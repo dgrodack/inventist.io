@@ -1,0 +1,1517 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Inventist — Fun Learning Experiences for iOS</title>
+<meta name="description" content="Inventist builds joyful learning experiences for iOS. Makers of Whereabouts, the daily interactive geography game." />
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,400;0,9..144,500;0,9..144,600;0,9..144,800;0,9..144,900;1,9..144,400;1,9..144,600&family=DM+Mono:wght@400;500&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+:root {
+  --cream: #f4ead5;
+  --cream-deep: #ecdfc1;
+  --paper: #fbf6e9;
+  --ink: #15233f;
+  --ink-soft: #2a3a5b;
+  --marigold: #e89e2c;
+  --marigold-deep: #c97f15;
+  --coral: #d8553e;
+  --moss: #4a6b3a;
+  --rule: rgba(21, 35, 63, 0.18);
+  --shadow: 0 24px 60px -28px rgba(21, 35, 63, 0.45);
+}
+
+* { box-sizing: border-box; margin: 0; padding: 0; }
+html { scroll-behavior: smooth; }
+
+body {
+  font-family: 'Inter', -apple-system, sans-serif;
+  background: var(--cream);
+  color: var(--ink);
+  line-height: 1.5;
+  overflow-x: hidden;
+  -webkit-font-smoothing: antialiased;
+  font-feature-settings: "ss01", "cv11";
+}
+
+body::before {
+  content: '';
+  position: fixed;
+  inset: 0;
+  background-image:
+    radial-gradient(ellipse at 20% 10%, rgba(232, 158, 44, 0.08) 0%, transparent 40%),
+    radial-gradient(ellipse at 80% 90%, rgba(216, 85, 62, 0.06) 0%, transparent 50%);
+  pointer-events: none;
+  z-index: 1;
+}
+
+body::after {
+  content: '';
+  position: fixed;
+  inset: 0;
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='2' stitchTiles='stitch'/%3E%3CfeColorMatrix values='0 0 0 0 0.08 0 0 0 0 0.13 0 0 0 0 0.24 0 0 0 0.4 0'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+  opacity: 0.18;
+  mix-blend-mode: multiply;
+  pointer-events: none;
+  z-index: 2;
+}
+
+main, nav, footer { position: relative; z-index: 3; }
+
+nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 28px 48px;
+  border-bottom: 1px solid var(--rule);
+  position: sticky;
+  top: 0;
+  background: rgba(244, 234, 213, 0.92);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  z-index: 50;
+}
+
+.logo {
+  font-family: 'Fraunces', serif;
+  font-weight: 900;
+  font-size: 26px;
+  letter-spacing: -0.03em;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  cursor: pointer;
+  font-variation-settings: "opsz" 144;
+}
+
+.logo-dot {
+  width: 10px;
+  height: 10px;
+  background: var(--marigold);
+  border-radius: 50%;
+  display: inline-block;
+  animation: pulse 2.6s ease-in-out infinite;
+}
+
+@keyframes pulse {
+  0%, 100% { transform: scale(1); opacity: 1; }
+  50% { transform: scale(1.4); opacity: 0.6; }
+}
+
+.nav-links { display: flex; gap: 36px; list-style: none; align-items: center; }
+
+.nav-links a {
+  color: var(--ink);
+  text-decoration: none;
+  font-size: 14px;
+  font-weight: 500;
+  letter-spacing: 0.02em;
+  position: relative;
+  cursor: pointer;
+}
+
+.nav-links a::after {
+  content: '';
+  position: absolute;
+  left: 0;
+  bottom: -4px;
+  width: 0;
+  height: 1px;
+  background: var(--ink);
+  transition: width 0.3s ease;
+}
+
+.nav-links a:hover::after, .nav-links a.active::after { width: 100%; }
+
+.nav-cta {
+  background: var(--ink);
+  color: var(--cream);
+  padding: 10px 18px;
+  border-radius: 999px;
+  font-size: 13px;
+  font-weight: 500;
+  transition: all 0.3s;
+  cursor: pointer;
+  border: none;
+  font-family: inherit;
+}
+
+.nav-cta::after { display: none; }
+
+.nav-cta:hover {
+  background: var(--marigold);
+  color: var(--ink);
+  transform: translateY(-1px);
+}
+
+.hero {
+  padding: 80px 48px 120px;
+  position: relative;
+  min-height: calc(100vh - 100px);
+  display: flex;
+  align-items: center;
+  overflow: hidden;
+}
+
+.hero-grid {
+  display: grid;
+  grid-template-columns: 1.1fr 1fr;
+  gap: 80px;
+  align-items: center;
+  width: 100%;
+  max-width: 1400px;
+  margin: 0 auto;
+}
+
+.eyebrow {
+  font-family: 'DM Mono', monospace;
+  font-size: 12px;
+  text-transform: uppercase;
+  letter-spacing: 0.18em;
+  color: var(--ink-soft);
+  margin-bottom: 32px;
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  opacity: 0;
+  animation: slideUp 0.8s 0.1s forwards;
+}
+
+.eyebrow::before {
+  content: '';
+  width: 32px;
+  height: 1px;
+  background: var(--ink-soft);
+}
+
+h1.display {
+  font-family: 'Fraunces', serif;
+  font-size: clamp(54px, 8vw, 120px);
+  line-height: 0.95;
+  letter-spacing: -0.04em;
+  font-weight: 400;
+  margin-bottom: 36px;
+  font-variation-settings: "opsz" 144;
+}
+
+h1.display .word {
+  display: inline-block;
+  opacity: 0;
+  transform: translateY(40px);
+  animation: wordRise 0.9s cubic-bezier(0.2, 0.8, 0.2, 1) forwards;
+}
+
+h1.display .ital {
+  font-style: italic;
+  font-weight: 600;
+  color: var(--marigold-deep);
+  font-variation-settings: "opsz" 9;
+}
+
+@keyframes wordRise { to { opacity: 1; transform: translateY(0); } }
+@keyframes slideUp { to { opacity: 1; transform: translateY(0); } }
+
+.hero-sub {
+  font-size: 19px;
+  color: var(--ink-soft);
+  max-width: 480px;
+  margin-bottom: 48px;
+  line-height: 1.55;
+  opacity: 0;
+  animation: slideUp 0.8s 0.9s forwards;
+  transform: translateY(20px);
+}
+
+.hero-cta-row {
+  display: flex;
+  gap: 16px;
+  align-items: center;
+  flex-wrap: wrap;
+  opacity: 0;
+  animation: slideUp 0.8s 1.1s forwards;
+  transform: translateY(20px);
+}
+
+.btn-primary {
+  background: var(--ink);
+  color: var(--cream);
+  padding: 16px 28px;
+  border-radius: 999px;
+  font-size: 15px;
+  font-weight: 500;
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  transition: all 0.3s;
+  border: none;
+  cursor: pointer;
+  font-family: inherit;
+}
+
+.btn-primary:hover {
+  background: var(--marigold);
+  color: var(--ink);
+  transform: translateY(-2px);
+  box-shadow: 0 12px 28px -10px rgba(232, 158, 44, 0.5);
+}
+
+.btn-ghost {
+  background: transparent;
+  color: var(--ink);
+  padding: 16px 28px;
+  border-radius: 999px;
+  font-size: 15px;
+  font-weight: 500;
+  border: 1px solid var(--rule);
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  transition: all 0.3s;
+  cursor: pointer;
+  font-family: inherit;
+}
+
+.btn-ghost:hover { border-color: var(--ink); background: var(--paper); }
+
+.globe-wrap {
+  position: relative;
+  aspect-ratio: 1;
+  max-width: 540px;
+  margin-left: auto;
+  opacity: 0;
+  animation: fadeIn 1.2s 0.6s forwards;
+}
+
+@keyframes fadeIn { to { opacity: 1; } }
+
+.globe-svg {
+  width: 100%;
+  height: 100%;
+  filter: drop-shadow(0 30px 60px rgba(21, 35, 63, 0.25));
+}
+
+.globe-rotate {
+  transform-origin: center;
+  animation: rotate 60s linear infinite;
+}
+
+@keyframes rotate { to { transform: rotate(360deg); } }
+
+.orbit-dot { fill: var(--marigold); }
+
+.pin-marker {
+  opacity: 0;
+  animation: pinDrop 1s 1.6s cubic-bezier(0.5, 1.5, 0.5, 1) forwards;
+}
+
+@keyframes pinDrop {
+  0% { opacity: 0; transform: translateY(-60px) scale(0.3); }
+  100% { opacity: 1; transform: translateY(0) scale(1); }
+}
+
+.pin-pulse {
+  transform-origin: 200px 145px;
+  animation: pinPulse 2.5s 2.6s ease-in-out infinite;
+}
+
+@keyframes pinPulse {
+  0%, 100% { transform: scale(1); opacity: 0.6; }
+  50% { transform: scale(2.2); opacity: 0; }
+}
+
+.coords-card {
+  position: absolute;
+  background: var(--paper);
+  border: 1px solid var(--rule);
+  padding: 12px 16px;
+  border-radius: 8px;
+  font-family: 'DM Mono', monospace;
+  font-size: 11px;
+  letter-spacing: 0.08em;
+  color: var(--ink-soft);
+  box-shadow: var(--shadow);
+  opacity: 0;
+  animation: cardPop 0.6s forwards;
+}
+
+.coords-card .label { color: var(--marigold-deep); font-weight: 500; }
+.coords-card .place { color: var(--ink); font-weight: 600; font-size: 13px; margin-top: 2px; font-family: 'Fraunces', serif; }
+
+.coords-card-1 { top: 8%; left: -10%; animation-delay: 1.4s; --r: rotate(-3deg); }
+.coords-card-2 { bottom: 22%; right: -6%; animation-delay: 1.7s; --r: rotate(2deg); }
+.coords-card-3 { bottom: -2%; left: 16%; animation-delay: 2s; --r: rotate(-1deg); }
+
+@keyframes cardPop {
+  0% { opacity: 0; transform: scale(0.8) translateY(10px) rotate(0deg); }
+  100% { opacity: 1; transform: scale(1) translateY(0) var(--r); }
+}
+
+.marquee {
+  background: var(--ink);
+  color: var(--cream);
+  padding: 28px 0;
+  overflow: hidden;
+}
+
+.marquee-track {
+  display: flex;
+  gap: 56px;
+  white-space: nowrap;
+  animation: marquee 40s linear infinite;
+  font-family: 'Fraunces', serif;
+  font-size: 28px;
+  font-style: italic;
+  font-weight: 400;
+  font-variation-settings: "opsz" 144;
+}
+
+.marquee-track span { display: inline-flex; align-items: center; gap: 56px; }
+.marquee-track .star { color: var(--marigold); font-style: normal; }
+
+@keyframes marquee { to { transform: translateX(-50%); } }
+
+.section {
+  padding: 140px 48px;
+  max-width: 1400px;
+  margin: 0 auto;
+  position: relative;
+}
+
+.section-tag {
+  font-family: 'DM Mono', monospace;
+  font-size: 11px;
+  text-transform: uppercase;
+  letter-spacing: 0.2em;
+  color: var(--marigold-deep);
+  margin-bottom: 20px;
+}
+
+.section-title {
+  font-family: 'Fraunces', serif;
+  font-size: clamp(40px, 5vw, 72px);
+  line-height: 1;
+  letter-spacing: -0.03em;
+  font-weight: 400;
+  margin-bottom: 60px;
+  max-width: 900px;
+  font-variation-settings: "opsz" 144;
+}
+
+.section-title em {
+  font-style: italic;
+  font-weight: 500;
+  color: var(--marigold-deep);
+  font-variation-settings: "opsz" 9;
+}
+
+.about-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 48px; }
+
+.about-card {
+  border-top: 1px solid var(--rule);
+  padding-top: 28px;
+}
+
+.about-card-num {
+  font-family: 'DM Mono', monospace;
+  font-size: 11px;
+  color: var(--ink-soft);
+  letter-spacing: 0.1em;
+  margin-bottom: 24px;
+}
+
+.about-card-icon {
+  width: 56px;
+  height: 56px;
+  margin-bottom: 24px;
+  color: var(--marigold-deep);
+}
+
+.about-card-title {
+  font-family: 'Fraunces', serif;
+  font-size: 26px;
+  font-weight: 500;
+  margin-bottom: 14px;
+  letter-spacing: -0.02em;
+}
+
+.about-card-body { color: var(--ink-soft); font-size: 15px; line-height: 1.6; }
+
+.apps-section {
+  background: var(--ink);
+  color: var(--cream);
+  padding: 140px 48px;
+  position: relative;
+  overflow: hidden;
+}
+
+.apps-section::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n2'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.7' numOctaves='2'/%3E%3CfeColorMatrix values='0 0 0 0 1 0 0 0 0 1 0 0 0 0 1 0 0 0 0.05 0'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n2)'/%3E%3C/svg%3E");
+  opacity: 0.4;
+  pointer-events: none;
+}
+
+.apps-inner { max-width: 1400px; margin: 0 auto; position: relative; }
+
+.apps-section .section-tag { color: var(--marigold); }
+.apps-section .section-title em { color: var(--marigold); }
+
+.app-card {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 80px;
+  align-items: center;
+  padding: 60px 0;
+  border-top: 1px solid rgba(244, 234, 213, 0.15);
+}
+
+.app-meta { display: flex; align-items: center; gap: 24px; margin-bottom: 28px; }
+
+.app-icon {
+  width: 96px;
+  height: 96px;
+  border-radius: 22px;
+  background: linear-gradient(135deg, #4a90c2 0%, #2c5f8a 50%, #1a3a5c 100%);
+  position: relative;
+  overflow: hidden;
+  box-shadow: 0 20px 40px -16px rgba(0, 0, 0, 0.5);
+  flex-shrink: 0;
+}
+
+.app-icon-svg { position: absolute; inset: 0; width: 100%; height: 100%; }
+
+.app-name-block h3 {
+  font-family: 'Fraunces', serif;
+  font-size: 44px;
+  font-weight: 500;
+  letter-spacing: -0.02em;
+  line-height: 1;
+  margin-bottom: 6px;
+}
+
+.app-tagline {
+  font-family: 'DM Mono', monospace;
+  font-size: 12px;
+  text-transform: uppercase;
+  letter-spacing: 0.15em;
+  color: var(--marigold);
+}
+
+.app-desc {
+  font-size: 17px;
+  line-height: 1.6;
+  color: rgba(244, 234, 213, 0.78);
+  margin-bottom: 32px;
+  max-width: 520px;
+}
+
+.app-features { list-style: none; margin-bottom: 36px; }
+
+.app-features li {
+  padding: 14px 0;
+  border-top: 1px solid rgba(244, 234, 213, 0.12);
+  display: flex;
+  gap: 16px;
+  align-items: baseline;
+  font-size: 15px;
+  color: rgba(244, 234, 213, 0.85);
+}
+
+.app-features li::before {
+  content: '+';
+  color: var(--marigold);
+  font-weight: 600;
+  font-size: 18px;
+}
+
+.app-screenshot {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  perspective: 1000px;
+}
+
+.phone-mockup {
+  width: 280px;
+  height: 580px;
+  background: #15233f;
+  border-radius: 44px;
+  border: 12px solid #2a2a2a;
+  position: relative;
+  box-shadow: 0 40px 80px -20px rgba(0, 0, 0, 0.7), inset 0 0 0 1px rgba(255, 255, 255, 0.1);
+  overflow: hidden;
+  transform: rotate(-4deg);
+  transition: transform 0.6s cubic-bezier(0.2, 0.8, 0.2, 1);
+}
+
+.phone-mockup:hover { transform: rotate(0deg) translateY(-8px); }
+
+.phone-notch {
+  position: absolute;
+  top: 8px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 100px;
+  height: 26px;
+  background: #000;
+  border-radius: 16px;
+  z-index: 10;
+}
+
+.phone-screen {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(180deg, #1f4870 0%, #0e1f33 100%);
+  display: flex;
+  flex-direction: column;
+  padding: 44px 16px 20px;
+  color: white;
+  font-family: 'Inter', sans-serif;
+}
+
+.screen-topbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 14px;
+  font-family: 'DM Mono', monospace;
+  font-size: 9px;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+}
+
+.screen-topbar .day-num { color: var(--marigold); font-weight: 500; }
+.screen-topbar .streak { display: flex; align-items: center; gap: 4px; opacity: 0.85; }
+
+.screen-prompt {
+  font-family: 'Fraunces', serif;
+  font-size: 16px;
+  text-align: center;
+  line-height: 1.3;
+  margin-bottom: 14px;
+  font-weight: 500;
+  padding: 0 4px;
+}
+
+.screen-prompt em { color: var(--marigold); font-style: italic; }
+
+.screen-globe {
+  width: 100%;
+  flex: 1;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 12px;
+}
+
+.screen-progress { display: flex; gap: 4px; margin-bottom: 12px; justify-content: center; }
+
+.screen-progress .dot {
+  width: 24px;
+  height: 4px;
+  border-radius: 2px;
+  background: rgba(255,255,255,0.15);
+}
+
+.screen-progress .dot.done { background: var(--marigold); }
+.screen-progress .dot.current { background: rgba(232, 158, 44, 0.5); }
+
+.screen-cta {
+  background: var(--marigold);
+  color: var(--ink);
+  padding: 12px;
+  border-radius: 999px;
+  text-align: center;
+  font-weight: 600;
+  font-size: 14px;
+}
+
+.float-deco {
+  position: absolute;
+  font-family: 'DM Mono', monospace;
+  font-size: 10px;
+  color: var(--marigold);
+  letter-spacing: 0.1em;
+  opacity: 0.7;
+}
+
+.float-deco.d1 { top: 8%; left: -2%; transform: rotate(-12deg); }
+.float-deco.d2 { bottom: 14%; right: -2%; transform: rotate(8deg); }
+
+.coming-soon-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 8px 16px;
+  border: 1px dashed rgba(244, 234, 213, 0.45);
+  border-radius: 999px;
+  font-family: 'DM Mono', monospace;
+  font-size: 11px;
+  letter-spacing: 0.14em;
+  color: rgba(244, 234, 213, 0.75);
+  text-transform: uppercase;
+  background: rgba(244, 234, 213, 0.04);
+}
+
+.coming-soon-badge::before {
+  content: '';
+  width: 6px;
+  height: 6px;
+  background: var(--marigold);
+  border-radius: 50%;
+  animation: pulse 2.6s ease-in-out infinite;
+}
+
+.manifesto {
+  padding: 160px 48px;
+  text-align: center;
+  max-width: 1100px;
+  margin: 0 auto;
+}
+
+.manifesto-text {
+  font-family: 'Fraunces', serif;
+  font-size: clamp(32px, 4vw, 56px);
+  line-height: 1.2;
+  font-weight: 400;
+  letter-spacing: -0.02em;
+  font-variation-settings: "opsz" 144;
+}
+
+.manifesto-text em {
+  font-style: italic;
+  color: var(--marigold-deep);
+  font-weight: 500;
+  font-variation-settings: "opsz" 9;
+}
+
+.manifesto-sig {
+  margin-top: 48px;
+  font-family: 'DM Mono', monospace;
+  font-size: 12px;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--ink-soft);
+}
+
+footer {
+  background: var(--ink);
+  color: var(--cream);
+  padding: 80px 48px 40px;
+  position: relative;
+  overflow: hidden;
+}
+
+.footer-grid {
+  max-width: 1400px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: 1.5fr 1fr 1fr 1fr;
+  gap: 48px;
+  margin-bottom: 64px;
+}
+
+.footer-brand {
+  font-family: 'Fraunces', serif;
+  font-size: 56px;
+  font-weight: 500;
+  letter-spacing: -0.03em;
+  font-variation-settings: "opsz" 144;
+  line-height: 1;
+  margin-bottom: 20px;
+}
+
+.footer-brand em { font-style: italic; color: var(--marigold); font-variation-settings: "opsz" 9; }
+
+.footer-tagline { color: rgba(244, 234, 213, 0.6); font-size: 14px; max-width: 280px; line-height: 1.5; }
+
+.footer-col h4 {
+  font-family: 'DM Mono', monospace;
+  font-size: 11px;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--marigold);
+  margin-bottom: 20px;
+  font-weight: 500;
+}
+
+.footer-col ul { list-style: none; }
+.footer-col li { margin-bottom: 12px; }
+
+.footer-col a {
+  color: rgba(244, 234, 213, 0.75);
+  text-decoration: none;
+  font-size: 14px;
+  transition: color 0.2s;
+  cursor: pointer;
+}
+
+.footer-col a:hover { color: var(--marigold); }
+
+.footer-bottom {
+  max-width: 1400px;
+  margin: 0 auto;
+  padding-top: 32px;
+  border-top: 1px solid rgba(244, 234, 213, 0.12);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-family: 'DM Mono', monospace;
+  font-size: 11px;
+  letter-spacing: 0.08em;
+  color: rgba(244, 234, 213, 0.5);
+}
+
+.subpage {
+  display: none;
+  padding: 80px 48px 120px;
+  max-width: 880px;
+  margin: 0 auto;
+  position: relative;
+  z-index: 3;
+}
+
+.subpage.active { display: block; }
+
+.page-eyebrow {
+  font-family: 'DM Mono', monospace;
+  font-size: 11px;
+  text-transform: uppercase;
+  letter-spacing: 0.2em;
+  color: var(--marigold-deep);
+  margin-bottom: 24px;
+}
+
+.page-title {
+  font-family: 'Fraunces', serif;
+  font-size: clamp(48px, 6vw, 84px);
+  line-height: 1;
+  font-weight: 400;
+  letter-spacing: -0.03em;
+  margin-bottom: 24px;
+  font-variation-settings: "opsz" 144;
+}
+
+.page-title em { font-style: italic; color: var(--marigold-deep); font-variation-settings: "opsz" 9; }
+
+.page-lede {
+  font-size: 19px;
+  color: var(--ink-soft);
+  line-height: 1.6;
+  margin-bottom: 56px;
+  max-width: 640px;
+  font-family: 'Fraunces', serif;
+  font-weight: 400;
+  font-style: italic;
+  font-variation-settings: "opsz" 144;
+}
+
+.page-content { font-size: 16px; line-height: 1.7; color: var(--ink); }
+
+.page-content h2 {
+  font-family: 'Fraunces', serif;
+  font-size: 28px;
+  font-weight: 500;
+  margin-top: 48px;
+  margin-bottom: 16px;
+  letter-spacing: -0.02em;
+}
+
+.page-content h3 {
+  font-family: 'Fraunces', serif;
+  font-size: 20px;
+  font-weight: 500;
+  margin-top: 32px;
+  margin-bottom: 12px;
+}
+
+.page-content p { margin-bottom: 16px; color: var(--ink-soft); }
+.page-content ul { margin-left: 24px; margin-bottom: 16px; color: var(--ink-soft); }
+.page-content li { margin-bottom: 8px; }
+.page-content a { color: var(--marigold-deep); text-decoration: underline; text-underline-offset: 3px; }
+.page-content strong { color: var(--ink); font-weight: 600; }
+
+.last-updated {
+  font-family: 'DM Mono', monospace;
+  font-size: 12px;
+  color: var(--ink-soft);
+  margin-top: 12px;
+  margin-bottom: 40px;
+  letter-spacing: 0.05em;
+}
+
+.contact-block {
+  background: var(--paper);
+  border: 1px solid var(--rule);
+  padding: 48px;
+  border-radius: 20px;
+  margin: 48px 0 56px;
+  text-align: center;
+  position: relative;
+  overflow: hidden;
+}
+
+.contact-block::before {
+  content: '';
+  position: absolute;
+  top: -40px;
+  right: -40px;
+  width: 160px;
+  height: 160px;
+  background: radial-gradient(circle, rgba(232, 158, 44, 0.18) 0%, transparent 70%);
+  border-radius: 50%;
+}
+
+.contact-block .icon {
+  width: 56px;
+  height: 56px;
+  margin: 0 auto 20px;
+  color: var(--marigold-deep);
+  position: relative;
+}
+
+.contact-block h2 {
+  font-family: 'Fraunces', serif;
+  font-size: 28px;
+  font-weight: 500;
+  margin-bottom: 8px !important;
+  margin-top: 0 !important;
+  letter-spacing: -0.02em;
+}
+
+.contact-block p {
+  color: var(--ink-soft);
+  margin-bottom: 24px !important;
+  position: relative;
+}
+
+.contact-email {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  background: var(--ink);
+  color: var(--cream) !important;
+  padding: 16px 28px;
+  border-radius: 999px;
+  font-family: 'DM Mono', monospace;
+  font-size: 14px;
+  letter-spacing: 0.05em;
+  text-decoration: none !important;
+  transition: all 0.3s;
+  position: relative;
+}
+
+.contact-email:hover {
+  background: var(--marigold);
+  color: var(--ink) !important;
+  transform: translateY(-2px);
+}
+
+.faq-item { border-top: 1px solid var(--rule); padding: 24px 0; }
+
+.faq-q {
+  font-family: 'Fraunces', serif;
+  font-size: 18px;
+  font-weight: 500;
+  margin-bottom: 8px;
+  cursor: pointer;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 24px;
+}
+
+.faq-q::after {
+  content: '+';
+  color: var(--marigold-deep);
+  font-size: 24px;
+  font-weight: 400;
+  transition: transform 0.3s;
+  flex-shrink: 0;
+}
+
+.faq-item.open .faq-q::after { transform: rotate(45deg); }
+
+.faq-a {
+  color: var(--ink-soft);
+  font-size: 15px;
+  line-height: 1.6;
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.4s ease, padding 0.3s ease;
+}
+
+.faq-item.open .faq-a { max-height: 240px; padding-top: 8px; }
+
+@media (max-width: 900px) {
+  nav { padding: 20px 24px; }
+  .nav-links { gap: 20px; font-size: 13px; }
+  .nav-links li:not(:last-child) { display: none; }
+  .hero { padding: 60px 24px 80px; }
+  .hero-grid { grid-template-columns: 1fr; gap: 60px; }
+  .globe-wrap { max-width: 380px; margin: 0 auto; }
+  .section, .apps-section, footer { padding-left: 24px; padding-right: 24px; }
+  .section, .apps-section { padding-top: 100px; padding-bottom: 100px; }
+  .about-grid { grid-template-columns: 1fr; gap: 32px; }
+  .app-card { grid-template-columns: 1fr; gap: 48px; }
+  .footer-grid { grid-template-columns: 1fr 1fr; gap: 32px; }
+  .footer-brand { font-size: 40px; }
+  .footer-bottom { flex-direction: column; gap: 16px; text-align: center; }
+  .subpage { padding: 60px 24px 80px; }
+  .manifesto { padding: 100px 24px; }
+  .contact-block { padding: 32px 24px; }
+}
+</style>
+</head>
+<body>
+
+<nav>
+  <div class="logo" data-route="home">
+    <span class="logo-dot"></span>
+    Inventist
+  </div>
+  <ul class="nav-links">
+    <li><a data-route="home" class="active">Home</a></li>
+    <li><a data-route="app">App</a></li>
+    <li><a data-route="support">Support</a></li>
+    <li><a data-route="privacy">Privacy</a></li>
+    <li><button class="nav-cta" data-route="support">Get in touch</button></li>
+  </ul>
+</nav>
+
+<main id="page-home" class="page">
+
+  <section class="hero">
+    <div class="hero-grid">
+      <div>
+        <div class="eyebrow">Independent Studio · Est. 2026</div>
+        <h1 class="display">
+          <span class="word" style="animation-delay: 0.2s">Fun</span>
+          <span class="word" style="animation-delay: 0.35s">to</span>
+          <span class="word ital" style="animation-delay: 0.5s">learn,</span><br>
+          <span class="word" style="animation-delay: 0.65s">made</span>
+          <span class="word" style="animation-delay: 0.8s">to</span>
+          <span class="word ital" style="animation-delay: 0.95s">play.</span>
+        </h1>
+        <p class="hero-sub">
+          We craft joyful learning experiences for iOS — small, beautiful apps designed to bring families and friends together around things worth knowing.
+        </p>
+        <div class="hero-cta-row">
+          <button class="btn-primary" data-route="app">
+            Meet our app
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M13 5l7 7-7 7"/></svg>
+          </button>
+          <button class="btn-ghost" data-route="support">Get support</button>
+        </div>
+      </div>
+
+      <div class="globe-wrap">
+        <svg class="globe-svg" viewBox="0 0 400 400" xmlns="http://www.w3.org/2000/svg">
+          <defs>
+            <radialGradient id="globeFill" cx="35%" cy="35%">
+              <stop offset="0%" stop-color="#5a8fb8"/>
+              <stop offset="60%" stop-color="#2c5f8a"/>
+              <stop offset="100%" stop-color="#15233f"/>
+            </radialGradient>
+            <linearGradient id="contGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+              <stop offset="0%" stop-color="#e89e2c"/>
+              <stop offset="100%" stop-color="#c97f15"/>
+            </linearGradient>
+          </defs>
+
+          <circle cx="200" cy="200" r="160" fill="url(#globeFill)"/>
+
+          <g class="globe-rotate" stroke="rgba(244, 234, 213, 0.18)" stroke-width="0.7" fill="none">
+            <ellipse cx="200" cy="200" rx="160" ry="50"/>
+            <ellipse cx="200" cy="200" rx="160" ry="100"/>
+            <ellipse cx="200" cy="200" rx="160" ry="140"/>
+            <ellipse cx="200" cy="200" rx="50" ry="160"/>
+            <ellipse cx="200" cy="200" rx="100" ry="160"/>
+            <ellipse cx="200" cy="200" rx="140" ry="160"/>
+            <line x1="40" y1="200" x2="360" y2="200"/>
+            <line x1="200" y1="40" x2="200" y2="360"/>
+          </g>
+
+          <g class="globe-rotate" fill="url(#contGrad)" opacity="0.92">
+            <path d="M 200 130 Q 230 135 240 165 Q 248 195 235 220 Q 220 245 200 248 Q 180 245 175 218 Q 172 190 182 165 Q 188 138 200 130 Z" />
+            <path d="M 175 110 Q 200 105 215 118 Q 215 130 195 130 Q 178 128 175 110 Z" />
+            <path d="M 110 150 Q 135 145 138 175 Q 140 200 125 220 Q 110 235 102 215 Q 95 188 105 165 Q 105 152 110 150 Z" />
+            <path d="M 250 125 Q 285 120 295 145 Q 290 170 270 175 Q 250 175 245 158 Q 245 138 250 125 Z" />
+            <path d="M 280 230 Q 305 228 310 245 Q 305 258 285 258 Q 272 252 280 230 Z" />
+          </g>
+
+          <circle cx="200" cy="200" r="185" fill="none" stroke="var(--ink)" stroke-width="1" stroke-dasharray="2 6" opacity="0.4"/>
+
+          <g class="globe-rotate">
+            <circle class="orbit-dot" cx="200" cy="15" r="6"/>
+          </g>
+
+          <g class="pin-marker">
+            <circle class="pin-pulse" cx="200" cy="145" r="10" fill="#d8553e" opacity="0.6"/>
+            <path d="M 200 125 C 192 125 188 132 188 138 C 188 148 200 162 200 162 C 200 162 212 148 212 138 C 212 132 208 125 200 125 Z" fill="#d8553e" stroke="#fbf6e9" stroke-width="2"/>
+            <circle cx="200" cy="138" r="4" fill="#fbf6e9"/>
+          </g>
+
+          <ellipse cx="160" cy="155" rx="55" ry="35" fill="rgba(255,255,255,0.12)" />
+        </svg>
+
+        <div class="coords-card coords-card-1">
+          <div class="label">DAILY · DAY 014</div>
+          <div class="place">5 questions a day</div>
+        </div>
+        <div class="coords-card coords-card-2">
+          <div class="label">STREAK · 23 DAYS</div>
+          <div class="place">Keep it alive</div>
+        </div>
+        <div class="coords-card coords-card-3">
+          <div class="label">FRIENDS · LEADERBOARD</div>
+          <div class="place">Beat your family</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <div class="marquee">
+    <div class="marquee-track">
+      <span>Five questions a day <span class="star">✦</span> Drop the pin <span class="star">✦</span> Keep your streak alive <span class="star">✦</span> Beat your family on the leaderboard <span class="star">✦</span> Made with care <span class="star">✦</span> Five questions a day <span class="star">✦</span> Drop the pin <span class="star">✦</span> Keep your streak alive <span class="star">✦</span> Beat your family on the leaderboard <span class="star">✦</span> Made with care <span class="star">✦</span></span>
+    </div>
+  </div>
+
+  <section class="section">
+    <div class="section-tag">// What we do</div>
+    <h2 class="section-title">Small studio. Big <em>curiosity.</em></h2>
+    <div class="about-grid">
+      <div class="about-card">
+        <div class="about-card-num">01 / Philosophy</div>
+        <svg class="about-card-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+          <circle cx="12" cy="12" r="10"/>
+          <path d="M12 2 a15 15 0 0 1 0 20 a15 15 0 0 1 0 -20"/>
+          <path d="M2 12h20"/>
+        </svg>
+        <h3 class="about-card-title">Learning that feels like play</h3>
+        <p class="about-card-body">Education sticks when it's fun. We design experiences that families actually want to spend time with — no screens of guilt, no joyless drills.</p>
+      </div>
+      <div class="about-card">
+        <div class="about-card-num">02 / Craft</div>
+        <svg class="about-card-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+          <path d="M3 3h18v18H3z"/>
+          <path d="M3 9h18M9 21V9"/>
+        </svg>
+        <h3 class="about-card-title">Native, beautiful, focused</h3>
+        <p class="about-card-body">Every app is built natively for iOS, with care for typography, motion, and the quiet details that make software feel alive in your hand.</p>
+      </div>
+      <div class="about-card">
+        <div class="about-card-num">03 / Privacy</div>
+        <svg class="about-card-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+          <path d="M12 2 L4 6 v6 c0 5 3.5 9 8 10 c4.5 -1 8 -5 8 -10 V6 z"/>
+        </svg>
+        <h3 class="about-card-title">Yours, and only yours</h3>
+        <p class="about-card-body">Our app doesn't track you, sell your data, or follow you around the internet. Privacy isn't a feature — it's the foundation.</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="apps-section">
+    <div class="apps-inner">
+      <div class="section-tag">// Our app</div>
+      <h2 class="section-title">Meet <em>Whereabouts.</em></h2>
+
+      <div class="app-card">
+        <div>
+          <div class="app-meta">
+            <div class="app-icon">
+              <svg class="app-icon-svg" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
+                <defs>
+                  <radialGradient id="iconGlobe" cx="35%" cy="35%">
+                    <stop offset="0%" stop-color="#7ab0d4"/>
+                    <stop offset="100%" stop-color="#1a3a5c"/>
+                  </radialGradient>
+                </defs>
+                <circle cx="50" cy="50" r="34" fill="url(#iconGlobe)"/>
+                <ellipse cx="50" cy="50" rx="34" ry="12" stroke="rgba(255,255,255,0.25)" stroke-width="0.6" fill="none"/>
+                <ellipse cx="50" cy="50" rx="12" ry="34" stroke="rgba(255,255,255,0.25)" stroke-width="0.6" fill="none"/>
+                <line x1="16" y1="50" x2="84" y2="50" stroke="rgba(255,255,255,0.2)" stroke-width="0.5"/>
+                <path d="M 50 32 C 44 32 40 37 40 42 C 40 50 50 62 50 62 C 50 62 60 50 60 42 C 60 37 56 32 50 32 Z" fill="#e89e2c" stroke="#fbf6e9" stroke-width="1.2"/>
+                <circle cx="50" cy="42" r="3" fill="#fbf6e9"/>
+              </svg>
+            </div>
+            <div class="app-name-block">
+              <h3>Whereabouts</h3>
+              <div class="app-tagline">A daily geography game</div>
+            </div>
+          </div>
+          <p class="app-desc">
+            Five questions, one interactive globe, one chance a day. Spin, zoom, and drop a pin on the spot you think the answer lives. Each day's questions get progressively harder. How long can you keep your streak going?
+          </p>
+          <ul class="app-features">
+            <li>Five fresh questions every day, progressively harder</li>
+            <li>Navigate an interactive globe and drop a pin on the answer</li>
+            <li>Build a streak — miss a day and it resets</li>
+            <li>Share your daily score with family and friends</li>
+            <li>Subscribe to unlock the friends leaderboard and bonus topic packs like capitals and countries</li>
+          </ul>
+          <div class="coming-soon-badge">Coming soon to the App Store</div>
+        </div>
+
+        <div class="app-screenshot">
+          <div class="float-deco d1">↗ Drop the pin</div>
+          <div class="float-deco d2">23 day streak ↘</div>
+          <div class="phone-mockup">
+            <div class="phone-notch"></div>
+            <div class="phone-screen">
+              <div class="screen-topbar">
+                <div class="day-num">Day 014 · Q3/5</div>
+                <div class="streak">🔥 23</div>
+              </div>
+              <div class="screen-prompt">
+                Find the city of <em>Marrakech</em> on the globe.
+              </div>
+              <div class="screen-globe">
+                <svg viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg" style="width: 180px; height: 180px;">
+                  <defs>
+                    <radialGradient id="phoneGlobe" cx="35%" cy="35%">
+                      <stop offset="0%" stop-color="#5a8fb8"/>
+                      <stop offset="100%" stop-color="#0e1f33"/>
+                    </radialGradient>
+                  </defs>
+                  <circle cx="100" cy="100" r="80" fill="url(#phoneGlobe)" stroke="rgba(232, 158, 44, 0.4)" stroke-width="1"/>
+                  <g stroke="rgba(244, 234, 213, 0.18)" stroke-width="0.5" fill="none">
+                    <ellipse cx="100" cy="100" rx="80" ry="25"/>
+                    <ellipse cx="100" cy="100" rx="80" ry="55"/>
+                    <ellipse cx="100" cy="100" rx="25" ry="80"/>
+                    <ellipse cx="100" cy="100" rx="55" ry="80"/>
+                    <line x1="20" y1="100" x2="180" y2="100"/>
+                    <line x1="100" y1="20" x2="100" y2="180"/>
+                  </g>
+                  <g fill="#e89e2c" opacity="0.88">
+                    <path d="M 95 70 Q 110 72 115 88 Q 118 105 110 118 Q 100 128 92 122 Q 85 108 88 90 Q 90 72 95 70 Z"/>
+                    <ellipse cx="60" cy="98" rx="10" ry="14"/>
+                    <ellipse cx="135" cy="85" rx="9" ry="11"/>
+                    <ellipse cx="142" cy="130" rx="6" ry="5"/>
+                  </g>
+                  <g>
+                    <circle cx="93" cy="92" r="8" fill="#d8553e" opacity="0.4">
+                      <animate attributeName="r" values="8;14;8" dur="2s" repeatCount="indefinite"/>
+                      <animate attributeName="opacity" values="0.5;0;0.5" dur="2s" repeatCount="indefinite"/>
+                    </circle>
+                    <path d="M 93 80 C 89 80 86 84 86 87 C 86 93 93 102 93 102 C 93 102 100 93 100 87 C 100 84 97 80 93 80 Z" fill="#d8553e" stroke="#fbf6e9" stroke-width="1"/>
+                    <circle cx="93" cy="87" r="2.2" fill="#fbf6e9"/>
+                  </g>
+                </svg>
+              </div>
+              <div class="screen-progress">
+                <div class="dot done"></div>
+                <div class="dot done"></div>
+                <div class="dot current"></div>
+                <div class="dot"></div>
+                <div class="dot"></div>
+              </div>
+              <div class="screen-cta">Drop pin</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="manifesto">
+    <p class="manifesto-text">
+      We believe the best apps are the ones that <em>leave you smarter,</em> closer to the people in the room with you, and a little more in love with how strange and brilliant the world is.
+    </p>
+    <div class="manifesto-sig">— The Inventist Studio</div>
+  </section>
+</main>
+
+<div id="page-app" class="subpage">
+  <div class="page-eyebrow">// Our app</div>
+  <h1 class="page-title">Meet <em>Whereabouts.</em></h1>
+  <p class="page-lede">A daily geography game built around a single, beautiful interactive globe — and the satisfying click of a well-placed pin.</p>
+
+  <div class="page-content">
+    <div style="background: var(--paper); border: 1px solid var(--rule); border-radius: 20px; padding: 40px; margin-bottom: 40px;">
+      <div style="display: flex; gap: 24px; align-items: flex-start; margin-bottom: 24px; flex-wrap: wrap;">
+        <div class="app-icon" style="width: 80px; height: 80px; border-radius: 18px; background: linear-gradient(135deg, #4a90c2 0%, #2c5f8a 50%, #1a3a5c 100%); position: relative; overflow: hidden; flex-shrink: 0;">
+          <svg viewBox="0 0 100 100" style="width: 100%; height: 100%;">
+            <circle cx="50" cy="50" r="34" fill="#1a3a5c"/>
+            <ellipse cx="50" cy="50" rx="34" ry="12" stroke="rgba(255,255,255,0.25)" fill="none" stroke-width="0.6"/>
+            <ellipse cx="50" cy="50" rx="12" ry="34" stroke="rgba(255,255,255,0.25)" fill="none" stroke-width="0.6"/>
+            <path d="M 50 32 C 44 32 40 37 40 42 C 40 50 50 62 50 62 C 50 62 60 50 60 42 C 60 37 56 32 50 32 Z" fill="#e89e2c" stroke="#fbf6e9" stroke-width="1.2"/>
+            <circle cx="50" cy="42" r="3" fill="#fbf6e9"/>
+          </svg>
+        </div>
+        <div style="flex: 1; min-width: 200px;">
+          <h2 style="margin-top: 0; font-size: 32px;">Whereabouts</h2>
+          <div style="font-family: 'DM Mono', monospace; font-size: 12px; text-transform: uppercase; letter-spacing: 0.15em; color: var(--marigold-deep); margin-bottom: 12px;">Daily Geography Game · iOS · Coming Soon</div>
+          <p style="margin: 0;">Five questions, one interactive globe, one chance a day. Test your geo-knowledge and see how long you can keep your streak alive.</p>
+        </div>
+      </div>
+
+      <h3>How it works</h3>
+      <p>Each day, Whereabouts gives you <strong>five questions</strong>, each one harder than the last. The challenge isn't multiple choice — it's spatial. You navigate an interactive globe, spin and zoom in, then <strong>drop a pin</strong> on the spot you think the answer lives. The closer your pin, the higher your score.</p>
+
+      <h3>Build your streak</h3>
+      <p>Show up every day and your streak grows. Skip a day and it resets to zero. It's the kind of small ritual that turns into something bigger over time — five minutes a day with a globe in your hand.</p>
+
+      <h3>Play with people you love</h3>
+      <p>Share your daily score with family and friends. Compare how you each handled today's questions. Talk about the ones you missed.</p>
+
+      <h3>Subscribe for more</h3>
+      <p>A subscription unlocks the <strong>friends leaderboard</strong> for richer head-to-head competition, plus additional topic packs — including <strong>capitals</strong>, <strong>countries</strong>, and more on the way.</p>
+    </div>
+
+    <h2>What's next</h2>
+    <p>Whereabouts is launching on the App Store soon. We're a small studio, so we focus on doing one thing well at a time — and we'll have more to share when the app is ready. Drop us a note via the <a data-route="support">support page</a> if you'd like to be among the first to know.</p>
+  </div>
+</div>
+
+<div id="page-support" class="subpage">
+  <div class="page-eyebrow">// Help & contact</div>
+  <h1 class="page-title">We're <em>here.</em></h1>
+  <p class="page-lede">Real humans, real replies. We typically respond within one business day — often much sooner.</p>
+
+  <div class="contact-block">
+    <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+      <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/>
+      <polyline points="22,6 12,13 2,6"/>
+    </svg>
+    <h2>Get in touch</h2>
+    <p>Bug reports, feature ideas, app help, press inquiries, privacy questions — all welcome. One inbox, one team.</p>
+    <a href="mailto:contact@inventist.io" class="contact-email">
+      contact@inventist.io
+      <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M13 5l7 7-7 7"/></svg>
+    </a>
+  </div>
+
+  <div class="page-content">
+    <h2>Frequently asked</h2>
+
+    <div class="faq-item">
+      <div class="faq-q">When is Whereabouts launching?</div>
+      <div class="faq-a"><p>Soon. We're putting the finishing touches on it now and will announce a launch date when we're ready. Email <a href="mailto:contact@inventist.io">contact@inventist.io</a> if you'd like to be notified.</p></div>
+    </div>
+
+    <div class="faq-item">
+      <div class="faq-q">How does Whereabouts work?</div>
+      <div class="faq-a"><p>Each day you get five questions of progressively increasing difficulty. For each one, you navigate an interactive globe and drop a pin on the location you think is correct. Your daily score depends on how close your pins are.</p></div>
+    </div>
+
+    <div class="faq-item">
+      <div class="faq-q">Is Whereabouts free?</div>
+      <div class="faq-a"><p>The core daily game is free to play. An optional subscription unlocks additional features — the friends leaderboard and bonus topic packs like capitals and countries.</p></div>
+    </div>
+
+    <div class="faq-item">
+      <div class="faq-q">What devices will it support?</div>
+      <div class="faq-a"><p>Whereabouts is being built natively for iPhone and iPad. We don't currently have an Android version planned.</p></div>
+    </div>
+
+    <div class="faq-item">
+      <div class="faq-q">How does the streak work?</div>
+      <div class="faq-a"><p>Play any of the five daily questions to keep your streak alive. Miss a full day and it resets to zero — that's part of what makes it satisfying.</p></div>
+    </div>
+
+    <div class="faq-item">
+      <div class="faq-q">Can I share my score with family and friends?</div>
+      <div class="faq-a"><p>Yes. After completing the day's questions, you can share your daily stats with anyone. Subscribers also get a friends leaderboard for head-to-head competition.</p></div>
+    </div>
+
+    <div class="faq-item">
+      <div class="faq-q">How do I report a bug or wrong answer?</div>
+      <div class="faq-a"><p>Email <a href="mailto:contact@inventist.io">contact@inventist.io</a> with as much detail as you can — a screenshot is ideal. We take corrections seriously and update the question pool regularly.</p></div>
+    </div>
+
+    <div class="faq-item">
+      <div class="faq-q">Do you collect any personal data?</div>
+      <div class="faq-a"><p>The short answer: no. We don't ask for accounts, we don't track your behavior, and we don't share data with third parties. Read the full <a data-route="privacy">privacy policy</a> for details.</p></div>
+    </div>
+  </div>
+</div>
+
+<div id="page-privacy" class="subpage">
+  <div class="page-eyebrow">// Privacy policy</div>
+  <h1 class="page-title">Your data, <em>your business.</em></h1>
+  <p class="page-lede">Inventist is built on the belief that great software shouldn't cost your privacy. Here's exactly what we do and don't do with your information.</p>
+  <div class="last-updated">Last updated: May 1, 2026</div>
+
+  <div class="page-content">
+    <h2>The short version</h2>
+    <p>We don't collect personal information from people who use our app. We don't use analytics SDKs, advertising networks, or tracking tools. We do not sell or share data with third parties.</p>
+    <p>The longer version below explains the specifics, including the limited information that may be processed by Apple itself when you download or use Whereabouts, and what is involved if you choose to subscribe.</p>
+
+    <h2>Information we collect</h2>
+
+    <h3>Through Whereabouts</h3>
+    <p>Whereabouts stores your game progress, daily scores, streak, and settings <strong>locally on your device</strong>. This information never leaves your device unless you choose to back it up via Apple's iCloud service, which is governed by <a href="https://www.apple.com/legal/privacy/" target="_blank" rel="noopener">Apple's Privacy Policy</a>.</p>
+    <p>If you choose to <strong>share your daily stats</strong> with family or friends, that sharing is initiated by you through your device's standard sharing options — we do not see, store, or transmit the content you share.</p>
+    <p>We do not use third-party analytics, advertising, crash reporting, or attribution SDKs in our app.</p>
+
+    <h3>If you subscribe</h3>
+    <p>Subscriptions to unlock the friends leaderboard and additional topic packs are processed through <strong>Apple's App Store and StoreKit</strong>. Apple handles the payment, billing, and subscription management — we do not see, store, or have access to your payment information. We may receive aggregate, anonymized information from Apple about subscription activity.</p>
+    <p>To enable the friends leaderboard feature, your scores and a chosen display name may be associated with an anonymous identifier so that you and your friends can see one another's results. This data is used solely to operate the leaderboard feature and is not used for advertising or shared with third parties.</p>
+
+    <h3>Through this website</h3>
+    <p>This website does not use cookies for tracking, does not embed third-party trackers, and does not require you to create an account. Standard server logs (IP address, browser type, pages visited) may be retained briefly by our hosting provider for security and operational purposes, and are not used to identify or profile individual visitors.</p>
+
+    <h3>When you contact us</h3>
+    <p>If you email us, we receive your email address and the content of your message. We use this only to reply to you and to keep a record of the conversation. We do not add you to any marketing lists.</p>
+
+    <h2>Information collected by Apple</h2>
+    <p>When you download Whereabouts from the App Store, Apple may collect information about that download according to <a href="https://www.apple.com/legal/privacy/" target="_blank" rel="noopener">Apple's Privacy Policy</a>. We may receive aggregate, anonymized statistics from Apple about app downloads and usage (such as country of download or app version) through App Store Connect. This data is not associated with any individual user.</p>
+
+    <h2>Children's privacy</h2>
+    <p>Whereabouts is designed to be enjoyed by people of all ages, including children. Because we do not collect personal information from any user, we likewise do not knowingly collect personal information from children under 13. Our practices are designed to be compliant with the Children's Online Privacy Protection Act (COPPA) and equivalent regulations.</p>
+
+    <h2>How we share information</h2>
+    <p>We don't. We do not sell, rent, trade, or otherwise share user information with third parties. The only exceptions would be if we were legally required to do so by a valid legal process, or if doing so were necessary to protect our rights, property, or safety.</p>
+
+    <h2>Your rights</h2>
+    <p>Because we collect very little personal data, there's typically very little for us to access, correct, or delete on your behalf. If you have contacted us by email and would like that correspondence deleted, or if you'd like your leaderboard data removed, simply email <a href="mailto:contact@inventist.io">contact@inventist.io</a> and we'll take care of it.</p>
+    <p>Residents of the European Economic Area, the United Kingdom, and California have certain rights under applicable data protection laws (such as GDPR and CCPA), including the right to access, correct, delete, or restrict the processing of personal data. To exercise any of these rights, contact us at the address above.</p>
+
+    <h2>Security</h2>
+    <p>We take reasonable measures to protect any information we do hold. Email correspondence is stored on industry-standard infrastructure with appropriate access controls. No system is perfectly secure, but our deliberate choice to collect as little data as possible is itself one of the strongest privacy protections we can offer.</p>
+
+    <h2>Changes to this policy</h2>
+    <p>If we make material changes to this policy, we'll update the date at the top of this page and, for changes of substance, post a notice on our website. We encourage you to check this page periodically.</p>
+
+    <h2>Contact us</h2>
+    <p>For any questions about this privacy policy or our data practices, please email <a href="mailto:contact@inventist.io">contact@inventist.io</a>.</p>
+  </div>
+</div>
+
+<div id="page-terms" class="subpage">
+  <div class="page-eyebrow">// Terms of use</div>
+  <h1 class="page-title">Terms of <em>use.</em></h1>
+  <p class="page-lede">The plain-language agreement between you and Inventist about how our app and website may be used.</p>
+  <div class="last-updated">Last updated: May 1, 2026</div>
+
+  <div class="page-content">
+    <h2>Acceptance of terms</h2>
+    <p>By downloading, installing, or using our app or by visiting this website, you agree to be bound by these Terms of Use. If you do not agree, please do not use our app or website.</p>
+
+    <h2>License to use our app</h2>
+    <p>Subject to your compliance with these terms, Inventist grants you a limited, non-exclusive, non-transferable, revocable license to download and use Whereabouts on Apple devices that you own or control, in accordance with the App Store Terms of Service and the Apple Media Services Terms.</p>
+
+    <h2>Subscriptions</h2>
+    <p>Whereabouts offers an optional auto-renewing subscription that unlocks additional features, including the friends leaderboard and bonus topic packs. Subscriptions are billed through your Apple ID and managed in your App Store account settings. Pricing, billing intervals, and renewal terms will be clearly disclosed at the point of purchase. You can cancel at any time through your Apple ID subscription settings; cancellation takes effect at the end of the current billing period.</p>
+
+    <h2>What you may not do</h2>
+    <ul>
+      <li>Reverse-engineer, decompile, or attempt to extract the source code of our app, except to the extent permitted by applicable law</li>
+      <li>Modify, adapt, translate, or create derivative works based on our app</li>
+      <li>Remove, obscure, or alter any proprietary notices or labels</li>
+      <li>Use our app in any manner that could damage, disable, or impair our services</li>
+      <li>Attempt to manipulate scores, leaderboards, or streak data through unauthorized means</li>
+      <li>Use our app for any unlawful purpose or in violation of any applicable laws</li>
+    </ul>
+
+    <h2>Intellectual property</h2>
+    <p>All content, features, and functionality of our app and website — including but not limited to text, graphics, logos, illustrations, code, and design — are the exclusive property of Inventist or its licensors and are protected by copyright, trademark, and other intellectual property laws.</p>
+
+    <h2>User content and feedback</h2>
+    <p>If you send us suggestions, ideas, feedback, or other materials ("Feedback"), you grant us a perpetual, irrevocable, royalty-free license to use that Feedback for any purpose, including improving our app and services, without obligation to you.</p>
+
+    <h2>Disclaimers</h2>
+    <p>Our app and website are provided "as is" and "as available," without warranties of any kind, either express or implied. While we try to ensure that all factual content is accurate, we make no guarantees of accuracy, completeness, or reliability. If you find an error, please let us know via the <a data-route="support">support page</a>.</p>
+
+    <h2>Limitation of liability</h2>
+    <p>To the fullest extent permitted by law, Inventist shall not be liable for any indirect, incidental, special, consequential, or punitive damages arising out of or related to your use of our app or website.</p>
+
+    <h2>Changes to these terms</h2>
+    <p>We may update these Terms of Use from time to time. When we do, we'll update the "Last updated" date above. Your continued use of our app and website after any changes constitutes acceptance of the updated terms.</p>
+
+    <h2>Governing law</h2>
+    <p>These terms are governed by the laws of the United States, without regard to conflict-of-laws principles. Any disputes arising from these terms or your use of our services shall be resolved in the appropriate courts.</p>
+
+    <h2>Contact</h2>
+    <p>Questions about these terms? Email <a href="mailto:contact@inventist.io">contact@inventist.io</a>.</p>
+  </div>
+</div>
+
+<footer>
+  <div class="footer-grid">
+    <div>
+      <div class="footer-brand">Inventist<em>.</em></div>
+      <p class="footer-tagline">Independent studio building joyful learning experiences for iOS. Established 2026.</p>
+    </div>
+    <div class="footer-col">
+      <h4>Studio</h4>
+      <ul>
+        <li><a data-route="home">About</a></li>
+        <li><a data-route="app">Our app</a></li>
+        <li><a href="mailto:contact@inventist.io">Press</a></li>
+      </ul>
+    </div>
+    <div class="footer-col">
+      <h4>Help</h4>
+      <ul>
+        <li><a data-route="support">Support</a></li>
+        <li><a href="mailto:contact@inventist.io">Contact</a></li>
+      </ul>
+    </div>
+    <div class="footer-col">
+      <h4>Legal</h4>
+      <ul>
+        <li><a data-route="privacy">Privacy policy</a></li>
+        <li><a data-route="terms">Terms of use</a></li>
+        <li><a href="mailto:contact@inventist.io">Data requests</a></li>
+      </ul>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <div>© 2026 INVENTIST · ALL RIGHTS RESERVED</div>
+    <div>MADE WITH CARE · iOS APP DEVELOPER</div>
+  </div>
+</footer>
+
+<script>
+  const routes = ['home', 'app', 'support', 'privacy', 'terms'];
+  const mainPage = document.getElementById('page-home');
+  const subpages = routes.slice(1).map(r => document.getElementById('page-' + r));
+
+  function navigate(route) {
+    if (!routes.includes(route)) route = 'home';
+
+    if (route === 'home') {
+      mainPage.style.display = 'block';
+      document.querySelector('footer').style.display = 'block';
+    } else {
+      mainPage.style.display = 'none';
+    }
+
+    subpages.forEach(p => p.classList.remove('active'));
+    if (route !== 'home') {
+      const target = document.getElementById('page-' + route);
+      if (target) target.classList.add('active');
+    }
+
+    document.querySelectorAll('.nav-links a').forEach(a => {
+      a.classList.toggle('active', a.dataset.route === route);
+    });
+
+    window.scrollTo({ top: 0, behavior: 'instant' });
+  }
+
+  document.querySelectorAll('[data-route]').forEach(el => {
+    el.addEventListener('click', (e) => {
+      e.preventDefault();
+      navigate(el.dataset.route);
+    });
+  });
+
+  document.querySelectorAll('.faq-item').forEach(item => {
+    item.querySelector('.faq-q').addEventListener('click', () => {
+      item.classList.toggle('open');
+    });
+  });
+
+  navigate('home');
+</script>
+
+</body>
+</html>
