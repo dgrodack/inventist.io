@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Whereabouts — Privacy Policy</title>
+<meta name="description" content="Privacy policy for the Whereabouts iOS app by Inventist LLC.">
+<meta name="robots" content="index,follow">
+<link rel="preconnect" href="https://rsms.me/">
+<link rel="stylesheet" href="https://rsms.me/inter/inter.css">
+<style>
+  :root {
+    --cream: #f4ead5;
+    --cream-deep: #ecdfc1;
+    --paper: #fbf6e9;
+    --ink: #15233f;
+    --ink-soft: #2a3a5b;
+    --marigold: #e89e2c;
+    --marigold-deep: #c97f15;
+    --rule: rgba(21, 35, 63, 0.18);
+  }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  html { scroll-behavior: smooth; }
+  body {
+    font-family: 'Inter', -apple-system, sans-serif;
+    background: var(--cream);
+    color: var(--ink);
+    line-height: 1.5;
+    -webkit-font-smoothing: antialiased;
+    font-feature-settings: "ss01", "cv11";
+    min-height: 100vh;
+    position: relative;
+  }
+  body::before {
+    content: '';
+    position: fixed; inset: 0;
+    background-image:
+      radial-gradient(ellipse at 20% 10%, rgba(232,158,44,0.08) 0%, transparent 40%),
+      radial-gradient(ellipse at 80% 90%, rgba(216,85,62,0.06) 0%, transparent 50%);
+    pointer-events: none; z-index: 0;
+  }
+  header {
+    position: relative; z-index: 2;
+    padding: 24px 40px;
+    border-bottom: 1px solid var(--rule);
+    display: flex; justify-content: space-between; align-items: center;
+  }
+  .logo {
+    font-weight: 700; font-size: 19px; letter-spacing: -0.02em;
+    text-decoration: none; color: var(--ink);
+  }
+  .logo em {
+    font-style: italic; color: var(--marigold-deep);
+    font-variation-settings: "opsz" 9;
+  }
+  .home-link {
+    font-size: 14px; font-weight: 500;
+    color: var(--ink-soft); text-decoration: none;
+    border-bottom: 1px solid transparent;
+    transition: color 0.15s, border-color 0.15s;
+  }
+  .home-link:hover { color: var(--marigold-deep); border-bottom-color: var(--marigold-deep); }
+
+  main {
+    position: relative; z-index: 2;
+    max-width: 720px;
+    margin: 0 auto;
+    padding: 64px 40px 96px;
+  }
+  .eyebrow {
+    font-size: 13px; font-weight: 500;
+    color: var(--marigold-deep);
+    text-transform: uppercase;
+    letter-spacing: 0.12em;
+    margin-bottom: 18px;
+    font-feature-settings: "tnum";
+  }
+  h1 {
+    font-size: clamp(36px, 5vw, 52px);
+    line-height: 1.05;
+    letter-spacing: -0.03em;
+    font-weight: 700;
+    margin-bottom: 16px;
+  }
+  h1 em {
+    font-style: italic; color: var(--marigold-deep);
+    font-variation-settings: "opsz" 9;
+  }
+  .lede {
+    font-size: 18px;
+    color: var(--ink-soft);
+    margin-bottom: 12px;
+    line-height: 1.55;
+  }
+  .last-updated {
+    font-size: 13px; color: var(--ink-soft); opacity: 0.6;
+    margin: 16px 0 40px;
+    padding-bottom: 24px;
+    border-bottom: 1px solid var(--rule);
+    font-feature-settings: "tnum";
+  }
+  .content { font-size: 16px; line-height: 1.7; color: var(--ink); }
+  .content h2 {
+    font-size: 22px; font-weight: 700; letter-spacing: -0.015em;
+    margin: 36px 0 12px; color: var(--ink);
+  }
+  .content h3 {
+    font-size: 17px; font-weight: 600; letter-spacing: -0.01em;
+    margin: 22px 0 8px; color: var(--ink);
+  }
+  .content p { margin-bottom: 16px; color: var(--ink-soft); }
+  .content ul { margin-left: 24px; margin-bottom: 16px; color: var(--ink-soft); }
+  .content li { margin-bottom: 8px; }
+  .content a {
+    color: var(--marigold-deep);
+    text-decoration: underline;
+    text-underline-offset: 3px;
+  }
+  .content strong { color: var(--ink); font-weight: 600; }
+
+  footer {
+    position: relative; z-index: 2;
+    padding: 28px 40px;
+    border-top: 1px solid var(--rule);
+    font-size: 13px; color: var(--ink-soft); opacity: 0.7;
+    text-align: center;
+  }
+  footer a { color: var(--marigold-deep); text-decoration: none; }
+  footer a:hover { text-decoration: underline; }
+
+  @media (max-width: 600px) {
+    header { padding: 20px 24px; }
+    main { padding: 48px 24px 72px; }
+    footer { padding: 24px 24px; }
+  }
+</style>
+</head>
+<body>
+
+<header>
+  <a href="/" class="logo">Inventist<em>.</em></a>
+  <a href="/" class="home-link">← Back to inventist.io</a>
+</header>
+
+<main>
+  <div class="eyebrow">// Whereabouts · Privacy policy</div>
+  <h1>Your data, <em>your business.</em></h1>
+  <p class="lede">Inventist is built on the belief that great software shouldn't cost your privacy. Here's exactly what we do and don't do with your information when you use Whereabouts.</p>
+  <div class="last-updated">Last updated: May 1, 2026</div>
+
+  <div class="content">
+    <h2>The short version</h2>
+    <p>We don't collect personal information from people who use Whereabouts. We don't use analytics SDKs, advertising networks, or tracking tools. We do not sell or share data with third parties.</p>
+    <p>The longer version below explains the specifics, including the limited information that may be processed by Apple itself when you download or use Whereabouts, and what is involved if you choose to subscribe.</p>
+
+    <h2>Information we collect</h2>
+
+    <h3>Through the Whereabouts app</h3>
+    <p>Whereabouts stores your game progress, daily scores, streak, and settings <strong>locally on your device</strong>. This information never leaves your device unless you choose to back it up via Apple's iCloud service, which is governed by <a href="https://www.apple.com/legal/privacy/" target="_blank" rel="noopener">Apple's Privacy Policy</a>.</p>
+    <p>If you choose to <strong>share your daily stats</strong> with family or friends, that sharing is initiated by you through your device's standard sharing options — we do not see, store, or transmit the content you share.</p>
+    <p>We do not use third-party analytics, advertising, crash reporting, or attribution SDKs in our app.</p>
+
+    <h3>If you subscribe</h3>
+    <p>Subscriptions to unlock the friends leaderboard and additional topic packs are processed through <strong>Apple's App Store and StoreKit</strong>. Apple handles the payment, billing, and subscription management — we do not see, store, or have access to your payment information. We may receive aggregate, anonymized information from Apple about subscription activity.</p>
+    <p>To enable the friends leaderboard feature, your scores and a chosen display name may be associated with an anonymous identifier so that you and your friends can see one another's results. This data is used solely to operate the leaderboard feature and is not used for advertising or shared with third parties.</p>
+
+    <h3>When you contact us</h3>
+    <p>If you email us, we receive your email address and the content of your message. We use this only to reply to you and to keep a record of the conversation. We do not add you to any marketing lists.</p>
+
+    <h2>Information collected by Apple</h2>
+    <p>When you download Whereabouts from the App Store, Apple may collect information about that download according to <a href="https://www.apple.com/legal/privacy/" target="_blank" rel="noopener">Apple's Privacy Policy</a>. We may receive aggregate, anonymized statistics from Apple about app downloads and usage (such as country of download or app version) through App Store Connect. This data is not associated with any individual user.</p>
+
+    <h2>Children's privacy</h2>
+    <p>Whereabouts is designed to be enjoyed by people of all ages, including children. Because we do not collect personal information from any user, we likewise do not knowingly collect personal information from children under 13. Our practices are designed to be compliant with the Children's Online Privacy Protection Act (COPPA) and equivalent regulations.</p>
+
+    <h2>How we share information</h2>
+    <p>We don't. We do not sell, rent, trade, or otherwise share user information with third parties. The only exceptions would be if we were legally required to do so by a valid legal process, or if doing so were necessary to protect our rights, property, or safety.</p>
+
+    <h2>Your rights</h2>
+    <p>Because we collect very little personal data, there's typically very little for us to access, correct, or delete on your behalf. If you have contacted us by email and would like that correspondence deleted, or if you'd like your leaderboard data removed, simply email <a href="mailto:contact@inventist.io">contact@inventist.io</a> and we'll take care of it.</p>
+    <p>Residents of the European Economic Area, the United Kingdom, and California have certain rights under applicable data protection laws (such as GDPR and CCPA), including the right to access, correct, delete, or restrict the processing of personal data. To exercise any of these rights, contact us at the address above.</p>
+
+    <h2>Security</h2>
+    <p>We take reasonable measures to protect any information we do hold. Email correspondence is stored on industry-standard infrastructure with appropriate access controls. No system is perfectly secure, but our deliberate choice to collect as little data as possible is itself one of the strongest privacy protections we can offer.</p>
+
+    <h2>Changes to this policy</h2>
+    <p>If we make material changes to this policy, we'll update the date at the top of this page and, for changes of substance, post a notice on our website. We encourage you to check this page periodically.</p>
+
+    <h2>Contact us</h2>
+    <p>For any questions about this privacy policy or our data practices, please email <a href="mailto:contact@inventist.io">contact@inventist.io</a>.</p>
+  </div>
+</main>
+
+<footer>
+  © 2026 Inventist LLC · <a href="/whereabouts/terms/">Terms of use</a> · <a href="/">inventist.io</a>
+</footer>
+
+</body>
+</html>

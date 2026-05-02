@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Whereabouts — Terms of Use</title>
+<meta name="description" content="Terms of use for the Whereabouts iOS app by Inventist LLC.">
+<meta name="robots" content="index,follow">
+<link rel="preconnect" href="https://rsms.me/">
+<link rel="stylesheet" href="https://rsms.me/inter/inter.css">
+<style>
+  :root {
+    --cream: #f4ead5;
+    --cream-deep: #ecdfc1;
+    --paper: #fbf6e9;
+    --ink: #15233f;
+    --ink-soft: #2a3a5b;
+    --marigold: #e89e2c;
+    --marigold-deep: #c97f15;
+    --rule: rgba(21, 35, 63, 0.18);
+  }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  html { scroll-behavior: smooth; }
+  body {
+    font-family: 'Inter', -apple-system, sans-serif;
+    background: var(--cream);
+    color: var(--ink);
+    line-height: 1.5;
+    -webkit-font-smoothing: antialiased;
+    font-feature-settings: "ss01", "cv11";
+    min-height: 100vh;
+    position: relative;
+  }
+  body::before {
+    content: '';
+    position: fixed; inset: 0;
+    background-image:
+      radial-gradient(ellipse at 20% 10%, rgba(232,158,44,0.08) 0%, transparent 40%),
+      radial-gradient(ellipse at 80% 90%, rgba(216,85,62,0.06) 0%, transparent 50%);
+    pointer-events: none; z-index: 0;
+  }
+  header {
+    position: relative; z-index: 2;
+    padding: 24px 40px;
+    border-bottom: 1px solid var(--rule);
+    display: flex; justify-content: space-between; align-items: center;
+  }
+  .logo {
+    font-weight: 700; font-size: 19px; letter-spacing: -0.02em;
+    text-decoration: none; color: var(--ink);
+  }
+  .logo em {
+    font-style: italic; color: var(--marigold-deep);
+    font-variation-settings: "opsz" 9;
+  }
+  .home-link {
+    font-size: 14px; font-weight: 500;
+    color: var(--ink-soft); text-decoration: none;
+    border-bottom: 1px solid transparent;
+    transition: color 0.15s, border-color 0.15s;
+  }
+  .home-link:hover { color: var(--marigold-deep); border-bottom-color: var(--marigold-deep); }
+
+  main {
+    position: relative; z-index: 2;
+    max-width: 720px;
+    margin: 0 auto;
+    padding: 64px 40px 96px;
+  }
+  .eyebrow {
+    font-size: 13px; font-weight: 500;
+    color: var(--marigold-deep);
+    text-transform: uppercase;
+    letter-spacing: 0.12em;
+    margin-bottom: 18px;
+    font-feature-settings: "tnum";
+  }
+  h1 {
+    font-size: clamp(36px, 5vw, 52px);
+    line-height: 1.05;
+    letter-spacing: -0.03em;
+    font-weight: 700;
+    margin-bottom: 16px;
+  }
+  h1 em {
+    font-style: italic; color: var(--marigold-deep);
+    font-variation-settings: "opsz" 9;
+  }
+  .lede {
+    font-size: 18px;
+    color: var(--ink-soft);
+    margin-bottom: 12px;
+    line-height: 1.55;
+  }
+  .last-updated {
+    font-size: 13px; color: var(--ink-soft); opacity: 0.6;
+    margin: 16px 0 40px;
+    padding-bottom: 24px;
+    border-bottom: 1px solid var(--rule);
+    font-feature-settings: "tnum";
+  }
+  .content { font-size: 16px; line-height: 1.7; color: var(--ink); }
+  .content h2 {
+    font-size: 22px; font-weight: 700; letter-spacing: -0.015em;
+    margin: 36px 0 12px; color: var(--ink);
+  }
+  .content h3 {
+    font-size: 17px; font-weight: 600; letter-spacing: -0.01em;
+    margin: 22px 0 8px; color: var(--ink);
+  }
+  .content p { margin-bottom: 16px; color: var(--ink-soft); }
+  .content ul { margin-left: 24px; margin-bottom: 16px; color: var(--ink-soft); }
+  .content li { margin-bottom: 8px; }
+  .content a {
+    color: var(--marigold-deep);
+    text-decoration: underline;
+    text-underline-offset: 3px;
+  }
+  .content strong { color: var(--ink); font-weight: 600; }
+
+  footer {
+    position: relative; z-index: 2;
+    padding: 28px 40px;
+    border-top: 1px solid var(--rule);
+    font-size: 13px; color: var(--ink-soft); opacity: 0.7;
+    text-align: center;
+  }
+  footer a { color: var(--marigold-deep); text-decoration: none; }
+  footer a:hover { text-decoration: underline; }
+
+  @media (max-width: 600px) {
+    header { padding: 20px 24px; }
+    main { padding: 48px 24px 72px; }
+    footer { padding: 24px 24px; }
+  }
+</style>
+</head>
+<body>
+
+<header>
+  <a href="/" class="logo">Inventist<em>.</em></a>
+  <a href="/" class="home-link">← Back to inventist.io</a>
+</header>
+
+<main>
+  <div class="eyebrow">// Whereabouts · Terms of use</div>
+  <h1>Terms of <em>use.</em></h1>
+  <p class="lede">The plain-language agreement between you and Inventist about how the Whereabouts iOS app and this website may be used.</p>
+  <div class="last-updated">Last updated: May 1, 2026</div>
+
+  <div class="content">
+    <h2>Acceptance of terms</h2>
+    <p>By downloading, installing, or using Whereabouts, or by visiting this website, you agree to be bound by these Terms of Use. If you do not agree, please do not use our app or website.</p>
+
+    <h2>License to use Whereabouts</h2>
+    <p>Subject to your compliance with these terms, Inventist grants you a limited, non-exclusive, non-transferable, revocable license to download and use Whereabouts on Apple devices that you own or control, in accordance with the App Store Terms of Service and the Apple Media Services Terms.</p>
+
+    <h2>Subscriptions</h2>
+    <p>Whereabouts offers an optional auto-renewing subscription that unlocks additional features, including the friends leaderboard and bonus topic packs. Subscriptions are billed through your Apple ID and managed in your App Store account settings. Pricing, billing intervals, and renewal terms will be clearly disclosed at the point of purchase. You can cancel at any time through your Apple ID subscription settings; cancellation takes effect at the end of the current billing period.</p>
+
+    <h2>What you may not do</h2>
+    <ul>
+      <li>Reverse-engineer, decompile, or attempt to extract the source code of our app, except to the extent permitted by applicable law</li>
+      <li>Modify, adapt, translate, or create derivative works based on our app</li>
+      <li>Remove, obscure, or alter any proprietary notices or labels</li>
+      <li>Use our app in any manner that could damage, disable, or impair our services</li>
+      <li>Attempt to manipulate scores, leaderboards, or streak data through unauthorized means</li>
+      <li>Use our app for any unlawful purpose or in violation of any applicable laws</li>
+    </ul>
+
+    <h2>Intellectual property</h2>
+    <p>All content, features, and functionality of Whereabouts and this website — including but not limited to text, graphics, logos, illustrations, code, and design — are the exclusive property of Inventist or its licensors and are protected by copyright, trademark, and other intellectual property laws.</p>
+
+    <h2>User content and feedback</h2>
+    <p>If you send us suggestions, ideas, feedback, or other materials ("Feedback"), you grant us a perpetual, irrevocable, royalty-free license to use that Feedback for any purpose, including improving our app and services, without obligation to you.</p>
+
+    <h2>Disclaimers</h2>
+    <p>Our app and website are provided "as is" and "as available," without warranties of any kind, either express or implied. While we try to ensure that all factual content is accurate, we make no guarantees of accuracy, completeness, or reliability. If you find an error, please report it from inside the app via Settings → Support, or email <a href="mailto:contact@inventist.io">contact@inventist.io</a>.</p>
+
+    <h2>Limitation of liability</h2>
+    <p>To the fullest extent permitted by law, Inventist shall not be liable for any indirect, incidental, special, consequential, or punitive damages arising out of or related to your use of our app or website.</p>
+
+    <h2>Changes to these terms</h2>
+    <p>We may update these Terms of Use from time to time. When we do, we'll update the "Last updated" date above. Your continued use of our app and website after any changes constitutes acceptance of the updated terms.</p>
+
+    <h2>Governing law</h2>
+    <p>These terms are governed by the laws of the State of Florida, USA, without regard to conflict-of-laws principles. Any disputes arising from these terms or your use of our services shall be resolved in the appropriate courts located in Florida.</p>
+
+    <h2>Contact</h2>
+    <p>Questions about these terms? Email <a href="mailto:contact@inventist.io">contact@inventist.io</a>.</p>
+  </div>
+</main>
+
+<footer>
+  © 2026 Inventist LLC · <a href="/whereabouts/privacy/">Privacy policy</a> · <a href="/">inventist.io</a>
+</footer>
+
+</body>
+</html>
