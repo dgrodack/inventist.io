@@ -978,9 +978,9 @@ footer {
   <ul class="nav-links">
     <li><a data-route="home" class="active">Home</a></li>
     <li><a data-route="app">App</a></li>
-    <li><a data-route="support">Support</a></li>
+    <li><a data-route="contact">Contact</a></li>
     <li><a data-route="privacy">Privacy</a></li>
-    <li><button class="nav-cta" data-route="support">Get in touch</button></li>
+    <li><button class="nav-cta" data-route="contact">Get in touch</button></li>
   </ul>
 </nav>
 
@@ -1006,7 +1006,7 @@ footer {
             Meet our app
             <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M13 5l7 7-7 7"/></svg>
           </button>
-          <button class="btn-ghost" data-route="support">Get support</button>
+          <button class="btn-ghost" data-route="contact">Contact us</button>
         </div>
       </div>
 
@@ -1265,11 +1265,11 @@ footer {
     </div>
 
     <h2>What's next</h2>
-    <p>Whereabouts is launching on the App Store soon. We're a small studio, so we focus on doing one thing well at a time — and we'll have more to share when the app is ready. Drop us a note via the <a data-route="support">support page</a> if you'd like to be among the first to know.</p>
+    <p>Whereabouts is launching on the App Store soon. We're a small studio, so we focus on doing one thing well at a time — and we'll have more to share when the app is ready. Drop us a note via the <a data-route="contact">contact page</a> if you'd like to be among the first to know.</p>
   </div>
 </div>
 
-<div id="page-support" class="subpage">
+<div id="page-contact" class="subpage">
   <div class="page-eyebrow">// Help & contact</div>
   <h1 class="page-title">We're <em>here.</em></h1>
   <p class="page-lede">Real humans, real replies. We typically respond within one business day — often much sooner.</p>
@@ -1417,7 +1417,7 @@ footer {
     <p>If you send us suggestions, ideas, feedback, or other materials ("Feedback"), you grant us a perpetual, irrevocable, royalty-free license to use that Feedback for any purpose, including improving our app and services, without obligation to you.</p>
 
     <h2>Disclaimers</h2>
-    <p>Our app and website are provided "as is" and "as available," without warranties of any kind, either express or implied. While we try to ensure that all factual content is accurate, we make no guarantees of accuracy, completeness, or reliability. If you find an error, please let us know via the <a data-route="support">support page</a>.</p>
+    <p>Our app and website are provided "as is" and "as available," without warranties of any kind, either express or implied. While we try to ensure that all factual content is accurate, we make no guarantees of accuracy, completeness, or reliability. If you find an error, please let us know via the <a data-route="contact">contact page</a>.</p>
 
     <h2>Limitation of liability</h2>
     <p>To the fullest extent permitted by law, Inventist shall not be liable for any indirect, incidental, special, consequential, or punitive damages arising out of or related to your use of our app or website.</p>
@@ -1450,7 +1450,7 @@ footer {
     <div class="footer-col">
       <h4>Help</h4>
       <ul>
-        <li><a data-route="support">Support</a></li>
+        <li><a data-route="contact">Contact</a></li>
         <li><a href="mailto:contact@inventist.io">Contact</a></li>
       </ul>
     </div>
@@ -1470,7 +1470,7 @@ footer {
 </footer>
 
 <script>
-  const routes = ['home', 'app', 'support', 'privacy', 'terms'];
+  const routes = ['home', 'app', 'contact', 'privacy', 'terms'];
   const mainPage = document.getElementById('page-home');
   const subpages = routes.slice(1).map(r => document.getElementById('page-' + r));
 
