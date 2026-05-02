@@ -1,0 +1,17 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" fill="currentColor" aria-label="Inventist — iN Monogram concept">
+  <!-- Rounded-square container -->
+  <rect x="2" y="2" width="60" height="60" rx="14" fill="currentColor"/>
+  <!-- iN monogram cut out of container -->
+  <g fill="var(--bg, #FFFFFF)">
+    <!-- 'i' stem -->
+    <rect x="14" y="22" width="6"  height="28" rx="2"/>
+    <!-- 'i' dot -->
+    <circle cx="17" cy="15" r="3.4"/>
+    <!-- 'N' left stem -->
+    <rect x="28" y="22" width="6"  height="28" rx="2"/>
+    <!-- 'N' diagonal -->
+    <path d="M34 22 L46 50 L52 50 L40 22 Z"/>
+    <!-- 'N' right stem -->
+    <rect x="46" y="22" width="6"  height="28" rx="2"/>
+  </g>
+</svg>

@@ -1,0 +1,74 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 270 585" role="img" aria-label="Whereabouts Play screen with globe and pin">
+  <defs>
+    <radialGradient id="globe-p" cx="0.42" cy="0.4" r="0.65">
+      <stop offset="0" stop-color="#3a2a1f"/>
+      <stop offset="0.65" stop-color="#1f130c"/>
+      <stop offset="1" stop-color="#0a0503"/>
+    </radialGradient>
+    <radialGradient id="atmo" cx="0.5" cy="0.5" r="0.55">
+      <stop offset="0.78" stop-color="#E87B3A" stop-opacity="0"/>
+      <stop offset="0.92" stop-color="#E87B3A" stop-opacity="0.18"/>
+      <stop offset="1"    stop-color="#E87B3A" stop-opacity="0"/>
+    </radialGradient>
+  </defs>
+
+  <rect width="270" height="585" fill="#1C1512"/>
+
+  <!-- Status bar -->
+  <text x="22" y="24" font-family="-apple-system,SF Pro Text,sans-serif" font-size="11" font-weight="600" fill="#F9EDD9">9:41</text>
+
+  <!-- HUD top bar -->
+  <rect x="14" y="50" width="242" height="58" rx="18" fill="#271D19" stroke="#3A2C24" stroke-width="0.8"/>
+  <text x="28" y="72" font-family="-apple-system,SF Pro Text,sans-serif" font-size="10" font-weight="600" fill="#F9EDD9" opacity="0.55" letter-spacing="1">ROUND 3 OF 5</text>
+  <text x="28" y="96" font-family="-apple-system,SF Pro Display,sans-serif" font-size="18" font-weight="700" fill="#F9EDD9" letter-spacing="-0.3">Tap on Iceland</text>
+  <g transform="translate(190,68)">
+    <rect x="0" y="0" width="56" height="28" rx="14" fill="#E87B3A"/>
+    <text x="28" y="18" font-family="-apple-system,SF Pro Text,sans-serif" font-size="11" font-weight="700" fill="#2A1408" text-anchor="middle">2,150 PT</text>
+  </g>
+
+  <!-- Atmosphere glow -->
+  <circle cx="135" cy="290" r="155" fill="url(#atmo)"/>
+  <!-- Globe -->
+  <circle cx="135" cy="290" r="118" fill="url(#globe-p)"/>
+  <!-- Subtle continents -->
+  <g fill="#3a2a1f" opacity="0.7">
+    <path d="M65 250 q 25 -32 56 -22 q 22 8 14 36 q -10 24 -38 18 q -32 -8 -32 -32 z"/>
+    <path d="M140 230 q 30 -8 44 6 q 8 14 -8 26 q -22 14 -42 -2 q -10 -10 6 -30 z"/>
+    <path d="M120 320 q 22 -6 38 8 q 12 14 -4 28 q -22 16 -42 -2 q -14 -14 8 -34 z"/>
+    <path d="M180 310 q 14 -4 24 6 q 6 12 -6 22 q -16 10 -28 -4 q -8 -10 10 -24 z"/>
+  </g>
+  <!-- Latitude/longitude -->
+  <g stroke="#F9EDD9" stroke-width="0.4" fill="none" opacity="0.18">
+    <ellipse cx="135" cy="290" rx="118" ry="40"/>
+    <ellipse cx="135" cy="290" rx="118" ry="80"/>
+    <ellipse cx="135" cy="290" rx="40"  ry="118"/>
+    <ellipse cx="135" cy="290" rx="80"  ry="118"/>
+  </g>
+  <!-- Globe edge -->
+  <circle cx="135" cy="290" r="118" fill="none" stroke="#F9EDD9" stroke-width="0.6" opacity="0.22"/>
+
+  <!-- Player's pin (orange) -->
+  <g transform="translate(105,238)">
+    <path d="M0 0 c -8 0 -14 6 -14 14 c 0 12 14 24 14 24 s 14 -12 14 -24 c 0 -8 -6 -14 -14 -14 z" fill="#E87B3A"/>
+    <circle cx="0" cy="14" r="5" fill="#1C1512"/>
+  </g>
+  <!-- Trail dots -->
+  <g fill="#E87B3A" opacity="0.5">
+    <circle cx="105" cy="260" r="2.5"/>
+    <circle cx="100" cy="270" r="1.8"/>
+    <circle cx="96"  cy="278" r="1.2"/>
+  </g>
+
+  <!-- Confirm guess button -->
+  <rect x="22" y="460" width="226" height="56" rx="16" fill="#E87B3A"/>
+  <text x="135" y="494" font-family="-apple-system,SF Pro Text,sans-serif" font-size="15" font-weight="700" fill="#2A1408" text-anchor="middle">Confirm guess</text>
+
+  <!-- Hint row -->
+  <g font-family="-apple-system,SF Pro Text,sans-serif" font-size="11" fill="#F9EDD9" opacity="0.55">
+    <text x="135" y="538" text-anchor="middle">Drag to rotate · Pinch to zoom · Tap to drop pin</text>
+  </g>
+
+  <!-- Tab bar / home indicator -->
+  <rect x="0" y="568" width="270" height="17" fill="#0c0908"/>
+  <rect x="100" y="576" width="70" height="3" rx="1.5" fill="#F9EDD9" opacity="0.6"/>
+</svg>

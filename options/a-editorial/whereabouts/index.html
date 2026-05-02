@@ -1,0 +1,514 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Whereabouts — A daily geography puzzle on a real 3D globe.</title>
+  <meta name="description" content="Whereabouts is a daily geography puzzle for iPhone. Five rounds, about three minutes, on a real 3D globe. 1,185 hand-curated places. Built in SwiftUI + RealityKit. iOS 18+. Free with optional Pro." />
+  <meta name="theme-color" content="#1C1512" />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,300..600;1,6..72,300..600&family=Inter+Tight:wght@400..600&display=swap" />
+  <link rel="stylesheet" href="../assets/css/style.css" />
+</head>
+<body class="wa-body">
+
+  <header class="mast mast-wa">
+    <div class="shell mast-row">
+      <a class="mast-brand" href="../">
+        <img src="../assets/img/marks/glyph.svg" alt="" class="glyph" style="filter: invert(1) brightness(2);" />
+        <span>Inventist <small>·&nbsp;Whereabouts</small></span>
+      </a>
+      <nav class="mast-nav" aria-label="Primary">
+        <a href="../">Studio</a>
+        <a href="./" class="active">Whereabouts</a>
+        <a href="../support/">Support</a>
+        <a href="../privacy/">Privacy</a>
+      </nav>
+      <div class="mast-side">iPhone · iOS 18+</div>
+    </div>
+  </header>
+
+  <main>
+
+    <!-- HERO -->
+    <section class="wa-hero">
+      <div class="shell">
+        <div class="grid-12" style="align-items: end;">
+          <div class="span-7">
+            <span class="kicker" style="color: var(--wa-gold);"><span class="dot" style="background: var(--wa-accent);"></span> No. 01 · Out today on the App Store</span>
+            <h1 class="wa-display" style="margin-top: var(--s-4);">
+              The whole earth,<br/>
+              <em>in your pocket,</em><br/>
+              <span class="gold">every morning.</span>
+            </h1>
+          </div>
+          <div class="span-4 start-9">
+            <p class="lead" style="color: var(--wa-mute);">
+              Whereabouts is a daily geography puzzle on a real 3D globe.
+              Spin it with your thumb. Drop a pin where you think the place is.
+              Five rounds, about three minutes — and the planet is yours again.
+            </p>
+            <div style="display: flex; gap: var(--s-3); margin-top: var(--s-5); flex-wrap: wrap;">
+              <a class="btn btn-wa" href="#pricing">Get the app <span class="arrow">→</span></a>
+              <a class="btn btn-wa-ghost" href="#how">How it plays</a>
+            </div>
+          </div>
+        </div>
+
+        <div class="issue-strip" style="margin-top: var(--s-9); border-color: var(--wa-rule); color: var(--wa-faint);">
+          <span><b style="color: var(--wa-text);">Daily No. 412</b> · <span data-today>Today</span></span>
+          <span>Built in SwiftUI · RealityKit</span>
+          <span>1,185 places · 4 modes</span>
+          <span>Privacy: Data Not Collected</span>
+        </div>
+      </div>
+    </section>
+
+    <!-- EDITORIAL SPREAD: phone gallery -->
+    <section style="background: var(--wa-bg);">
+      <div class="shell-wide shell">
+        <div class="wa-spread">
+          <div class="pane reveal">
+            <figure>
+              <div class="phone phone-tilt-l">
+                <img src="../assets/img/whereabouts/02-today.svg" alt="The today screen — 'Good morning, explorer.'" />
+              </div>
+              <figcaption><b>Plate 02</b>The morning briefing. A streak, a pack, a small ritual.</figcaption>
+            </figure>
+          </div>
+          <div class="pane-tall reveal">
+            <figure>
+              <div class="phone">
+                <img src="../assets/img/whereabouts/01-globe.svg" alt="The 3D globe with a dropped pin." />
+              </div>
+              <figcaption><b>Plate 03</b>Round 3 of 5. A pin dropped near Reykjavík.</figcaption>
+            </figure>
+          </div>
+          <div class="pane-low reveal">
+            <figure>
+              <div class="phone phone-tilt-r">
+                <img src="../assets/img/whereabouts/03-result.svg" alt="The result screen with distance and points." />
+              </div>
+              <figcaption><b>Plate 04</b>The reveal. Distance, points, a sentence about the place.</figcaption>
+            </figure>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- HOW IT PLAYS: prose with drop cap -->
+    <section class="section" id="how" style="background: var(--wa-bg);">
+      <div class="shell">
+        <div class="grid-12">
+          <div class="span-3">
+            <p class="eyebrow"><span class="num">§ I</span>&nbsp;&nbsp;How it plays</p>
+            <p class="cap" style="margin-top: var(--s-3);"><b>Three minutes</b><br/>From the first spin to the last reveal — small enough to be a habit.</p>
+          </div>
+          <div class="span-7 start-5">
+            <h2 style="font-size: clamp(36px, 5vw, 64px); line-height: 1.04; letter-spacing: -0.018em; color: var(--wa-text);">
+              A new puzzle each day, drawn on the same warm globe.
+            </h2>
+            <p class="dropcap" style="font-family: var(--serif); font-size: 19px; line-height: 1.62; color: var(--wa-mute); max-width: 56ch; margin-top: var(--s-6); font-variation-settings: 'opsz' 24;">
+              Each morning, Whereabouts hands you five small geographies. The 10K equirectangular
+              map is wrapped on a real sphere — drag to spin, pinch to zoom, tap to drop a pin.
+              You'll have a place to find: a country, a capital, a city, a landmark. Get close
+              and you keep your streak; miss by an ocean and you'll learn something. The whole
+              round takes about as long as a coffee.
+            </p>
+            <p style="font-family: var(--serif); font-size: 19px; line-height: 1.62; color: var(--wa-mute); max-width: 56ch; text-indent: 1.5em;">
+              There are no accounts and nothing to sign. Your streak, your XP, your earned
+              badges — everything lives on the device, in <code style="font-family: var(--mono); font-size: 0.86em; color: var(--wa-gold);">UserDefaults</code>.
+              You can play the daily for free, forever. Pro just opens the back catalog and
+              the themed map packs.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- MODES catalog -->
+    <section style="background: var(--wa-bg); padding: var(--s-8) 0;">
+      <div class="shell">
+        <div class="grid-12" style="margin-bottom: var(--s-6); align-items: end;">
+          <div class="span-7">
+            <p class="eyebrow"><span class="num">§ II</span>&nbsp;&nbsp;Four modes, hand-curated</p>
+            <h2 style="margin-top: var(--s-3); color: var(--wa-text);">1,185 places, picked by hand.</h2>
+          </div>
+          <div class="span-4 start-9">
+            <p class="cap" style="color: var(--wa-mute);"><b style="color: var(--wa-text);">No procedural lists</b> · Every place is here because it earned its way in.</p>
+          </div>
+        </div>
+
+        <div class="wa-modes">
+          <div class="wa-mode">
+            <span class="n">i.</span>
+            <h3>Countries</h3>
+            <div class="count">200</div>
+            <p>Every member state and the contested ones we couldn't bring ourselves to leave out.</p>
+          </div>
+          <div class="wa-mode">
+            <span class="n">ii.</span>
+            <h3>Capitals</h3>
+            <div class="count">200</div>
+            <p>Sometimes the obvious one. Sometimes the one nobody can name on the second try.</p>
+          </div>
+          <div class="wa-mode">
+            <span class="n">iii.</span>
+            <h3>Cities</h3>
+            <div class="count">500</div>
+            <p>Five hundred lived-in cities — the small ones too. Densely chosen, lightly explained.</p>
+          </div>
+          <div class="wa-mode">
+            <span class="n">iv.</span>
+            <h3>Landmarks</h3>
+            <div class="count">285</div>
+            <p>Mountains, monuments, lighthouses, ruins. Anywhere a postcard used to come from.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- FEATURES alternating -->
+    <section style="background: var(--wa-bg);">
+      <div class="shell">
+
+        <div class="wa-feature">
+          <div class="text">
+            <p class="eyebrow"><span class="num">§ III</span>&nbsp;&nbsp;The globe itself</p>
+            <h2 style="color: var(--wa-text);">A real sphere, not a square pretending.</h2>
+            <p>
+              The 10K equirectangular map is wrapped on an actual 3D globe in RealityKit.
+              You'll feel it: the parallax when you spin Antarctica past the rim, the way
+              the lighting catches the Pacific. It's a small thing and the whole point.
+            </p>
+            <ul style="margin-top: var(--s-5); display: grid; gap: 8px;">
+              <li class="cap" style="color: var(--wa-mute);"><b style="color: var(--wa-text);">Drag</b> to spin · the world keeps inertia</li>
+              <li class="cap" style="color: var(--wa-mute);"><b style="color: var(--wa-text);">Pinch</b> to zoom · down to street-aware</li>
+              <li class="cap" style="color: var(--wa-mute);"><b style="color: var(--wa-text);">Tap</b> to drop a pin · long-press to nudge</li>
+            </ul>
+          </div>
+          <div class="visual reveal">
+            <div class="phone">
+              <img src="../assets/img/whereabouts/01-globe.svg" alt="" />
+            </div>
+          </div>
+        </div>
+
+        <div class="wa-feature flip">
+          <div class="text">
+            <p class="eyebrow"><span class="num">§ IV</span>&nbsp;&nbsp;The morning ritual</p>
+            <h2 style="color: var(--wa-text);">Open it with the coffee. Done by the second sip.</h2>
+            <p>
+              Whereabouts is built around a daily — five rounds, about three minutes. A streak
+              for showing up, XP for getting close, badges for the milestones that aren't
+              announced until you find them.
+            </p>
+            <ul style="margin-top: var(--s-5); display: grid; gap: 8px;">
+              <li class="cap" style="color: var(--wa-mute);"><b style="color: var(--wa-text);">Streaks</b> · A reason to come back without nagging.</li>
+              <li class="cap" style="color: var(--wa-mute);"><b style="color: var(--wa-text);">XP &amp; Badges</b> · 17 to find. We won't tell you what they are.</li>
+              <li class="cap" style="color: var(--wa-mute);"><b style="color: var(--wa-text);">Leaderboard</b> · Weekly, all-time, friends — opt-in only.</li>
+            </ul>
+          </div>
+          <div class="visual reveal">
+            <div class="phone phone-tilt-r">
+              <img src="../assets/img/whereabouts/02-today.svg" alt="" />
+            </div>
+          </div>
+        </div>
+
+        <div class="wa-feature">
+          <div class="text">
+            <p class="eyebrow"><span class="num">§ V</span>&nbsp;&nbsp;The reveal</p>
+            <h2 style="color: var(--wa-text);">Wrong is interesting too.</h2>
+            <p>
+              Each round ends with a measured arc from your pin to the answer — distance in
+              kilometers, points earned, and a single sentence about the place that you'll
+              remember when it shows up at trivia night. We try to write them well.
+            </p>
+            <ul style="margin-top: var(--s-5); display: grid; gap: 8px;">
+              <li class="cap" style="color: var(--wa-mute);"><b style="color: var(--wa-text);">Distance</b> · Great-circle, in kilometers.</li>
+              <li class="cap" style="color: var(--wa-mute);"><b style="color: var(--wa-text);">Score</b> · Closer is more, with a soft floor for the wild guesses.</li>
+              <li class="cap" style="color: var(--wa-mute);"><b style="color: var(--wa-text);">Footnote</b> · A sentence about the place — written by us.</li>
+            </ul>
+          </div>
+          <div class="visual reveal">
+            <div class="phone phone-tilt-l">
+              <img src="../assets/img/whereabouts/03-result.svg" alt="" />
+            </div>
+          </div>
+        </div>
+
+        <div class="wa-feature flip">
+          <div class="text">
+            <p class="eyebrow"><span class="num">§ VI</span>&nbsp;&nbsp;The library</p>
+            <h2 style="color: var(--wa-text);">Themed packs — small editions for the curious.</h2>
+            <p>
+              When the daily isn't enough, the Library opens. Themed packs are little
+              editions of 20–40 places: a coastline, a range, an idea. Pro unlocks the
+              full back catalog; we keep adding to it.
+            </p>
+            <div class="tagrow" style="margin-top: var(--s-5);">
+              <span class="tag" style="color: var(--wa-text); border-color: var(--wa-rule);">Cascade Peaks</span>
+              <span class="tag" style="color: var(--wa-text); border-color: var(--wa-rule);">Ring of Fire</span>
+              <span class="tag" style="color: var(--wa-text); border-color: var(--wa-rule);">World Lighthouses</span>
+              <span class="tag" style="color: var(--wa-text); border-color: var(--wa-rule);">Old World Capitals</span>
+              <span class="tag" style="color: var(--wa-text); border-color: var(--wa-rule);">Sacred Mountains</span>
+              <span class="tag" style="color: var(--wa-text); border-color: var(--wa-rule);">+ 7 more</span>
+            </div>
+          </div>
+          <div class="visual reveal">
+            <div class="phone phone-tilt-r">
+              <img src="../assets/img/whereabouts/04-packs.svg" alt="" />
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- NUMBERS row -->
+    <section style="background: var(--wa-bg);">
+      <div class="shell">
+        <div class="numbers">
+          <div class="n">
+            <div class="v"><em>5</em></div>
+            <div class="l">Rounds per daily</div>
+          </div>
+          <div class="n">
+            <div class="v">~3<small style="font-size: 22px; font-style: italic; color: var(--wa-mute); margin-left: 4px;">min</small></div>
+            <div class="l">A morning ritual</div>
+          </div>
+          <div class="n">
+            <div class="v">1,<em>185</em></div>
+            <div class="l">Hand-curated places</div>
+          </div>
+          <div class="n">
+            <div class="v"><em>0</em></div>
+            <div class="l">Trackers · accounts · ads</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- THEMED PACKS gallery -->
+    <section class="section-tight" id="packs" style="background: var(--wa-bg);">
+      <div class="shell">
+        <div class="grid-12" style="align-items: end; margin-bottom: var(--s-5);">
+          <div class="span-7">
+            <p class="eyebrow"><span class="num">§ VII</span>&nbsp;&nbsp;The library</p>
+            <h2 style="color: var(--wa-text);">A short shelf of themed packs.</h2>
+          </div>
+          <div class="span-4 start-9">
+            <p class="cap" style="color: var(--wa-mute);"><b style="color: var(--wa-text);">12 published</b> · A new pack each first Tuesday.</p>
+          </div>
+        </div>
+
+        <div class="packs">
+          <a class="pack" href="#packs">
+            <img class="glyph" src="../assets/img/whereabouts/pack-cascade.svg" alt=""/>
+            <div>
+              <span class="num">No. 01</span>
+              <h4 style="margin-top: 4px;">Cascade Peaks</h4>
+              <span class="meta">22 mountains</span>
+            </div>
+          </a>
+          <a class="pack" href="#packs">
+            <img class="glyph" src="../assets/img/whereabouts/pack-fire.svg" alt=""/>
+            <div>
+              <span class="num">No. 12 · New</span>
+              <h4 style="margin-top: 4px;">Ring of Fire</h4>
+              <span class="meta">28 volcanoes</span>
+            </div>
+          </a>
+          <a class="pack" href="#packs">
+            <img class="glyph" src="../assets/img/whereabouts/pack-light.svg" alt=""/>
+            <div>
+              <span class="num">No. 06</span>
+              <h4 style="margin-top: 4px;">World Lighthouses</h4>
+              <span class="meta">36 beacons</span>
+            </div>
+          </a>
+          <a class="pack" href="#packs">
+            <img class="glyph" src="../assets/img/whereabouts/pack-towns.svg" alt=""/>
+            <div>
+              <span class="num">No. 09</span>
+              <h4 style="margin-top: 4px;">Old World Capitals</h4>
+              <span class="meta">40 cities</span>
+            </div>
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- LEADERBOARD spread -->
+    <section style="background: var(--wa-bg); padding: var(--s-9) 0;">
+      <div class="shell">
+        <div class="grid-12" style="align-items: center;">
+          <div class="span-5 reveal">
+            <div class="phone phone-tilt-l" style="max-width: 320px;">
+              <img src="../assets/img/whereabouts/05-leaderboard.svg" alt="A weekly leaderboard with a small statistics rail." />
+            </div>
+          </div>
+          <div class="span-6 start-7">
+            <p class="eyebrow"><span class="num">§ VIII</span>&nbsp;&nbsp;Friends, optionally</p>
+            <h2 style="color: var(--wa-text); font-size: clamp(36px, 4.6vw, 64px); line-height: 1.04;">A leaderboard for the people you actually know.</h2>
+            <p style="color: var(--wa-mute); font-size: 18px; max-width: 50ch; margin-top: var(--s-4);">
+              Weekly and all-time boards are anonymous and opt-in. Add a friend by code, not
+              by phone book; nothing is collected to make this work. We can show you where you
+              stand without selling you to someone.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- PRIVACY callout -->
+    <section style="background: var(--wa-bg); padding: 0;">
+      <div class="shell">
+        <div class="privacy-callout reveal">
+          <div>
+            <span class="label">Privacy nutrition label</span>
+            <h2>Data <em>Not</em> Collected.</h2>
+          </div>
+          <ul>
+            <li>No accounts. No sign-in. No email asked for.</li>
+            <li>No analytics. No third-party SDKs. No ads.</li>
+            <li>Your streak and XP live on-device in UserDefaults.</li>
+            <li>Friends &amp; leaderboard are opt-in and anonymous.</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <!-- PRICING -->
+    <section class="section-tight" id="pricing" style="background: var(--wa-bg);">
+      <div class="shell">
+        <div class="grid-12" style="align-items: end; margin-bottom: var(--s-5);">
+          <div class="span-7">
+            <p class="eyebrow"><span class="num">§ IX</span>&nbsp;&nbsp;Pricing</p>
+            <h2 style="color: var(--wa-text);">Free to play. Pro to keep going.</h2>
+          </div>
+          <div class="span-4 start-9">
+            <p class="cap" style="color: var(--wa-mute);"><b style="color: var(--wa-text);">No trial trick.</b> Pro asks once and never again.</p>
+          </div>
+        </div>
+
+        <div class="wa-pricing">
+          <div class="price-card">
+            <div class="tier">Monthly</div>
+            <div class="price">$2.99<small>/ mo</small></div>
+            <div class="save">First week free</div>
+            <ul>
+              <li>The full daily, every day</li>
+              <li>Every themed pack in the library</li>
+              <li>Cancel any time, in Settings</li>
+            </ul>
+            <a class="btn btn-wa-ghost" href="#" style="margin-top: auto; align-self: flex-start;">Get monthly</a>
+          </div>
+          <div class="price-card featured">
+            <span class="ribbon">Best value</span>
+            <div class="tier">Yearly</div>
+            <div class="price">$19.99<small>/ yr</small></div>
+            <div class="save">First week free · save 44%</div>
+            <ul>
+              <li>Everything in monthly</li>
+              <li>New packs as they ship</li>
+              <li>One quiet annual reminder, no nag</li>
+            </ul>
+            <a class="btn btn-wa" href="#" style="margin-top: auto; align-self: flex-start;">Get yearly</a>
+          </div>
+          <div class="price-card">
+            <div class="tier">Lifetime</div>
+            <div class="price">$49.99<small>once</small></div>
+            <div class="save">A one-time purchase</div>
+            <ul>
+              <li>Everything, forever</li>
+              <li>Every future pack included</li>
+              <li>Family Sharing supported</li>
+            </ul>
+            <a class="btn btn-wa-ghost" href="#" style="margin-top: auto; align-self: flex-start;">Get lifetime</a>
+          </div>
+        </div>
+
+        <p class="cap" style="color: var(--wa-faint); text-align: center; margin-top: var(--s-6);">
+          The daily puzzle is free, forever. Pro is for the curious who want the rest.
+        </p>
+      </div>
+    </section>
+
+    <!-- CLOSING ANNOUNCEMENT -->
+    <section style="background: var(--wa-bg); padding: var(--s-10) 0 var(--s-11);">
+      <div class="shell">
+        <div class="grid-12">
+          <div class="span-10 start-2" style="text-align: center;">
+            <p class="eyebrow" style="color: var(--wa-faint); justify-content: center; display: inline-flex;"><span class="num">Fin.</span></p>
+            <h2 class="wa-display" style="font-size: clamp(48px, 9vw, 132px); margin-top: var(--s-4);">
+              See you,<br/><em>at first light.</em>
+            </h2>
+            <p class="lead" style="margin: var(--s-6) auto 0; color: var(--wa-mute); max-width: 40ch;">
+              Whereabouts is on the App Store today. iPhone, iOS 18 and up.
+              Free to play, optional Pro.
+            </p>
+            <div style="margin-top: var(--s-6); display: inline-flex; gap: var(--s-3);">
+              <a class="btn btn-wa" href="#pricing">Get the app <span class="arrow">→</span></a>
+              <a class="btn btn-wa-ghost" href="../support/">Read the support doc</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <footer class="footer footer-wa">
+    <div class="shell">
+      <div class="footer-grid">
+        <div>
+          <h4>Colophon</h4>
+          <p class="colophon">
+            <b>Whereabouts</b>
+            A daily geography puzzle by Inventist LLC. Set in Newsreader &amp; Inter Tight. Cream and ink, with one warm orange.
+          </p>
+        </div>
+        <div>
+          <h4>Studio</h4>
+          <ul>
+            <li><a href="../">Inventist</a></li>
+            <li><a href="./">Whereabouts</a></li>
+          </ul>
+        </div>
+        <div>
+          <h4>App</h4>
+          <ul>
+            <li><a href="#how">How it plays</a></li>
+            <li><a href="#packs">Map packs</a></li>
+            <li><a href="#pricing">Pro &amp; pricing</a></li>
+          </ul>
+        </div>
+        <div>
+          <h4>Legal &amp; help</h4>
+          <ul>
+            <li><a href="../privacy/">Privacy policy</a></li>
+            <li><a href="../terms/">Terms</a></li>
+            <li><a href="../support/">Support</a></li>
+            <li><a href="mailto:hello@inventist.io">hello@inventist.io</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <span>© <span id="yr">2026</span> Inventist LLC · Florida, USA</span>
+        <span class="compliance">
+          <span>Privacy: Data Not Collected</span>
+          <span>iOS 18+</span>
+          <span>iPhone</span>
+        </span>
+      </div>
+    </div>
+  </footer>
+
+  <script>document.getElementById('yr').textContent = new Date().getFullYear();</script>
+  <script src="../assets/js/main.js" defer></script>
+</body>
+</html>

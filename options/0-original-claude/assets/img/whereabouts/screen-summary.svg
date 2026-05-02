@@ -1,0 +1,68 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 270 585" role="img" aria-label="Whereabouts Summary screen with score">
+  <defs>
+    <linearGradient id="bg-s" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#2A1F1A"/>
+      <stop offset="1" stop-color="#1C1512"/>
+    </linearGradient>
+    <linearGradient id="trophy" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#F2B84B"/>
+      <stop offset="1" stop-color="#D99635"/>
+    </linearGradient>
+  </defs>
+
+  <rect width="270" height="585" fill="url(#bg-s)"/>
+  <!-- Hero glow -->
+  <ellipse cx="135" cy="160" rx="200" ry="90" fill="#E87B3A" opacity="0.16"/>
+
+  <text x="22" y="24" font-family="-apple-system,SF Pro Text,sans-serif" font-size="11" font-weight="600" fill="#F9EDD9">9:41</text>
+
+  <text x="135" y="80" font-family="-apple-system,SF Pro Text,sans-serif" font-size="11" font-weight="700" fill="#F2B84B" text-anchor="middle" letter-spacing="1.4">DAILY COMPLETE</text>
+
+  <!-- Trophy / star -->
+  <g transform="translate(135,150)">
+    <circle r="48" fill="#271D19" stroke="#3A2C24" stroke-width="1"/>
+    <path d="M0 -28 L8 -8 L30 -5 L13 9 L18 30 L0 19 L-18 30 L-13 9 L-30 -5 L-8 -8 Z" fill="url(#trophy)"/>
+  </g>
+
+  <text x="135" y="240" font-family="-apple-system,SF Pro Display,sans-serif" font-size="14" fill="#F9EDD9" opacity="0.65" text-anchor="middle">You scored</text>
+  <text x="135" y="282" font-family="-apple-system,SF Pro Display,sans-serif" font-size="48" font-weight="700" fill="#F9EDD9" text-anchor="middle" letter-spacing="-1.5">4,820</text>
+  <text x="135" y="306" font-family="-apple-system,SF Pro Text,sans-serif" font-size="12" font-weight="600" fill="#F2B84B" text-anchor="middle">+ 380 STREAK BONUS</text>
+
+  <!-- Round breakdown -->
+  <g font-family="-apple-system,SF Pro Text,sans-serif" font-size="12">
+    <rect x="22" y="332" width="226" height="172" rx="18" fill="#271D19" stroke="#3A2C24" stroke-width="0.8"/>
+
+    <text x="38" y="356" fill="#F9EDD9" opacity="0.55" font-size="10" font-weight="700" letter-spacing="1">ROUND BREAKDOWN</text>
+
+    <g transform="translate(38,378)" fill="#F9EDD9">
+      <text y="0">Tokyo, Japan</text>
+      <text x="194" y="0" text-anchor="end" fill="#F2B84B" font-weight="700">980</text>
+    </g>
+    <g transform="translate(38,402)" fill="#F9EDD9">
+      <text y="0">Reykjavík, Iceland</text>
+      <text x="194" y="0" text-anchor="end" fill="#F2B84B" font-weight="700">1,120</text>
+    </g>
+    <g transform="translate(38,426)" fill="#F9EDD9">
+      <text y="0">Cape Town, S. Africa</text>
+      <text x="194" y="0" text-anchor="end" fill="#F2B84B" font-weight="700">760</text>
+    </g>
+    <g transform="translate(38,450)" fill="#F9EDD9">
+      <text y="0">Quito, Ecuador</text>
+      <text x="194" y="0" text-anchor="end" fill="#F2B84B" font-weight="700">920</text>
+    </g>
+    <g transform="translate(38,474)" fill="#F9EDD9">
+      <text y="0">Astana, Kazakhstan</text>
+      <text x="194" y="0" text-anchor="end" fill="#F2B84B" font-weight="700">660</text>
+    </g>
+  </g>
+
+  <!-- Share / Continue -->
+  <rect x="22" y="520" width="108" height="42" rx="14" fill="#2A1F1A" stroke="#3A2C24" stroke-width="0.8"/>
+  <text x="76" y="546" font-family="-apple-system,SF Pro Text,sans-serif" font-size="13" font-weight="600" fill="#F9EDD9" text-anchor="middle">Share</text>
+
+  <rect x="140" y="520" width="108" height="42" rx="14" fill="#E87B3A"/>
+  <text x="194" y="546" font-family="-apple-system,SF Pro Text,sans-serif" font-size="13" font-weight="700" fill="#2A1408" text-anchor="middle">Continue</text>
+
+  <rect x="0" y="568" width="270" height="17" fill="#0c0908"/>
+  <rect x="100" y="576" width="70" height="3" rx="1.5" fill="#F9EDD9" opacity="0.6"/>
+</svg>

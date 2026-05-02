@@ -1,0 +1,14 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 760 160" width="760" height="160" role="img" aria-label="Inventist — Period as Pin wordmark">
+  <defs>
+    <style>
+      .w { font-family: 'Inter Tight', 'Helvetica Neue', Arial, sans-serif; font-weight: 600; font-size: 132px; letter-spacing: -6px; fill: #0B0B0C; }
+      .small { font-family: 'JetBrains Mono', ui-monospace, monospace; font-size: 10px; letter-spacing: 1.4px; fill: #6E6E73; text-transform: uppercase; }
+    </style>
+  </defs>
+
+  <g transform="translate(20,30)">
+    <text x="0" y="118" class="w">inventist</text>
+    <!-- The period — a square pin, signature ultramarine. Reads as a map pin and as a full stop. -->
+    <rect x="660" y="100" width="20" height="20" fill="#1840FF"/>
+  </g>
+</svg>

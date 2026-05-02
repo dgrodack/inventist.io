@@ -1,0 +1,5 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" role="img" aria-label="Ring of Fire">
+  <path d="M 8 54 L 32 12 L 56 54 Z" fill="#E87B3A"/>
+  <path d="M 26 12 L 38 12 L 42 4 L 36 18 L 30 8 Z" fill="#F2B84B"/>
+  <circle cx="32" cy="6" r="3.5" fill="#F2B84B"/>
+</svg>

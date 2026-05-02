@@ -1,0 +1,109 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 270 585" role="img" aria-label="Whereabouts — round result">
+  <defs>
+    <linearGradient id="r_bg" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%"   stop-color="#241914"/>
+      <stop offset="60%"  stop-color="#1C1512"/>
+      <stop offset="100%" stop-color="#120D0B"/>
+    </linearGradient>
+    <linearGradient id="r_arc" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%"  stop-color="#F2B84B"/>
+      <stop offset="100%" stop-color="#E87B3A"/>
+    </linearGradient>
+    <radialGradient id="r_glow" cx="50%" cy="50%" r="50%">
+      <stop offset="0%"  stop-color="rgba(242,184,75,0.5)"/>
+      <stop offset="100%" stop-color="rgba(242,184,75,0)"/>
+    </radialGradient>
+    <clipPath id="r_screen"><rect x="0" y="0" width="270" height="585" rx="22" ry="22"/></clipPath>
+  </defs>
+
+  <g clip-path="url(#r_screen)">
+    <rect width="270" height="585" fill="url(#r_bg)"/>
+
+    <!-- Status -->
+    <text x="20" y="22" font-family="Inter, sans-serif" font-size="11" font-weight="600" fill="#F9EDD9">9:41</text>
+    <g transform="translate(225, 14)" fill="#F9EDD9">
+      <rect x="0"  y="3" width="3" height="6" rx="1"/>
+      <rect x="5"  y="1" width="3" height="8" rx="1"/>
+      <rect x="10" y="-1" width="3" height="10" rx="1"/>
+      <circle cx="20" cy="5" r="3" stroke="#F9EDD9" stroke-width="1" fill="none"/>
+      <rect x="28" y="0" width="14" height="9" rx="2" stroke="#F9EDD9" stroke-width="1" fill="none"/>
+      <rect x="29" y="1.5" width="11" height="6" rx="1" fill="#F9EDD9"/>
+    </g>
+
+    <!-- Eyebrow -->
+    <text x="20" y="60" font-family="Inter, sans-serif" font-size="9" font-weight="600" letter-spacing="2" fill="rgba(249,237,217,0.5)">RESULT · ROUND 3</text>
+    <line x1="20" y1="70" x2="250" y2="70" stroke="rgba(249,237,217,0.16)" stroke-width="0.5"/>
+
+    <!-- Headline -->
+    <text x="20" y="118" font-family="Newsreader, Georgia, serif" font-size="38" font-weight="380" fill="#F9EDD9" letter-spacing="-1">Reykjavík,</text>
+    <text x="20" y="156" font-family="Newsreader, Georgia, serif" font-size="38" font-weight="380" font-style="italic" fill="#E87B3A" letter-spacing="-1">Iceland.</text>
+
+    <!-- Map context — small north-atlantic vignette -->
+    <g transform="translate(20, 188)">
+      <rect x="0" y="0" width="230" height="170" rx="14" fill="#0E1620"/>
+      <!-- ocean grid -->
+      <g stroke="rgba(249,237,217,0.05)" stroke-width="0.5" fill="none">
+        <line x1="0" y1="40"  x2="230" y2="40"/>
+        <line x1="0" y1="85"  x2="230" y2="85"/>
+        <line x1="0" y1="130" x2="230" y2="130"/>
+        <line x1="60"  y1="0" x2="60"  y2="170"/>
+        <line x1="120" y1="0" x2="120" y2="170"/>
+        <line x1="180" y1="0" x2="180" y2="170"/>
+      </g>
+      <!-- Greenland silhouette -->
+      <path d="M 25 30 Q 50 22 70 38 Q 78 60 65 78 Q 45 88 30 72 Q 18 52 25 30 Z" fill="#3A2C24" opacity="0.8"/>
+      <!-- Iceland silhouette -->
+      <path d="M 105 70 Q 122 65 138 72 Q 142 84 130 92 Q 115 94 102 86 Q 98 76 105 70 Z" fill="#7A6443"/>
+      <!-- UK -->
+      <path d="M 168 100 Q 178 100 184 112 Q 188 132 178 142 Q 168 142 164 128 Q 162 112 168 100 Z" fill="#3A2C24" opacity="0.8"/>
+      <!-- Norway -->
+      <path d="M 198 50 Q 210 45 218 60 Q 222 90 212 105 Q 200 100 196 82 Q 192 64 198 50 Z" fill="#3A2C24" opacity="0.8"/>
+
+      <!-- Distance arc from guess (lower-right) to answer (Iceland) -->
+      <path d="M 168 130 Q 152 100 122 84" stroke="url(#r_arc)" stroke-width="1.5" fill="none" stroke-dasharray="3 3"/>
+
+      <!-- Guess pin -->
+      <g transform="translate(168, 130)">
+        <circle r="14" fill="rgba(249,237,217,0.12)"/>
+        <circle r="4" fill="rgba(249,237,217,0.65)" stroke="#1C1512" stroke-width="1"/>
+      </g>
+      <!-- Answer pin (glow) -->
+      <g transform="translate(122, 84)">
+        <circle r="22" fill="url(#r_glow)"/>
+        <path d="M 0 -8 C -5 -8 -8 -5 -8 0 C -8 6 0 16 0 16 C 0 16 8 6 8 0 C 8 -5 5 -8 0 -8 Z" fill="#F2B84B" stroke="#1C1512" stroke-width="0.8"/>
+        <circle cy="-1" r="2.4" fill="#1C1512"/>
+      </g>
+    </g>
+
+    <!-- Score panel -->
+    <g transform="translate(20, 380)">
+      <rect x="0" y="0" width="230" height="86" rx="14" fill="#2A1F1A" stroke="rgba(249,237,217,0.10)"/>
+      <!-- Distance -->
+      <text x="16" y="22" font-family="Inter, sans-serif" font-size="9" font-weight="600" letter-spacing="1.5" fill="rgba(249,237,217,0.5)">DISTANCE</text>
+      <text x="16" y="58" font-family="Newsreader, Georgia, serif" font-size="32" font-weight="380" fill="#F9EDD9" letter-spacing="-0.5">312<tspan font-family="Newsreader, Georgia, serif" font-size="14" font-style="italic" fill="rgba(249,237,217,0.7)"> km</tspan></text>
+      <text x="16" y="76" font-family="Newsreader, Georgia, serif" font-size="11" font-style="italic" fill="rgba(249,237,217,0.55)">a stone's throw, really</text>
+
+      <!-- Vertical rule -->
+      <line x1="125" y1="14" x2="125" y2="72" stroke="rgba(249,237,217,0.10)"/>
+
+      <!-- Score -->
+      <text x="140" y="22" font-family="Inter, sans-serif" font-size="9" font-weight="600" letter-spacing="1.5" fill="rgba(249,237,217,0.5)">+ POINTS</text>
+      <text x="140" y="58" font-family="Newsreader, Georgia, serif" font-size="32" font-weight="380" fill="#F2B84B" letter-spacing="-0.5">894</text>
+      <text x="140" y="76" font-family="Newsreader, Georgia, serif" font-size="11" font-style="italic" fill="rgba(249,237,217,0.55)">round 3 of 5</text>
+    </g>
+
+    <!-- Footnote-style anecdote -->
+    <g transform="translate(20, 482)">
+      <text font-family="Inter, sans-serif" font-size="9" font-weight="600" letter-spacing="2" fill="rgba(249,237,217,0.5)">DID YOU KNOW</text>
+      <text y="20" font-family="Newsreader, Georgia, serif" font-size="13" font-style="italic" fill="rgba(249,237,217,0.78)">Reykjavík sits just south of</text>
+      <text y="36" font-family="Newsreader, Georgia, serif" font-size="13" font-style="italic" fill="rgba(249,237,217,0.78)">the Arctic Circle — the world's</text>
+      <text y="52" font-family="Newsreader, Georgia, serif" font-size="13" font-style="italic" fill="rgba(249,237,217,0.78)">northernmost capital city.</text>
+    </g>
+
+    <!-- Next button -->
+    <g transform="translate(20, 552)">
+      <rect x="0" y="0" width="230" height="22" rx="11" fill="rgba(249,237,217,0.08)" stroke="rgba(249,237,217,0.16)"/>
+      <text x="115" y="14" font-family="Inter, sans-serif" font-size="10" font-weight="600" letter-spacing="0.5" text-anchor="middle" fill="#F9EDD9">Next round →</text>
+    </g>
+  </g>
+</svg>

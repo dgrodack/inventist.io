@@ -1,0 +1,50 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 360 110" role="img" aria-label="Inventist — Workbench badge mark">
+  <defs>
+    <linearGradient id="wb-disc" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#FBF4E6"/>
+      <stop offset="1" stop-color="#ECDDB8"/>
+    </linearGradient>
+  </defs>
+  <!-- Concept: an inventor's workbench seen from above — a globe slice on a table with tools. The whole mark sits in a soft circular badge that calls back to a workshop sign. -->
+  <g transform="translate(8 6)">
+    <!-- circular wood/cream badge -->
+    <circle cx="50" cy="50" r="48" fill="url(#wb-disc)" stroke="#1F1A14" stroke-width="3"/>
+    <!-- inner ring -->
+    <circle cx="50" cy="50" r="42" fill="none" stroke="#1F1A14" stroke-width="1.4" stroke-dasharray="2 4" opacity="0.4"/>
+
+    <!-- table edge (slight perspective slab) -->
+    <path d="M10 64 Q 50 78 90 64 L 90 80 Q 50 92 10 80 Z" fill="#6E9B7B" opacity="0.85"/>
+
+    <!-- the inventor's workpiece: half of a globe -->
+    <clipPath id="wb-clip"><path d="M16 60 Q 50 38 84 60 Z"/></clipPath>
+    <g clip-path="url(#wb-clip)">
+      <path d="M16 60 Q 50 38 84 60 Z" fill="#2F7B82"/>
+      <!-- continents -->
+      <path d="M28 56 Q 32 48 38 50 Q 40 56 36 58 Z" fill="#E87B3A"/>
+      <path d="M48 48 Q 56 44 60 50 Q 58 56 50 56 Z" fill="#E87B3A"/>
+      <path d="M66 54 Q 72 50 76 56 Z" fill="#E87B3A"/>
+      <!-- meridian -->
+      <path d="M50 40 Q 50 50 50 60" stroke="#FBF4E6" stroke-width="1" opacity="0.5"/>
+    </g>
+    <path d="M16 60 Q 50 38 84 60" stroke="#1F1A14" stroke-width="2.6" fill="none" stroke-linejoin="round"/>
+
+    <!-- a pencil resting across the top -->
+    <g transform="rotate(-22 50 32)">
+      <rect x="20" y="28" width="48" height="6" rx="1" fill="#F2B84B" stroke="#1F1A14" stroke-width="1.6"/>
+      <path d="M68 28 L76 31 L68 34 Z" fill="#1F1A14"/>
+      <rect x="20" y="28" width="6" height="6" fill="#D9482E" stroke="#1F1A14" stroke-width="1.6"/>
+    </g>
+    <!-- magnifier -->
+    <circle cx="32" cy="34" r="6" fill="none" stroke="#1F1A14" stroke-width="2.2"/>
+    <path d="M37 39 L42 44" stroke="#1F1A14" stroke-width="2.6" stroke-linecap="round"/>
+
+    <!-- twinkle -->
+    <path d="M76 18 L78 22 L82 24 L78 26 L76 30 L74 26 L70 24 L74 22 Z" fill="#F2B84B"/>
+  </g>
+
+  <!-- wordmark -->
+  <g font-family="Bricolage Grotesque, Geist, system-ui, sans-serif" font-weight="700" font-size="40" letter-spacing="-1.4" fill="#1F1A14">
+    <text x="120" y="58">inventist</text>
+  </g>
+  <text x="120" y="82" font-family="Geist, system-ui, sans-serif" font-size="14" fill="#6B5B45" letter-spacing="0.18em" font-weight="500">A · WORKSHOP · FOR · CURIOUS · APPS</text>
+</svg>

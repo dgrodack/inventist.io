@@ -1,0 +1,79 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 600" role="img" aria-label="A 3D globe at dusk">
+  <defs>
+    <radialGradient id="hg_atm" cx="50%" cy="50%" r="50%">
+      <stop offset="78%" stop-color="rgba(232,123,58,0)"/>
+      <stop offset="100%" stop-color="rgba(232,123,58,0.5)"/>
+    </radialGradient>
+    <radialGradient id="hg_ocean" cx="38%" cy="36%" r="64%">
+      <stop offset="0%"   stop-color="#3A5066"/>
+      <stop offset="55%"  stop-color="#1B2A3B"/>
+      <stop offset="100%" stop-color="#070C14"/>
+    </radialGradient>
+    <radialGradient id="hg_high" cx="50%" cy="50%" r="50%">
+      <stop offset="0%"   stop-color="rgba(255,235,200,0.35)"/>
+      <stop offset="100%" stop-color="rgba(255,235,200,0)"/>
+    </radialGradient>
+    <clipPath id="hg_clip"><circle cx="300" cy="300" r="240"/></clipPath>
+  </defs>
+
+  <!-- Atmosphere glow -->
+  <circle cx="300" cy="300" r="280" fill="url(#hg_atm)" opacity="0.85"/>
+
+  <!-- Ocean -->
+  <circle cx="300" cy="300" r="240" fill="url(#hg_ocean)"/>
+
+  <g clip-path="url(#hg_clip)">
+    <!-- Continents (warm earth) -->
+    <path d="M 130 260 Q 145 220 180 215 Q 220 220 240 250 Q 250 290 230 320 Q 200 345 165 335 Q 130 315 130 280 Z"
+          fill="#7A6443"/>
+    <path d="M 245 240 Q 270 225 295 235 Q 305 250 295 265 Q 275 275 252 268 Q 240 255 245 240 Z"
+          fill="#8B7350"/>
+    <path d="M 305 245 Q 345 240 375 250 Q 395 270 388 295 Q 360 310 330 305 Q 305 290 305 270 Z"
+          fill="#7A6443"/>
+    <path d="M 295 295 Q 330 295 350 320 Q 360 360 350 395 Q 320 420 290 408 Q 270 380 275 350 Q 285 318 295 295 Z"
+          fill="#8B7350"/>
+    <path d="M 380 240 Q 430 230 465 250 Q 480 280 470 305 Q 440 320 410 312 Q 380 290 380 240 Z"
+          fill="#7A6443"/>
+    <path d="M 195 360 Q 220 360 230 385 Q 240 425 222 450 Q 200 460 188 440 Q 180 410 188 385 Z"
+          fill="#7A6443"/>
+    <path d="M 415 365 Q 460 360 478 380 Q 472 400 445 405 Q 420 398 415 365 Z"
+          fill="#8B7350"/>
+
+    <!-- Lat/lon grid -->
+    <g stroke="rgba(249,237,217,0.07)" fill="none" stroke-width="0.8">
+      <ellipse cx="300" cy="220" rx="234" ry="32"/>
+      <ellipse cx="300" cy="260" rx="240" ry="48"/>
+      <ellipse cx="300" cy="300" rx="240" ry="62"/>
+      <ellipse cx="300" cy="340" rx="240" ry="48"/>
+      <ellipse cx="300" cy="380" rx="234" ry="32"/>
+    </g>
+    <g stroke="rgba(249,237,217,0.06)" fill="none" stroke-width="0.8">
+      <ellipse cx="300" cy="300" rx="32"  ry="240"/>
+      <ellipse cx="300" cy="300" rx="92"  ry="240"/>
+      <ellipse cx="300" cy="300" rx="160" ry="240"/>
+    </g>
+
+    <!-- Specular highlight -->
+    <ellipse cx="220" cy="240" rx="90" ry="60" fill="url(#hg_high)"/>
+  </g>
+
+  <!-- Rim -->
+  <circle cx="300" cy="300" r="240" fill="none" stroke="rgba(232,123,58,0.45)" stroke-width="1.5"/>
+  <circle cx="300" cy="300" r="240" fill="none" stroke="rgba(0,0,0,0.6)" stroke-width="0.8" transform="translate(1,1)"/>
+
+  <!-- A few constellation pins -->
+  <g>
+    <g transform="translate(220, 240)">
+      <circle r="14" fill="rgba(242,184,75,0.18)"/>
+      <circle r="3.5" fill="#F2B84B"/>
+    </g>
+    <g transform="translate(330, 280)">
+      <circle r="14" fill="rgba(232,123,58,0.18)"/>
+      <circle r="3.5" fill="#E87B3A"/>
+    </g>
+    <g transform="translate(280, 360)">
+      <circle r="14" fill="rgba(232,123,58,0.18)"/>
+      <circle r="3.5" fill="#E87B3A"/>
+    </g>
+  </g>
+</svg>

@@ -1,0 +1,104 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 270 585" width="270" height="585" role="img" aria-label="Whereabouts — daily complete summary card, ready to share">
+  <defs>
+    <linearGradient id="bg5" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#231811"/>
+      <stop offset="1" stop-color="#1C1512"/>
+    </linearGradient>
+    <style>
+      .ui  { font-family: -apple-system, 'Inter Tight', system-ui, sans-serif; fill: #F9EDD9; }
+      .mono { font-family: 'JetBrains Mono', ui-monospace, monospace; fill: #B8A38B; font-size: 9px; letter-spacing: 0.7px; text-transform: uppercase; }
+      .accent { fill: #E87B3A; }
+      .gold { fill: #F2B84B; }
+    </style>
+  </defs>
+
+  <rect x="0" y="0" width="270" height="585" rx="38" fill="url(#bg5)"/>
+  <text x="20" y="26" class="mono" style="font-size:10px">9:41</text>
+  <rect x="105" y="10" width="60" height="22" rx="11" fill="#0A0605"/>
+
+  <!-- Header -->
+  <g transform="translate(20,55)">
+    <text x="0" y="14" class="mono">DAILY · COMPLETE</text>
+  </g>
+
+  <!-- Big number -->
+  <g transform="translate(20,90)">
+    <text x="0" y="0" class="ui" style="font-size:96px; font-weight:600; letter-spacing:-5px; line-height:0.85">3 826</text>
+    <text x="0" y="22" class="mono" style="text-transform:none; font-size:9px; letter-spacing:0.3px">total points · top 12 % today</text>
+  </g>
+
+  <!-- Round-by-round ledger -->
+  <g transform="translate(20,210)">
+    <line x1="0" y1="0" x2="230" y2="0" stroke="#3A2C24"/>
+    <text x="0" y="20" class="mono">SUMMARY</text>
+
+    <g transform="translate(0,38)">
+      <text x="0"  y="0" class="mono" style="fill:#B8A38B">01</text>
+      <text x="24" y="0" class="ui" style="font-size:13px; letter-spacing:-0.2px">Lisbon</text>
+      <text x="180" y="0" class="ui" style="font-size:13px; text-anchor:end; fill:#F9EDD9">+ 920</text>
+      <text x="230" y="0" class="mono" style="text-anchor:end; font-size:8px">12 km</text>
+    </g>
+    <line x1="0" y1="14" x2="230" y2="14" stroke="#3A2C24" opacity="0.6" transform="translate(0,38)"/>
+
+    <g transform="translate(0,66)">
+      <text x="0"  y="0" class="mono" style="fill:#B8A38B">02</text>
+      <text x="24" y="0" class="ui" style="font-size:13px; letter-spacing:-0.2px">Mount Fuji</text>
+      <text x="180" y="0" class="ui" style="font-size:13px; text-anchor:end; fill:#F9EDD9">+ 760</text>
+      <text x="230" y="0" class="mono" style="text-anchor:end; font-size:8px">86 km</text>
+    </g>
+    <line x1="0" y1="14" x2="230" y2="14" stroke="#3A2C24" opacity="0.6" transform="translate(0,66)"/>
+
+    <g transform="translate(0,94)">
+      <text x="0"  y="0" class="mono" style="fill:#B8A38B">03</text>
+      <text x="24" y="0" class="ui" style="font-size:13px; letter-spacing:-0.2px">Reykjavík</text>
+      <text x="180" y="0" class="ui" style="font-size:13px; text-anchor:end; fill:#F9EDD9">+ 842</text>
+      <text x="230" y="0" class="mono" style="text-anchor:end; font-size:8px">218 km</text>
+    </g>
+    <line x1="0" y1="14" x2="230" y2="14" stroke="#3A2C24" opacity="0.6" transform="translate(0,94)"/>
+
+    <g transform="translate(0,122)">
+      <text x="0"  y="0" class="mono" style="fill:#B8A38B">04</text>
+      <text x="24" y="0" class="ui" style="font-size:13px; letter-spacing:-0.2px">Quito</text>
+      <text x="180" y="0" class="ui" style="font-size:13px; text-anchor:end; fill:#F9EDD9">+ 478</text>
+      <text x="230" y="0" class="mono" style="text-anchor:end; font-size:8px">412 km</text>
+    </g>
+    <line x1="0" y1="14" x2="230" y2="14" stroke="#3A2C24" opacity="0.6" transform="translate(0,122)"/>
+
+    <g transform="translate(0,150)">
+      <text x="0"  y="0" class="mono" style="fill:#B8A38B">05</text>
+      <text x="24" y="0" class="ui" style="font-size:13px; letter-spacing:-0.2px">Petra</text>
+      <text x="180" y="0" class="ui" style="font-size:13px; text-anchor:end; fill:#F9EDD9">+ 826</text>
+      <text x="230" y="0" class="mono" style="text-anchor:end; font-size:8px">94 km</text>
+    </g>
+  </g>
+
+  <!-- Streak ribbon -->
+  <g transform="translate(20,398)">
+    <line x1="0" y1="0" x2="230" y2="0" stroke="#3A2C24"/>
+    <g transform="translate(0,18)">
+      <text x="0" y="0" class="mono">STREAK · DAY</text>
+      <text x="0" y="32" class="ui" style="font-size:46px; font-weight:600; letter-spacing:-1.8px"><tspan class="accent">17</tspan></text>
+      <text x="100" y="0" class="mono" style="text-anchor:start">XP EARNED</text>
+      <text x="100" y="32" class="ui" style="font-size:46px; font-weight:600; letter-spacing:-1.8px">+ 482</text>
+    </g>
+  </g>
+
+  <!-- Share button -->
+  <g transform="translate(20,476)">
+    <rect x="0" y="0" width="230" height="42" rx="6" fill="none" stroke="#F9EDD9"/>
+    <text x="115" y="26" class="ui" style="font-size:13px; font-weight:600; letter-spacing:-0.3px; text-anchor:middle">Share result</text>
+  </g>
+
+  <!-- Bottom tabs -->
+  <g transform="translate(20,520)">
+    <line x1="0" y1="0" x2="230" y2="0" stroke="#3A2C24" stroke-width="1"/>
+    <g transform="translate(0,12)">
+      <text x="0" y="14" class="mono accent" style="fill:#E87B3A">DAILY</text>
+      <text x="60" y="14" class="mono">PACKS</text>
+      <text x="115" y="14" class="mono">STREAK</text>
+      <text x="180" y="14" class="mono">YOU</text>
+    </g>
+  </g>
+
+  <rect x="95" y="568" width="80" height="4" rx="2" fill="#F9EDD9" opacity="0.6"/>
+</svg>

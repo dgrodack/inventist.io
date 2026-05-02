@@ -1,0 +1,8 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 28" role="img" aria-label="Editorial flourish">
+  <g fill="none" stroke="currentColor" stroke-width="1">
+    <line x1="0" y1="14" x2="80" y2="14"/>
+    <line x1="120" y1="14" x2="200" y2="14"/>
+    <path d="M 84 14 Q 92 4 100 14 Q 108 24 116 14"/>
+  </g>
+  <circle cx="100" cy="14" r="2" fill="currentColor"/>
+</svg>

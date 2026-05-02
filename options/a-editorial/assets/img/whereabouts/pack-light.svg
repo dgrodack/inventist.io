@@ -1,0 +1,7 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" role="img" aria-label="World Lighthouses">
+  <path d="M 22 8 L 42 8 L 40 18 L 24 18 Z" fill="#F9EDD9"/>
+  <rect x="24" y="18" width="16" height="3" fill="#F2B84B"/>
+  <path d="M 24 21 L 40 21 L 46 58 L 18 58 Z" fill="#F9EDD9"/>
+  <path d="M 24 34 L 40 34 L 40 38 L 24 38 Z" fill="#E87B3A"/>
+  <path d="M 46 18 L 64 8 L 64 28 Z" fill="#F2B84B" opacity="0.5"/>
+</svg>

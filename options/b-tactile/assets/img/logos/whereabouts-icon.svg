@@ -1,0 +1,27 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 80 80" role="img" aria-label="Whereabouts app icon">
+  <defs>
+    <linearGradient id="wa-bg" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#3A2C24"/>
+      <stop offset="1" stop-color="#1C1512"/>
+    </linearGradient>
+    <radialGradient id="wa-globe" cx=".4" cy=".35" r=".75">
+      <stop offset="0" stop-color="#F2B84B"/>
+      <stop offset=".5" stop-color="#E87B3A"/>
+      <stop offset="1" stop-color="#8A3A12"/>
+    </radialGradient>
+  </defs>
+  <rect width="80" height="80" rx="20" fill="url(#wa-bg)"/>
+  <circle cx="40" cy="42" r="24" fill="url(#wa-globe)"/>
+  <!-- continents abstracted -->
+  <path d="M22 38 Q 28 30 38 32 Q 40 40 32 42 Q 26 44 22 38 Z" fill="#1C1512" opacity="0.55"/>
+  <path d="M48 36 Q 56 34 58 42 Q 54 48 46 46 Q 44 40 48 36 Z" fill="#1C1512" opacity="0.55"/>
+  <path d="M36 50 Q 44 52 50 56 Q 44 60 38 58 Z" fill="#1C1512" opacity="0.5"/>
+  <!-- meridian arcs -->
+  <ellipse cx="40" cy="42" rx="24" ry="9" fill="none" stroke="#FBF4E6" stroke-width="0.8" opacity="0.35"/>
+  <ellipse cx="40" cy="42" rx="9" ry="24" fill="none" stroke="#FBF4E6" stroke-width="0.8" opacity="0.35"/>
+  <!-- a tiny pin -->
+  <g transform="translate(46 16)">
+    <path d="M6 0 C 11 0 14 4 14 9 C 14 14 6 22 6 22 C 6 22 -2 14 -2 9 C -2 4 1 0 6 0 Z" fill="#F2B84B" stroke="#1C1512" stroke-width="1.6"/>
+    <circle cx="6" cy="9" r="2.6" fill="#1C1512"/>
+  </g>
+</svg>

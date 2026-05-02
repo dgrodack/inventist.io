@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Lost — Inventist</title>
+  <meta name="description" content="The page you were looking for isn't here." />
+  <meta name="theme-color" content="#FAF6EE" />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,300..600;1,6..72,300..600&family=Inter+Tight:wght@400..600&display=swap" />
+  <link rel="stylesheet" href="assets/css/style.css" />
+</head>
+<body>
+
+  <header class="mast">
+    <div class="shell mast-row">
+      <a class="mast-brand" href="./">
+        <img src="assets/img/marks/glyph.svg" alt="" class="glyph" />
+        <span>Inventist <small>·&nbsp;Off the map</small></span>
+      </a>
+      <nav class="mast-nav" aria-label="Primary">
+        <a href="./">Studio</a>
+        <a href="whereabouts/">Whereabouts</a>
+        <a href="support/">Support</a>
+        <a href="privacy/">Privacy</a>
+      </nav>
+      <div class="mast-side">404 · No such page</div>
+    </div>
+  </header>
+
+  <main>
+    <section class="notfound">
+      <div class="shell" style="text-align: center;">
+        <p class="eyebrow" style="justify-content: center; display: inline-flex;"><span class="num">§ —</span>&nbsp;&nbsp;A polite redirection</p>
+        <h1 class="num" style="margin: var(--s-4) 0 0;">404.</h1>
+        <h2 style="font-size: clamp(36px, 5vw, 56px); margin-top: var(--s-3);">
+          You're <em style="font-style: italic; color: var(--accent);">somewhere</em> — just not here.
+        </h2>
+        <p class="lead">
+          The page you tried to visit isn't on the map. Spin the globe back to the
+          studio, or pop over to the daily puzzle.
+        </p>
+        <div style="display: inline-flex; gap: var(--s-3); margin-top: var(--s-4);">
+          <a class="btn btn-ink" href="./">Back to the studio <span class="arrow">→</span></a>
+          <a class="btn btn-ghost" href="whereabouts/">Open Whereabouts</a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="shell">
+      <div class="footer-bottom" style="border: 0; padding-top: var(--s-7);">
+        <span>© <span id="yr">2026</span> Inventist LLC · Florida, USA</span>
+        <span class="compliance">
+          <span>Privacy: Data Not Collected</span>
+          <span><a href="privacy/">Privacy</a></span>
+          <span><a href="support/">Support</a></span>
+          <span>hello@inventist.io</span>
+        </span>
+      </div>
+    </div>
+  </footer>
+
+  <script>document.getElementById('yr').textContent = new Date().getFullYear();</script>
+  <script src="assets/js/main.js" defer></script>
+</body>
+</html>

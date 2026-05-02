@@ -1,0 +1,138 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 270 585" width="270" height="585" role="img" aria-label="Whereabouts — streak and badges screen, the daily ritual">
+  <defs>
+    <linearGradient id="bg3" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#231811"/>
+      <stop offset="1" stop-color="#1C1512"/>
+    </linearGradient>
+    <style>
+      .ui  { font-family: -apple-system, 'Inter Tight', system-ui, sans-serif; fill: #F9EDD9; }
+      .mono { font-family: 'JetBrains Mono', ui-monospace, monospace; fill: #B8A38B; font-size: 9px; letter-spacing: 0.7px; text-transform: uppercase; }
+      .accent { fill: #E87B3A; }
+      .gold { fill: #F2B84B; }
+    </style>
+  </defs>
+
+  <rect x="0" y="0" width="270" height="585" rx="38" fill="url(#bg3)"/>
+  <text x="20" y="26" class="mono" style="font-size:10px">9:41</text>
+  <rect x="105" y="10" width="60" height="22" rx="11" fill="#0A0605"/>
+
+  <!-- Header -->
+  <g transform="translate(20,55)">
+    <text x="0" y="14" class="mono">YOU · APRIL</text>
+    <text x="0" y="50" class="ui" style="font-size:38px; font-weight:600; letter-spacing:-1.6px">17 day<tspan dx="6" class="accent">streak</tspan></text>
+    <text x="0" y="74" class="mono" style="text-transform:none; font-size:9px; letter-spacing:0.3px">longest · 42 days · personal best</text>
+  </g>
+
+  <!-- Calendar grid (5 weeks) -->
+  <g transform="translate(20,120)">
+    <text x="0" y="0" class="mono">CONSISTENCY</text>
+    <g transform="translate(0,12)">
+      <!-- 7 cols * 5 rows -->
+      <g>
+        <!-- legend dots -->
+        <!-- Row 1 -->
+      </g>
+    </g>
+  </g>
+
+  <!-- Generate calendar squares -->
+  <g transform="translate(20,140)">
+    <!-- 5x7 grid of 28x28 cells with 4px gap, fits 230 wide -->
+    <!-- Row 1 -->
+    <g transform="translate(0,0)">
+      <rect x="0"   y="0" width="28" height="28" rx="2" fill="#2A1F1A"/>
+      <rect x="32"  y="0" width="28" height="28" rx="2" fill="#3A2C24"/>
+      <rect x="64"  y="0" width="28" height="28" rx="2" fill="#5C3E2A"/>
+      <rect x="96"  y="0" width="28" height="28" rx="2" fill="#5C3E2A"/>
+      <rect x="128" y="0" width="28" height="28" rx="2" fill="#7A4F33"/>
+      <rect x="160" y="0" width="28" height="28" rx="2" fill="#3A2C24"/>
+      <rect x="192" y="0" width="28" height="28" rx="2" fill="#5C3E2A"/>
+    </g>
+    <g transform="translate(0,32)">
+      <rect x="0"   y="0" width="28" height="28" rx="2" fill="#7A4F33"/>
+      <rect x="32"  y="0" width="28" height="28" rx="2" fill="#A0613A"/>
+      <rect x="64"  y="0" width="28" height="28" rx="2" fill="#7A4F33"/>
+      <rect x="96"  y="0" width="28" height="28" rx="2" fill="#5C3E2A"/>
+      <rect x="128" y="0" width="28" height="28" rx="2" fill="#A0613A"/>
+      <rect x="160" y="0" width="28" height="28" rx="2" fill="#A0613A"/>
+      <rect x="192" y="0" width="28" height="28" rx="2" fill="#7A4F33"/>
+    </g>
+    <g transform="translate(0,64)">
+      <rect x="0"   y="0" width="28" height="28" rx="2" fill="#A0613A"/>
+      <rect x="32"  y="0" width="28" height="28" rx="2" fill="#A0613A"/>
+      <rect x="64"  y="0" width="28" height="28" rx="2" fill="#7A4F33"/>
+      <rect x="96"  y="0" width="28" height="28" rx="2" fill="#A0613A"/>
+      <rect x="128" y="0" width="28" height="28" rx="2" fill="#E87B3A"/>
+      <rect x="160" y="0" width="28" height="28" rx="2" fill="#E87B3A"/>
+      <rect x="192" y="0" width="28" height="28" rx="2" fill="#E87B3A"/>
+    </g>
+    <g transform="translate(0,96)">
+      <rect x="0"   y="0" width="28" height="28" rx="2" fill="#E87B3A"/>
+      <rect x="32"  y="0" width="28" height="28" rx="2" fill="#E87B3A"/>
+      <rect x="64"  y="0" width="28" height="28" rx="2" fill="#E87B3A"/>
+      <rect x="96"  y="0" width="28" height="28" rx="2" fill="#E87B3A"/>
+      <rect x="128" y="0" width="28" height="28" rx="2" fill="#E87B3A"/>
+      <rect x="160" y="0" width="28" height="28" rx="2" fill="#E87B3A"/>
+      <rect x="192" y="0" width="28" height="28" rx="2" fill="#E87B3A"/>
+    </g>
+    <g transform="translate(0,128)">
+      <rect x="0"   y="0" width="28" height="28" rx="2" fill="#E87B3A"/>
+      <rect x="32"  y="0" width="28" height="28" rx="2" fill="#E87B3A"/>
+      <rect x="64"  y="0" width="28" height="28" rx="2" fill="#F2B84B" stroke="#F9EDD9" stroke-width="1.5"/>
+      <rect x="96"  y="0" width="28" height="28" rx="2" fill="#2A1F1A" stroke="#3A2C24" stroke-dasharray="2 2"/>
+      <rect x="128" y="0" width="28" height="28" rx="2" fill="#2A1F1A" stroke="#3A2C24" stroke-dasharray="2 2"/>
+      <rect x="160" y="0" width="28" height="28" rx="2" fill="#2A1F1A" stroke="#3A2C24" stroke-dasharray="2 2"/>
+      <rect x="192" y="0" width="28" height="28" rx="2" fill="#2A1F1A" stroke="#3A2C24" stroke-dasharray="2 2"/>
+    </g>
+  </g>
+
+  <!-- Badges row -->
+  <g transform="translate(20,335)">
+    <line x1="0" y1="0" x2="230" y2="0" stroke="#3A2C24"/>
+    <text x="0" y="22" class="mono">BADGES · 12 EARNED</text>
+  </g>
+
+  <g transform="translate(20,365)">
+    <!-- 4 small badge tiles -->
+    <g>
+      <rect x="0" y="0" width="50" height="60" rx="4" fill="#2A1F1A" stroke="#3A2C24"/>
+      <circle cx="25" cy="22" r="10" fill="none" stroke="#E87B3A" stroke-width="1.5"/>
+      <text x="25" y="46" class="mono" style="font-size:7px; text-anchor:middle">CASCADE</text>
+    </g>
+    <g transform="translate(60,0)">
+      <rect x="0" y="0" width="50" height="60" rx="4" fill="#2A1F1A" stroke="#3A2C24"/>
+      <polygon points="25,12 30,28 18,22 32,22 20,28" fill="#F2B84B"/>
+      <text x="25" y="46" class="mono" style="font-size:7px; text-anchor:middle">RING ·</text>
+    </g>
+    <g transform="translate(120,0)">
+      <rect x="0" y="0" width="50" height="60" rx="4" fill="#2A1F1A" stroke="#3A2C24"/>
+      <rect x="20" y="14" width="10" height="14" fill="none" stroke="#F9EDD9" stroke-width="1.5"/>
+      <text x="25" y="46" class="mono" style="font-size:7px; text-anchor:middle">LIGHT</text>
+    </g>
+    <g transform="translate(180,0)">
+      <rect x="0" y="0" width="50" height="60" rx="4" fill="#2A1F1A" stroke="#3A2C24" stroke-dasharray="2 2"/>
+      <text x="25" y="28" class="mono" style="font-size:18px; text-anchor:middle; fill:#3A2C24">+9</text>
+      <text x="25" y="46" class="mono" style="font-size:7px; text-anchor:middle">MORE</text>
+    </g>
+  </g>
+
+  <!-- XP bar -->
+  <g transform="translate(20,450)">
+    <text x="0" y="0" class="mono">LEVEL 9 · XP 4 821 / 6 000</text>
+    <rect x="0" y="10" width="230" height="6" rx="3" fill="#3A2C24"/>
+    <rect x="0" y="10" width="184" height="6" rx="3" fill="#E87B3A"/>
+  </g>
+
+  <!-- Bottom tabs -->
+  <g transform="translate(20,520)">
+    <line x1="0" y1="0" x2="230" y2="0" stroke="#3A2C24" stroke-width="1"/>
+    <g transform="translate(0,12)">
+      <text x="0" y="14" class="mono">DAILY</text>
+      <text x="60" y="14" class="mono">PACKS</text>
+      <text x="115" y="14" class="mono accent" style="fill:#E87B3A">STREAK</text>
+      <text x="180" y="14" class="mono">YOU</text>
+    </g>
+  </g>
+
+  <rect x="95" y="568" width="80" height="4" rx="2" fill="#F9EDD9" opacity="0.6"/>
+</svg>

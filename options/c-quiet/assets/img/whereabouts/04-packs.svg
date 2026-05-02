@@ -1,0 +1,100 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 270 585" width="270" height="585" role="img" aria-label="Whereabouts — themed map packs library">
+  <defs>
+    <linearGradient id="bg4" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#231811"/>
+      <stop offset="1" stop-color="#1C1512"/>
+    </linearGradient>
+    <style>
+      .ui  { font-family: -apple-system, 'Inter Tight', system-ui, sans-serif; fill: #F9EDD9; }
+      .mono { font-family: 'JetBrains Mono', ui-monospace, monospace; fill: #B8A38B; font-size: 9px; letter-spacing: 0.7px; text-transform: uppercase; }
+      .accent { fill: #E87B3A; }
+      .gold { fill: #F2B84B; }
+    </style>
+  </defs>
+
+  <rect x="0" y="0" width="270" height="585" rx="38" fill="url(#bg4)"/>
+  <text x="20" y="26" class="mono" style="font-size:10px">9:41</text>
+  <rect x="105" y="10" width="60" height="22" rx="11" fill="#0A0605"/>
+
+  <!-- Header -->
+  <g transform="translate(20,55)">
+    <text x="0" y="14" class="mono">PACKS · 14 AVAILABLE</text>
+    <text x="0" y="50" class="ui" style="font-size:32px; font-weight:600; letter-spacing:-1.4px; line-height:0.95">Hand-curated<tspan x="0" dy="34">map packs</tspan></text>
+  </g>
+
+  <!-- Featured pack card -->
+  <g transform="translate(20,170)">
+    <rect x="0" y="0" width="230" height="120" rx="6" fill="#2A1F1A" stroke="#3A2C24"/>
+    <!-- art: stylized peak silhouettes -->
+    <g transform="translate(0,0)">
+      <polygon points="0,90 40,40 70,72 110,28 145,70 190,30 230,80 230,120 0,120" fill="#5C3E2A" opacity="0.8"/>
+      <polygon points="0,98 36,62 78,86 130,52 170,82 210,58 230,90 230,120 0,120" fill="#3A2C24" opacity="0.95"/>
+      <!-- snow caps -->
+      <circle cx="110" cy="28" r="2" fill="#F9EDD9"/>
+      <circle cx="190" cy="30" r="2" fill="#F9EDD9"/>
+    </g>
+    <!-- label -->
+    <g transform="translate(14,98)">
+      <text x="0" y="0" class="mono">FEATURED</text>
+      <text x="0" y="14" class="ui" style="font-size:14px; font-weight:600; letter-spacing:-0.3px">Cascade Peaks · 24 places</text>
+    </g>
+  </g>
+
+  <!-- Pack list -->
+  <g transform="translate(20,310)">
+    <line x1="0" y1="0" x2="230" y2="0" stroke="#3A2C24"/>
+
+    <!-- pack row 1 -->
+    <g transform="translate(0,18)">
+      <text x="0" y="0" class="mono" style="font-size:9px; fill:#B8A38B">01</text>
+      <text x="22" y="0" class="ui" style="font-size:14px; font-weight:600; letter-spacing:-0.3px">Ring of Fire</text>
+      <text x="0" y="16" class="mono" style="text-transform:none; letter-spacing:0.3px">38 volcanoes · pacific rim</text>
+    </g>
+    <line x1="0" y1="42" x2="230" y2="42" stroke="#3A2C24"/>
+
+    <!-- pack row 2 -->
+    <g transform="translate(0,60)">
+      <text x="0" y="0" class="mono" style="font-size:9px; fill:#B8A38B">02</text>
+      <text x="22" y="0" class="ui" style="font-size:14px; font-weight:600; letter-spacing:-0.3px">World Lighthouses</text>
+      <text x="0" y="16" class="mono" style="text-transform:none; letter-spacing:0.3px">52 beacons · every coast</text>
+    </g>
+    <line x1="0" y1="84" x2="230" y2="84" stroke="#3A2C24"/>
+
+    <!-- pack row 3 -->
+    <g transform="translate(0,102)">
+      <text x="0" y="0" class="mono" style="font-size:9px; fill:#B8A38B">03</text>
+      <text x="22" y="0" class="ui" style="font-size:14px; font-weight:600; letter-spacing:-0.3px">Old World Capitals</text>
+      <text x="0" y="16" class="mono" style="text-transform:none; letter-spacing:0.3px">28 cities · pre-1800</text>
+      <!-- pro badge -->
+      <g transform="translate(195,-12)">
+        <rect x="0" y="0" width="32" height="14" rx="2" fill="none" stroke="#F2B84B"/>
+        <text x="16" y="10" class="mono" style="font-size:7px; text-anchor:middle; fill:#F2B84B">PRO</text>
+      </g>
+    </g>
+    <line x1="0" y1="126" x2="230" y2="126" stroke="#3A2C24"/>
+
+    <!-- pack row 4 -->
+    <g transform="translate(0,144)">
+      <text x="0" y="0" class="mono" style="font-size:9px; fill:#B8A38B">04</text>
+      <text x="22" y="0" class="ui" style="font-size:14px; font-weight:600; letter-spacing:-0.3px">Desert Crossings</text>
+      <text x="0" y="16" class="mono" style="text-transform:none; letter-spacing:0.3px">19 routes · sahara, gobi, atacama</text>
+      <g transform="translate(195,-12)">
+        <rect x="0" y="0" width="32" height="14" rx="2" fill="none" stroke="#F2B84B"/>
+        <text x="16" y="10" class="mono" style="font-size:7px; text-anchor:middle; fill:#F2B84B">PRO</text>
+      </g>
+    </g>
+  </g>
+
+  <!-- Bottom tabs -->
+  <g transform="translate(20,520)">
+    <line x1="0" y1="0" x2="230" y2="0" stroke="#3A2C24" stroke-width="1"/>
+    <g transform="translate(0,12)">
+      <text x="0" y="14" class="mono">DAILY</text>
+      <text x="60" y="14" class="mono accent" style="fill:#E87B3A">PACKS</text>
+      <text x="115" y="14" class="mono">STREAK</text>
+      <text x="180" y="14" class="mono">YOU</text>
+    </g>
+  </g>
+
+  <rect x="95" y="568" width="80" height="4" rx="2" fill="#F9EDD9" opacity="0.6"/>
+</svg>

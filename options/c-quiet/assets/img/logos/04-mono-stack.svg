@@ -1,0 +1,17 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 220" width="320" height="220" role="img" aria-label="Inventist — Mono stack mark">
+  <defs>
+    <style>
+      .stack { font-family: 'JetBrains Mono', ui-monospace, monospace; font-weight: 700; font-size: 56px; letter-spacing: -2px; fill: #0B0B0C; }
+      .accent { fill: #1840FF; }
+      .small { font-family: 'JetBrains Mono', ui-monospace, monospace; font-size: 10px; letter-spacing: 1.4px; fill: #6E6E73; text-transform: uppercase; }
+    </style>
+  </defs>
+
+  <!-- Stacked mono lockup: INVENT / IST. — period-as-pin, mono cut. Used as compact mark. -->
+  <g transform="translate(28,72)">
+    <text x="0" y="0" class="stack">INVENT</text>
+    <text x="0" y="60" class="stack">IST<tspan class="accent">.</tspan></text>
+    <line x1="0" y1="80" x2="240" y2="80" stroke="#0B0B0C" stroke-width="2"/>
+    <text x="0" y="106" class="small">indie ios studio · est. florida</text>
+  </g>
+</svg>

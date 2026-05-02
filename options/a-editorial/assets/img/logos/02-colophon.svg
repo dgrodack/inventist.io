@@ -1,0 +1,31 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 520 200" role="img" aria-labelledby="t2">
+  <title id="t2">Inventist — Colophon stack</title>
+  <defs>
+    <style>
+      .ink  { fill: #1A1410; }
+      .red  { fill: #B0431D; }
+      .name { font-family: "Newsreader", "Source Serif 4", Georgia, serif; font-weight: 420; font-size: 64px; letter-spacing: -0.018em; fill: #1A1410; }
+      .name em { font-style: italic; font-weight: 380; }
+      .small { font-family: "Inter Tight", Inter, sans-serif; font-size: 10px; letter-spacing: 0.22em; text-transform: uppercase; font-weight: 540; fill: #6E5E4F; }
+      .smallink { font-family: "Inter Tight", Inter, sans-serif; font-size: 10px; letter-spacing: 0.22em; text-transform: uppercase; font-weight: 600; fill: #1A1410; }
+    </style>
+  </defs>
+  <!-- Editorial colophon: stacked metadata above the wordmark -->
+  <text x="14" y="22" class="small">Volume 03 · No. 04</text>
+  <text x="506" y="22" class="small" text-anchor="end">A studio of Florida</text>
+  <line x1="14" y1="32" x2="506" y2="32" stroke="#1A1410" stroke-width="0.75"/>
+
+  <!-- Wordmark with italic 'vent' as a custom run -->
+  <text x="14" y="120" class="name">In<tspan font-style="italic" fill="#B0431D">vent</tspan>ist.</text>
+
+  <!-- Custom in-line glyph: a small flourish replacing the period stroke decoration -->
+  <line x1="14" y1="148" x2="506" y2="148" stroke="#1A1410" stroke-width="0.75"/>
+  <text x="14" y="170" class="smallink">Native iOS · Made by hand</text>
+  <text x="506" y="170" class="small" text-anchor="end">hello@inventist.io</text>
+
+  <!-- Tiny printer's flourish -->
+  <g transform="translate(255, 162)">
+    <path d="M -16 0 Q 0 -8 16 0" stroke="#B0431D" stroke-width="1" fill="none"/>
+    <circle cx="0" cy="0" r="2" class="red"/>
+  </g>
+</svg>

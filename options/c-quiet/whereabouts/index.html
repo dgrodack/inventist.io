@@ -1,0 +1,345 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8"/>
+  <meta name="viewport" content="width=device-width,initial-scale=1"/>
+  <title>Whereabouts — A daily geography puzzle for iPhone</title>
+  <meta name="description" content="Whereabouts is a daily geography puzzle for iPhone. Five rounds, three minutes, on a real 3D globe. Built with SwiftUI and RealityKit. Data not collected."/>
+  <link rel="preconnect" href="https://fonts.googleapis.com"/>
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+  <link href="https://fonts.googleapis.com/css2?family=Inter+Tight:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet"/>
+  <link rel="stylesheet" href="../assets/css/style.css"/>
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' fill='%231C1512'/%3E%3Ccircle cx='16' cy='16' r='10' fill='none' stroke='%23E87B3A' stroke-width='2'/%3E%3C/svg%3E"/>
+</head>
+<body class="theme-wa">
+
+<header class="site-header">
+  <div class="shell bar">
+    <a href="../index.html" class="brand-mark" aria-label="Inventist home">
+      inventist<span class="dot"></span>
+    </a>
+    <nav aria-label="Primary">
+      <a href="index.html" style="color:#E87B3A">Whereabouts</a>
+      <a href="../index.html#manifest">Studio</a>
+      <a href="../support/index.html">Support</a>
+      <a href="../privacy/index.html">Privacy</a>
+    </nav>
+    <span class="meta hide-md">PRODUCT 001 · iOS 18+</span>
+  </div>
+</header>
+
+<!-- HERO -->
+<section class="wa-hero">
+  <div class="shell">
+    <div class="meta-row">
+      <span><span style="display:inline-block;width:6px;height:6px;background:#E87B3A;margin-right:8px;vertical-align:middle"></span>WHEREABOUTS · DAILY</span>
+      <span>BY INVENTIST · FLORIDA</span>
+      <span class="hide-md">200 COUNTRIES · 200 CAPITALS · 500 CITIES · 285 LANDMARKS</span>
+    </div>
+
+    <h1>
+      A real<br/>
+      globe.<br/>
+      <span class="em">Five</span> pins<br/>
+      a day.
+    </h1>
+
+    <div class="grid mt-7">
+      <div class="col-7">
+        <p class="lede">Whereabouts is a daily geography puzzle for iPhone. Drag a real 3D globe, pinch to zoom, drop a pin where you think the place is. Five rounds, three minutes, then come back tomorrow.</p>
+        <div class="actions">
+          <a class="btn" href="#download">Download for iPhone <span class="arrow">↗</span></a>
+          <a class="btn btn-ghost" href="#how">How it works</a>
+        </div>
+      </div>
+      <div class="col-5">
+        <div class="wa-hero__caption" style="border-top: none; padding-top: 0">
+          <div>
+            <span>Catalogue</span>
+            <span class="v">1 185 places</span>
+          </div>
+          <div>
+            <span>Length</span>
+            <span class="v">~3 min · daily</span>
+          </div>
+          <div>
+            <span>Privacy</span>
+            <span class="v">Data not collected</span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="wa-hero__media">
+      <div class="phone">
+        <img src="../assets/img/whereabouts/01-globe.svg" alt="Whereabouts hero — round 3 of the daily puzzle, the warm 3D globe with a guess pin near Iceland"/>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- BIG NUMBERS -->
+<section class="section-tight">
+  <div class="shell">
+    <div class="wa-nums">
+      <div class="cell">
+        <span class="num"><span class="accent">5</span></span>
+        <span class="label">rounds per day</span>
+      </div>
+      <div class="cell">
+        <span class="num">3<span class="accent">′</span></span>
+        <span class="label">minutes, no longer</span>
+      </div>
+      <div class="cell">
+        <span class="num">1 185</span>
+        <span class="label">places, hand-curated</span>
+      </div>
+      <div class="cell">
+        <span class="num">10<span class="accent">K</span></span>
+        <span class="label">map, on a real sphere</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- HOW IT WORKS -->
+<section class="section" id="how">
+  <div class="shell">
+    <div class="section-head" style="border-bottom-color: rgba(249,237,217,0.18)">
+      <h2 style="color:#F9EDD9">How a day plays</h2>
+      <span class="nav" style="color:#B8A38B">RITUAL — 04 STEPS</span>
+    </div>
+
+    <div class="phone-gallery">
+      <figure class="phone-card">
+        <img src="../assets/img/whereabouts/01-globe.svg" alt="Step 1 — drag the globe and drop a pin on Reykjavík"/>
+        <figcaption class="cap">
+          <span class="name">Aim a pin</span>
+          <span class="num">01</span>
+        </figcaption>
+      </figure>
+      <figure class="phone-card">
+        <img src="../assets/img/whereabouts/02-result.svg" alt="Step 2 — see the distance, points and arc to the true location"/>
+        <figcaption class="cap">
+          <span class="name">See the arc</span>
+          <span class="num">02</span>
+        </figcaption>
+      </figure>
+      <figure class="phone-card">
+        <img src="../assets/img/whereabouts/05-summary.svg" alt="Step 3 — the daily summary, five rounds tallied with streak and XP"/>
+        <figcaption class="cap">
+          <span class="name">Tally the day</span>
+          <span class="num">03</span>
+        </figcaption>
+      </figure>
+      <figure class="phone-card">
+        <img src="../assets/img/whereabouts/03-streak.svg" alt="Step 4 — keep a streak across days and earn pack badges"/>
+        <figcaption class="cap">
+          <span class="name">Keep the streak</span>
+          <span class="num">04</span>
+        </figcaption>
+      </figure>
+    </div>
+  </div>
+</section>
+
+<!-- MODES LEDGER -->
+<section class="section-tight">
+  <div class="shell">
+    <div class="section-head" style="border-bottom-color: rgba(249,237,217,0.18)">
+      <h2 style="color:#F9EDD9">Four modes</h2>
+      <span class="nav" style="color:#B8A38B">CATALOGUE — 1 185 PLACES</span>
+    </div>
+
+    <div class="modes">
+      <div class="row">
+        <div class="num">01</div>
+        <div class="name">Countries</div>
+        <div class="desc">Every sovereign nation. The starter mode — easy on day one, surprising by Friday.</div>
+        <div class="count">PLACES <span class="v">200</span></div>
+      </div>
+      <div class="row">
+        <div class="num">02</div>
+        <div class="name">Capitals</div>
+        <div class="desc">From Tórshavn to Yamoussoukro. The cities you should know but rarely place.</div>
+        <div class="count">PLACES <span class="v">200</span></div>
+      </div>
+      <div class="row">
+        <div class="num">03</div>
+        <div class="name">Cities</div>
+        <div class="desc">A wider net — five hundred cities by population, history and culture.</div>
+        <div class="count">PLACES <span class="v">500</span></div>
+      </div>
+      <div class="row">
+        <div class="num">04</div>
+        <div class="name">Landmarks</div>
+        <div class="desc">Built and natural. Mount Fuji to the Pyramids of Giza to the Sydney Opera House.</div>
+        <div class="count">PLACES <span class="v">285</span></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- MAP PACKS -->
+<section class="section">
+  <div class="shell">
+    <div class="section-head" style="border-bottom-color: rgba(249,237,217,0.18)">
+      <h2 style="color:#F9EDD9">Themed packs</h2>
+      <span class="nav" style="color:#B8A38B">CURATED — ROTATING</span>
+    </div>
+
+    <div class="grid">
+      <div class="col-7">
+        <p class="lede" style="color:#E9D7BD">Beyond the daily, themed map packs let you specialise. Cascade peaks for an alpine evening, the Ring of Fire for a tour of the Pacific, World Lighthouses for the long way around the coast. Hand-built by us, rotated regularly.</p>
+        <ul class="bullets" style="color:#E9D7BD; margin-top: 24px">
+          <li style="padding: 6px 0 6px 22px; position: relative">Cascade Peaks · 24 places</li>
+          <li style="padding: 6px 0 6px 22px; position: relative">Ring of Fire · 38 volcanoes</li>
+          <li style="padding: 6px 0 6px 22px; position: relative">World Lighthouses · 52 beacons</li>
+          <li style="padding: 6px 0 6px 22px; position: relative">Old World Capitals · 28 cities</li>
+          <li style="padding: 6px 0 6px 22px; position: relative">Desert Crossings · 19 routes</li>
+        </ul>
+      </div>
+      <div class="col-5">
+        <div style="display:flex; justify-content:center">
+          <img src="../assets/img/whereabouts/04-packs.svg" alt="The packs library inside Whereabouts" style="width: clamp(220px, 26vw, 320px); filter: drop-shadow(0 30px 70px rgba(0,0,0,0.55))"/>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- PRIVACY CALLOUT -->
+<section>
+  <div class="shell">
+    <div class="privacy-callout">
+      <div>
+        <span class="mono" style="color:#B8A38B; letter-spacing:0.08em; text-transform:uppercase">Privacy — non-negotiable</span>
+        <h3 class="mt-4">Data <span class="em">not</span><br/>collected.</h3>
+        <p class="lede mt-5">No accounts. No trackers. No ads. No analytics. Your streak, your XP, your badges, your pin history — all of it lives on your iPhone in <code style="font-family:'JetBrains Mono',monospace; color:#F9EDD9">UserDefaults</code>. We never see it.</p>
+      </div>
+      <div class="nutrition" aria-label="App Store privacy nutrition label">
+        <div class="row"><span>Data Used to Track You</span><span class="v">NONE</span></div>
+        <div class="row"><span>Data Linked to You</span><span class="v">NONE</span></div>
+        <div class="row"><span>Data Not Linked to You</span><span class="v">NONE</span></div>
+        <div class="row"><span>Third-party SDKs</span><span class="v">NONE</span></div>
+        <div class="row"><span>Storage</span><span class="v">ON DEVICE</span></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- PRICING -->
+<section class="section" id="download">
+  <div class="shell">
+    <div class="section-head" style="border-bottom-color: rgba(249,237,217,0.18)">
+      <h2 style="color:#F9EDD9">Free, with optional Pro</h2>
+      <span class="nav" style="color:#B8A38B">PRICING — 03 PLANS</span>
+    </div>
+
+    <p class="lede" style="color:#E9D7BD">Whereabouts is free to play, every day, forever. Pro removes nothing — it adds themed map packs, deeper stats and a longer history. One week free on every plan.</p>
+
+    <div class="pricing">
+      <article class="plan">
+        <h5>Monthly</h5>
+        <div class="price">$2.99<span class="unit"> / month</span></div>
+        <p class="desc">Try Pro week to week. One week free, cancel anytime.</p>
+        <a class="btn btn-ghost" href="#" style="color:#F9EDD9; border-color:rgba(249,237,217,0.3)">Start the free week</a>
+      </article>
+      <article class="plan is-featured">
+        <h5>Annual</h5>
+        <div class="price">$19.99<span class="unit"> / year</span></div>
+        <p class="desc">A week free, then 44% off the monthly rate. Most travellers pick this.</p>
+        <a class="btn" href="#">Start the free week</a>
+      </article>
+      <article class="plan">
+        <h5>Lifetime</h5>
+        <div class="price">$49.99<span class="unit"> · once</span></div>
+        <p class="desc">Pay once. Pro for as long as the app exists, on every device you own.</p>
+        <a class="btn btn-ghost" href="#" style="color:#F9EDD9; border-color:rgba(249,237,217,0.3)">Buy lifetime</a>
+      </article>
+    </div>
+
+    <p class="mono mt-7" style="color:#B8A38B; opacity:0.8">Subscriptions billed by Apple. Manage in Settings → Apple ID → Subscriptions. iOS 18+ required.</p>
+  </div>
+</section>
+
+<!-- SPEC TABLE -->
+<section class="section-tight">
+  <div class="shell">
+    <div class="section-head" style="border-bottom-color: rgba(249,237,217,0.18)">
+      <h2 style="color:#F9EDD9">Specifications</h2>
+      <span class="nav" style="color:#B8A38B">FOR THE RECORD</span>
+    </div>
+
+    <div class="modes" style="border-color: rgba(249,237,217,0.18)">
+      <div class="row">
+        <div class="num">A</div>
+        <div class="name" style="font-size:18px">Platform</div>
+        <div class="desc">iPhone · iOS 18.0 or later · Universal</div>
+        <div class="count"><span class="v">SwiftUI · RealityKit</span></div>
+      </div>
+      <div class="row">
+        <div class="num">B</div>
+        <div class="name" style="font-size:18px">Globe</div>
+        <div class="desc">10 240 × 5 120 px equirectangular map, projected onto a real sphere mesh. Drag, pinch, tap, drop.</div>
+        <div class="count"><span class="v">Real-time 3D</span></div>
+      </div>
+      <div class="row">
+        <div class="num">C</div>
+        <div class="name" style="font-size:18px">Daily</div>
+        <div class="desc">A new puzzle at midnight local time. Five rounds, no more, no less.</div>
+        <div class="count"><span class="v">~3 minutes</span></div>
+      </div>
+      <div class="row">
+        <div class="num">D</div>
+        <div class="name" style="font-size:18px">Storage</div>
+        <div class="desc">All progress on device, in <code style="font-family:'JetBrains Mono',monospace; color:#F9EDD9">UserDefaults</code>. Nothing leaves your iPhone.</div>
+        <div class="count"><span class="v">On device · always</span></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer class="site-footer">
+  <div class="shell">
+    <div class="top">
+      <div>
+        <h6>Studio</h6>
+        <p style="font-size:14px; color:#E9D7BD; max-width:36ch">Whereabouts is published by Inventist LLC, an independent iOS studio in Florida, United States.</p>
+      </div>
+      <div>
+        <h6>Apps</h6>
+        <ul>
+          <li><a href="index.html">Whereabouts</a></li>
+          <li><a href="../index.html#manifest">Manifest</a></li>
+        </ul>
+      </div>
+      <div>
+        <h6>Information</h6>
+        <ul>
+          <li><a href="../support/index.html">Support</a></li>
+          <li><a href="../privacy/index.html">Privacy</a></li>
+          <li><a href="../terms/index.html">Terms</a></li>
+        </ul>
+      </div>
+      <div>
+        <h6>Contact</h6>
+        <ul>
+          <li><a href="mailto:hello@inventist.io">hello@inventist.io</a></li>
+          <li><a href="mailto:privacy@inventist.io">privacy@inventist.io</a></li>
+        </ul>
+      </div>
+    </div>
+
+    <span class="wordmark">whereabouts<span class="accent">.</span></span>
+
+    <div class="legal">
+      <span>© 2024 — 2026 Inventist LLC · Registered in Florida</span>
+      <span>Apple, App Store and iPhone are trademarks of Apple Inc.</span>
+    </div>
+  </div>
+</footer>
+
+</body>
+</html>

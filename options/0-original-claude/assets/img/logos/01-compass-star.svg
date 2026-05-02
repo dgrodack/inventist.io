@@ -1,0 +1,6 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" fill="none" stroke="currentColor" stroke-width="3.2" stroke-linecap="round" stroke-linejoin="round" aria-label="Inventist — Compass Star concept">
+  <!-- Four-point compass star: long N-S, short E-W -->
+  <path d="M32 6 L36 28 L58 32 L36 36 L32 58 L28 36 L6 32 L28 28 Z" fill="currentColor" stroke="none" opacity="0.95"/>
+  <!-- Inner contrast diamond cut-out -->
+  <path d="M32 22 L36 32 L32 42 L28 32 Z" fill="var(--bg, #FFFFFF)" stroke="none"/>
+</svg>

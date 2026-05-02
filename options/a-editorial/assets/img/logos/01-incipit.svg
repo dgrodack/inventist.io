@@ -1,0 +1,20 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 520 140" role="img" aria-labelledby="t1">
+  <title id="t1">Inventist — Incipit wordmark</title>
+  <defs>
+    <style>
+      .ink   { fill: #1A1410; }
+      .red   { fill: #B0431D; }
+      .word  { font-family: "Newsreader", "Source Serif 4", Georgia, serif; font-weight: 380; font-style: italic; font-size: 96px; letter-spacing: -0.02em; }
+      .small { font-family: "Inter Tight", Inter, sans-serif; font-size: 11px; letter-spacing: 0.22em; text-transform: uppercase; font-weight: 540; fill: #1A1410; }
+    </style>
+  </defs>
+  <!-- Drop-cap "I" treated as a manuscript incipit -->
+  <text x="14" y="104" class="ink word" font-style="normal" font-weight="500" font-size="120">I</text>
+  <text x="60" y="104" class="ink word">nventist</text>
+  <!-- Hairline rule under wordmark -->
+  <line x1="14" y1="118" x2="506" y2="118" stroke="#1A1410" stroke-width="1"/>
+  <text x="14" y="135" class="small">Independent · iOS · Florida</text>
+  <text x="506" y="135" class="small" text-anchor="end">Est. 2023</text>
+  <!-- Decorative red accent dot acting as the printer's mark -->
+  <circle cx="498" cy="92" r="5" class="red"/>
+</svg>

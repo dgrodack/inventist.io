@@ -1,0 +1,8 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" role="img" aria-label="Old World Capitals">
+  <path d="M 4 56 L 4 32 L 16 18 L 28 32 L 28 56 Z" fill="#F9EDD9"/>
+  <path d="M 28 56 L 28 22 L 42 10 L 56 22 L 56 56 Z" fill="#F9EDD9"/>
+  <rect x="10" y="42" width="4" height="8" fill="#1C1512"/>
+  <rect x="36" y="32" width="4" height="8" fill="#1C1512"/>
+  <rect x="46" y="32" width="4" height="8" fill="#1C1512"/>
+  <rect x="36" y="46" width="4" height="8" fill="#E87B3A"/>
+</svg>

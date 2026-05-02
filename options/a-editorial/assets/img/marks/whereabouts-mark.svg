@@ -1,0 +1,9 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 80" role="img" aria-label="Whereabouts">
+  <defs>
+    <style>
+      .name { font-family: "Newsreader", "Source Serif 4", Georgia, serif; font-weight: 380; font-size: 60px; letter-spacing: -0.02em; fill: #F9EDD9; }
+      .name em { font-style: italic; }
+    </style>
+  </defs>
+  <text x="0" y="58" class="name">Where<tspan font-style="italic" fill="#E87B3A">abouts</tspan>.</text>
+</svg>

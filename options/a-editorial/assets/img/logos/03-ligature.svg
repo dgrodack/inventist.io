@@ -1,0 +1,36 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 520 200" role="img" aria-labelledby="t3">
+  <title id="t3">Inventist — Ligature mark (interlocked I·v)</title>
+  <defs>
+    <style>
+      .ink   { fill: #1A1410; }
+      .red   { fill: #B0431D; }
+      .small { font-family: "Inter Tight", Inter, sans-serif; font-size: 10px; letter-spacing: 0.22em; text-transform: uppercase; font-weight: 540; fill: #1A1410; }
+      .smallm { font-family: "Inter Tight", Inter, sans-serif; font-size: 10px; letter-spacing: 0.22em; text-transform: uppercase; font-weight: 540; fill: #6E5E4F; }
+      .name  { font-family: "Newsreader", "Source Serif 4", Georgia, serif; font-weight: 420; font-size: 30px; letter-spacing: -0.012em; fill: #1A1410; }
+    </style>
+  </defs>
+
+  <!-- Custom drawn I·v ligature: a slab serif "I" whose lower terminal becomes the
+       diagonal of a "v" — drawn as paths so it reads as one mark. -->
+  <g transform="translate(50, 24)">
+    <!-- Top serif of I -->
+    <rect x="0"  y="0"   width="48" height="6"  class="ink"/>
+    <!-- Stem of I -->
+    <rect x="19" y="6"   width="10" height="74" class="ink"/>
+    <!-- Bottom serif of I (left half) -->
+    <rect x="0"  y="80"  width="22" height="6"  class="ink"/>
+    <!-- The "v": diagonals leaving the I's lower right serif -->
+    <path d="M 22 80 L 56 142 L 90 80 L 78 80 L 56 120 L 34 80 Z" class="ink"/>
+    <!-- Editorial red dot, sitting like a tittle in the angle of the v -->
+    <circle cx="56" cy="92" r="5" class="red"/>
+  </g>
+
+  <!-- Wordmark to the right of the mark -->
+  <text x="170" y="98" class="name">Inventist</text>
+  <line x1="170" y1="112" x2="506" y2="112" stroke="#1A1410" stroke-width="0.75"/>
+  <text x="170" y="130" class="smallm">A house of native iOS apps</text>
+
+  <!-- Identifier line under the whole composition -->
+  <text x="50"  y="180" class="small">Mark · 2024</text>
+  <text x="506" y="180" class="smallm" text-anchor="end">Drawn for Inventist LLC</text>
+</svg>

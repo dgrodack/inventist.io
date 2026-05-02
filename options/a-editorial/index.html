@@ -1,0 +1,361 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Inventist — A studio of native iOS, made by hand.</title>
+  <meta name="description" content="Inventist is an independent iOS studio in Florida, building native apps that make learning feel like play. Publisher of Whereabouts, the daily geography puzzle." />
+  <meta name="theme-color" content="#FAF6EE" />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,300..600;1,6..72,300..600&family=Inter+Tight:wght@400..600&display=swap" />
+  <link rel="stylesheet" href="assets/css/style.css" />
+</head>
+<body>
+
+  <!-- Masthead -->
+  <header class="mast">
+    <div class="shell mast-row">
+      <a class="mast-brand" href="./">
+        <img src="assets/img/marks/glyph.svg" alt="" class="glyph" />
+        <span>Inventist <small>·&nbsp;Vol. 0<span data-vol>3</span></small></span>
+      </a>
+      <nav class="mast-nav" aria-label="Primary">
+        <a href="./" class="active">Studio</a>
+        <a href="whereabouts/">Whereabouts</a>
+        <a href="support/">Support</a>
+        <a href="privacy/">Privacy</a>
+      </nav>
+      <div class="mast-side"><span data-today>Today</span></div>
+    </div>
+  </header>
+
+  <main>
+
+    <!-- Hero -->
+    <section class="hero">
+      <div class="shell">
+
+        <div class="issue-strip">
+          <span><b>Issue No. 04</b> · Spring</span>
+          <span>Independent iOS · Florida</span>
+          <span>Published from a desk by the bay</span>
+        </div>
+
+        <div style="margin-top: var(--s-7);">
+          <span class="kicker"><span class="dot"></span> The Inventist Reader · A studio dispatch</span>
+          <h1 class="display">A house of native iOS,<br/><em>made by hand.</em></h1>
+        </div>
+
+        <div class="hero-foot">
+          <p class="lead">
+            Inventist is a one-room studio in Florida. We make small, careful iOS apps that
+            try to turn the things you used to study into things you'd rather play.
+            We ship under our own name, on our own clock, and we mean it about privacy.
+          </p>
+          <div class="ctas">
+            <a class="btn btn-ink" href="whereabouts/">See Whereabouts <span class="arrow">→</span></a>
+            <a class="btn btn-ghost" href="#manifesto">Read the manifesto</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Manifesto / Editor's note -->
+    <section class="section" id="manifesto">
+      <div class="shell">
+        <div class="grid-12">
+          <div class="span-3">
+            <p class="eyebrow"><span class="num">§ 01</span>&nbsp;&nbsp;Editor's note</p>
+            <p class="cap" style="margin-top: var(--s-3);"><b>From the studio</b><br/>An open letter, of sorts, about why we still build this way.</p>
+          </div>
+          <div class="span-7 start-5 reveal">
+            <p class="manifesto">
+              We believe a phone can be a small, well-edited room. So we work in the
+              <em>old way:</em> deeply native, mostly serif, never selling the reader to
+              anyone. The app is the <em>product;</em> attention is the <em>currency;</em>
+              you keep both.
+            </p>
+            <hr class="hairline" style="margin-top: var(--s-7);"/>
+            <p class="cap" style="margin-top: var(--s-4);"><b>signed</b> &nbsp;The studio · Florida, USA</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Featured app -->
+    <section class="section-tight">
+      <div class="shell">
+        <div class="grid-12" style="align-items: end; margin-bottom: var(--s-6);">
+          <div class="span-6">
+            <p class="eyebrow"><span class="num">§ 02</span>&nbsp;&nbsp;The current issue</p>
+            <h2 style="margin-top: var(--s-3);">A daily ritual, drawn on a real globe.</h2>
+          </div>
+          <div class="span-4 start-9">
+            <p class="cap"><b>Featured</b> · Out now on the App Store</p>
+          </div>
+        </div>
+
+        <div class="app-card reveal">
+          <div>
+            <span class="num">No. 01 · Whereabouts</span>
+            <h2 style="font-size: 56px; line-height: 1.02; margin-top: var(--s-4);">
+              Five rounds.<br/>
+              <em>Three minutes.</em><br/>
+              The whole earth.
+            </h2>
+            <p class="lead" style="margin-top: var(--s-5);">
+              A daily geography puzzle for iPhone, set on a real 3D globe you spin with your thumb.
+              Drag, pinch, tap to drop a pin. 1,185 hand-curated places — countries, capitals,
+              cities, landmarks. Built in SwiftUI and RealityKit. Free, with an optional Pro.
+            </p>
+            <div class="tagrow" style="margin-top: var(--s-5);">
+              <span class="tag">SwiftUI</span>
+              <span class="tag">RealityKit</span>
+              <span class="tag">iOS 18+</span>
+              <span class="tag">Data Not Collected</span>
+              <span class="tag">No accounts</span>
+            </div>
+            <div style="margin-top: var(--s-6); display: flex; gap: var(--s-3); align-items: center;">
+              <a class="btn btn-ink" href="whereabouts/">Open the product page <span class="arrow">→</span></a>
+              <span class="signoff">— or read the colophon below.</span>
+            </div>
+          </div>
+          <figure class="figure">
+            <div class="frame" style="aspect-ratio: 4/5; padding: var(--s-6); background: #1C1512; display: grid; place-items: center;">
+              <div class="phone phone-tilt-l" style="width: 80%;">
+                <img src="assets/img/whereabouts/01-globe.svg" alt="The Whereabouts daily puzzle, with a 3D globe and pin." />
+              </div>
+            </div>
+            <figcaption class="cap"><b>Plate 01</b> &nbsp;Whereabouts · The daily round, mid-pin.</figcaption>
+          </figure>
+        </div>
+      </div>
+    </section>
+
+    <!-- The catalog -->
+    <section class="section">
+      <div class="shell">
+        <div class="grid-12" style="margin-bottom: var(--s-6);">
+          <div class="span-6">
+            <p class="eyebrow"><span class="num">§ 03</span>&nbsp;&nbsp;The catalog</p>
+            <h2 style="margin-top: var(--s-3);">A short, deliberate list.</h2>
+          </div>
+          <div class="span-5 start-8">
+            <p class="lead" style="font-size: 18px;">
+              We'd rather ship one app well than ten in a hurry. The list grows slowly,
+              on purpose.
+            </p>
+          </div>
+        </div>
+
+        <div class="entries">
+          <div class="entry reveal">
+            <span class="n">01.</span>
+            <div>
+              <h3>Whereabouts <em style="font-style: italic; color: var(--accent);">— a daily puzzle for the curious.</em></h3>
+              <p>Five rounds, about three minutes. 1,185 hand-curated places across countries, capitals, cities and landmarks. Spun on a real 3D globe.</p>
+            </div>
+            <span class="yr">2024 · Out now</span>
+          </div>
+
+          <div class="entry reveal">
+            <span class="n">02.</span>
+            <div>
+              <h3>Untitled No. 02 <em style="font-style: italic; color: var(--ink-mute);">— a quieter way to read.</em></h3>
+              <p>An iPad-first reader for daily essays and long-form, with margin notes that travel between devices. Currently in private studio.</p>
+            </div>
+            <span class="yr">In studio</span>
+          </div>
+
+          <div class="entry reveal">
+            <span class="n">03.</span>
+            <div>
+              <h3>Untitled No. 03 <em style="font-style: italic; color: var(--ink-mute);">— for the kitchen counter.</em></h3>
+              <p>Recipes by the hand-written card, spaced for screens that have to be wiped on the apron. Sketched out, not yet promised.</p>
+            </div>
+            <span class="yr">Sketch</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Pull quote / values -->
+    <section class="section-tight">
+      <div class="shell">
+        <div class="grid-12">
+          <div class="span-3">
+            <p class="eyebrow"><span class="num">§ 04</span>&nbsp;&nbsp;House style</p>
+          </div>
+          <div class="span-7 start-4">
+            <blockquote class="pull">
+              "Every app should feel like it was made by someone who would still
+              answer your email. We try to keep that posture even after we've
+              shipped, and especially when no one is watching."
+            </blockquote>
+          </div>
+        </div>
+
+        <!-- Three principles -->
+        <div class="grid-12" style="margin-top: var(--s-7);">
+          <article class="span-4 reveal">
+            <p class="eyebrow"><span class="num">i.</span>&nbsp;&nbsp;Native, always</p>
+            <h3 style="margin-top: var(--s-3);">Built in Swift, for the device in your hand.</h3>
+            <p style="color: var(--ink-mute); font-size: 15px; margin-top: var(--s-3); max-width: 36ch;">
+              No webviews dressed up as apps. No frameworks the platform didn't ask for. We use
+              SwiftUI, RealityKit, and the system the way Apple intended it.
+            </p>
+          </article>
+          <article class="span-4 reveal">
+            <p class="eyebrow"><span class="num">ii.</span>&nbsp;&nbsp;Quiet by default</p>
+            <h3 style="margin-top: var(--s-3);">Data not collected. Nothing to leak.</h3>
+            <p style="color: var(--ink-mute); font-size: 15px; margin-top: var(--s-3); max-width: 36ch;">
+              No accounts, no analytics, no third-party trackers, no ads. Your streak lives on
+              the device, where it belongs. The privacy label says it because it's true.
+            </p>
+          </article>
+          <article class="span-4 reveal">
+            <p class="eyebrow"><span class="num">iii.</span>&nbsp;&nbsp;Made for keeping</p>
+            <h3 style="margin-top: var(--s-3);">A small list, kept current for years.</h3>
+            <p style="color: var(--ink-mute); font-size: 15px; margin-top: var(--s-3); max-width: 36ch;">
+              We'd rather maintain a few favorites than ship a dozen we couldn't love. Updates
+              come because they should, not on a quarter's schedule.
+            </p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- Logo concepts plate -->
+    <section class="section">
+      <div class="shell">
+        <div class="grid-12" style="align-items: end; margin-bottom: var(--s-5);">
+          <div class="span-7">
+            <p class="eyebrow"><span class="num">§ 05</span>&nbsp;&nbsp;Identity, in three studies</p>
+            <h2 style="margin-top: var(--s-3);">Three drafts of the same name.</h2>
+          </div>
+          <div class="span-4 start-9">
+            <p class="cap"><b>Plates</b> · Wordmarks &amp; a custom ligature</p>
+          </div>
+        </div>
+
+        <div class="logos-sheet">
+          <figure class="logo-cell reveal">
+            <div class="frame">
+              <img src="assets/img/logos/01-incipit.svg" alt="Inventist Incipit wordmark" />
+            </div>
+            <figcaption class="meta cap">
+              <b>Plate I · Incipit</b>
+              <span>The opening line of an old book, set in italic Newsreader with a printer's red dot.</span>
+            </figcaption>
+          </figure>
+
+          <figure class="logo-cell reveal">
+            <div class="frame">
+              <img src="assets/img/logos/02-colophon.svg" alt="Inventist Colophon stack" />
+            </div>
+            <figcaption class="meta cap">
+              <b>Plate II · Colophon</b>
+              <span>A masthead-style stack with a custom italic 'vent' run and a hand-drawn flourish.</span>
+            </figcaption>
+          </figure>
+
+          <figure class="logo-cell reveal">
+            <div class="frame">
+              <img src="assets/img/logos/03-ligature.svg" alt="Inventist I·v ligature mark" />
+            </div>
+            <figcaption class="meta cap">
+              <b>Plate III · Ligature</b>
+              <span>A custom-drawn slab I whose lower serif becomes the diagonal of the v — a one-stroke mark.</span>
+            </figcaption>
+          </figure>
+        </div>
+      </div>
+    </section>
+
+    <!-- Contact / colophon -->
+    <section class="section-tight">
+      <div class="shell">
+        <div class="grid-12">
+          <div class="span-5">
+            <p class="eyebrow"><span class="num">§ 06</span>&nbsp;&nbsp;Correspondence</p>
+            <h2 style="margin-top: var(--s-3); font-size: 56px;">Write,<br/><em>if you're so inclined.</em></h2>
+          </div>
+          <div class="span-6 start-7">
+            <hr class="hr"/>
+            <div style="display: grid; grid-template-columns: 1fr 1fr; gap: var(--s-6); padding: var(--s-5) 0;">
+              <div>
+                <p class="cap"><b>General</b></p>
+                <p style="font-family: var(--serif); font-size: 22px; font-weight: 380;">
+                  <a href="mailto:hello@inventist.io" style="border-bottom: 1px solid var(--accent); color: var(--ink);">hello@inventist.io</a>
+                </p>
+              </div>
+              <div>
+                <p class="cap"><b>Privacy</b></p>
+                <p style="font-family: var(--serif); font-size: 22px; font-weight: 380;">
+                  <a href="mailto:privacy@inventist.io" style="border-bottom: 1px solid var(--accent); color: var(--ink);">privacy@inventist.io</a>
+                </p>
+              </div>
+            </div>
+            <hr class="hr"/>
+            <p class="cap" style="margin-top: var(--s-4);"><b>Inventist LLC</b> · A small studio registered in Florida, USA. We don't keep a public mailing address; please write.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="shell">
+      <div class="footer-grid">
+        <div>
+          <h4>Colophon</h4>
+          <p class="colophon">
+            <b>Set in</b>
+            Newsreader &amp; Inter Tight. Printed in cream and ink on the open web. Made by Inventist LLC, Florida.
+          </p>
+        </div>
+        <div>
+          <h4>Studio</h4>
+          <ul>
+            <li><a href="./">Inventist</a></li>
+            <li><a href="whereabouts/">Whereabouts</a></li>
+            <li><a href="#manifesto">Manifesto</a></li>
+          </ul>
+        </div>
+        <div>
+          <h4>Apps</h4>
+          <ul>
+            <li><a href="whereabouts/">Whereabouts</a></li>
+            <li><a href="whereabouts/#pricing">Pro</a></li>
+            <li><a href="whereabouts/#packs">Map packs</a></li>
+          </ul>
+        </div>
+        <div>
+          <h4>Legal &amp; help</h4>
+          <ul>
+            <li><a href="privacy/">Privacy policy</a></li>
+            <li><a href="terms/">Terms</a></li>
+            <li><a href="support/">Support</a></li>
+            <li><a href="mailto:hello@inventist.io">hello@inventist.io</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <span>© <span id="yr">2026</span> Inventist LLC · Florida, USA</span>
+        <span class="compliance">
+          <span>Privacy: Data Not Collected</span>
+          <span>iOS 18+</span>
+          <span>Made by hand</span>
+        </span>
+      </div>
+    </div>
+  </footer>
+
+  <script>document.getElementById('yr').textContent = new Date().getFullYear();</script>
+  <script src="assets/js/main.js" defer></script>
+</body>
+</html>

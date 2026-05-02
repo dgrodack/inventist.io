@@ -1,0 +1,25 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 760 160" width="760" height="160" role="img" aria-label="Inventist — VT ligature wordmark">
+  <defs>
+    <style>
+      .w { font-family: 'Inter Tight', 'Helvetica Neue', Arial, sans-serif; font-weight: 600; font-size: 132px; letter-spacing: -7px; fill: #0B0B0C; }
+      .accent { fill: #1840FF; }
+    </style>
+  </defs>
+
+  <g transform="translate(20,30)">
+    <!-- Render 'inven' then a custom V/T ligature, then 'ist' -->
+    <text x="0" y="118" class="w">inven</text>
+    <!-- Custom ligature: the V's right diagonal becomes the T's stem. Drawn as paths so it's truly a single glyph. -->
+    <g transform="translate(345,0)">
+      <!-- V left diagonal -->
+      <polygon points="0,8 26,8 70,118 44,118" fill="#0B0B0C"/>
+      <!-- shared diagonal that doubles as T stem (extended past V apex up to T crossbar) -->
+      <polygon points="80,8 106,8 70,118 44,118" fill="#1840FF"/>
+      <!-- T crossbar -->
+      <rect x="42" y="8" width="98" height="20" fill="#0B0B0C"/>
+      <!-- T stem continues below crossbar — uses the same ultramarine line -->
+      <rect x="80" y="28" width="22" height="90" fill="#0B0B0C"/>
+    </g>
+    <text x="490" y="118" class="w">ist</text>
+  </g>
+</svg>

@@ -1,0 +1,116 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 270 585" role="img" aria-label="Whereabouts — themed map packs">
+  <defs>
+    <linearGradient id="p_bg" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%"   stop-color="#241914"/>
+      <stop offset="100%" stop-color="#120D0B"/>
+    </linearGradient>
+    <linearGradient id="p_card1" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%"  stop-color="#3A2C24"/>
+      <stop offset="100%" stop-color="#1C1512"/>
+    </linearGradient>
+    <linearGradient id="p_card2" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%"  stop-color="#42291E"/>
+      <stop offset="100%" stop-color="#1C1512"/>
+    </linearGradient>
+    <linearGradient id="p_card3" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%"  stop-color="#2C3A30"/>
+      <stop offset="100%" stop-color="#101814"/>
+    </linearGradient>
+    <linearGradient id="p_card4" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%"  stop-color="#3A2A38"/>
+      <stop offset="100%" stop-color="#1C1512"/>
+    </linearGradient>
+    <clipPath id="p_screen"><rect x="0" y="0" width="270" height="585" rx="22" ry="22"/></clipPath>
+  </defs>
+
+  <g clip-path="url(#p_screen)">
+    <rect width="270" height="585" fill="url(#p_bg)"/>
+
+    <!-- Status -->
+    <text x="20" y="22" font-family="Inter, sans-serif" font-size="11" font-weight="600" fill="#F9EDD9">9:41</text>
+    <g transform="translate(225, 14)" fill="#F9EDD9">
+      <rect x="0"  y="3" width="3" height="6" rx="1"/>
+      <rect x="5"  y="1" width="3" height="8" rx="1"/>
+      <rect x="10" y="-1" width="3" height="10" rx="1"/>
+      <circle cx="20" cy="5" r="3" stroke="#F9EDD9" stroke-width="1" fill="none"/>
+      <rect x="28" y="0" width="14" height="9" rx="2" stroke="#F9EDD9" stroke-width="1" fill="none"/>
+      <rect x="29" y="1.5" width="11" height="6" rx="1" fill="#F9EDD9"/>
+    </g>
+
+    <!-- Title -->
+    <text x="20" y="58" font-family="Inter, sans-serif" font-size="9" font-weight="600" letter-spacing="2" fill="rgba(249,237,217,0.5)">THE LIBRARY</text>
+    <text x="20" y="92" font-family="Newsreader, Georgia, serif" font-size="34" font-weight="380" fill="#F9EDD9" letter-spacing="-0.5">Themed</text>
+    <text x="20" y="124" font-family="Newsreader, Georgia, serif" font-size="34" font-weight="380" font-style="italic" fill="#E87B3A" letter-spacing="-0.5">map packs.</text>
+    <text x="20" y="148" font-family="Newsreader, Georgia, serif" font-size="13" font-style="italic" fill="rgba(249,237,217,0.65)">Hand-curated journeys, free to play.</text>
+
+    <!-- Pack cards 2x2 -->
+    <!-- Pack 1: Cascade Peaks -->
+    <g transform="translate(20, 178)">
+      <rect x="0" y="0" width="108" height="138" rx="10" fill="url(#p_card1)" stroke="rgba(249,237,217,0.08)"/>
+      <!-- Mountain glyph -->
+      <g transform="translate(20, 24)">
+        <path d="M 0 50 L 22 14 L 38 36 L 52 8 L 70 50 Z" fill="#F2B84B" opacity="0.85"/>
+        <path d="M 22 14 L 26 22 L 18 22 Z" fill="#F9EDD9" opacity="0.7"/>
+        <path d="M 52 8 L 56 18 L 48 18 Z" fill="#F9EDD9" opacity="0.7"/>
+      </g>
+      <text x="10" y="100" font-family="Newsreader, Georgia, serif" font-size="14" font-weight="420" fill="#F9EDD9">Cascade</text>
+      <text x="10" y="116" font-family="Newsreader, Georgia, serif" font-size="14" font-style="italic" fill="#F9EDD9">Peaks</text>
+      <text x="10" y="130" font-family="Inter, sans-serif" font-size="8" font-weight="600" letter-spacing="1.5" fill="rgba(249,237,217,0.5)">22 PLACES</text>
+    </g>
+
+    <!-- Pack 2: Ring of Fire -->
+    <g transform="translate(142, 178)">
+      <rect x="0" y="0" width="108" height="138" rx="10" fill="url(#p_card2)" stroke="rgba(232,123,58,0.35)"/>
+      <!-- Volcano glyph -->
+      <g transform="translate(28, 26)">
+        <path d="M 4 50 L 22 12 L 40 50 Z" fill="#E87B3A"/>
+        <path d="M 18 12 L 26 12 L 28 6 L 24 18 L 20 8 Z" fill="#F2B84B"/>
+        <circle cx="22" cy="6" r="3" fill="#F2B84B"/>
+      </g>
+      <text x="10" y="100" font-family="Newsreader, Georgia, serif" font-size="14" font-weight="420" fill="#F9EDD9">Ring of</text>
+      <text x="10" y="116" font-family="Newsreader, Georgia, serif" font-size="14" font-style="italic" fill="#F9EDD9">Fire</text>
+      <text x="10" y="130" font-family="Inter, sans-serif" font-size="8" font-weight="600" letter-spacing="1.5" fill="#E87B3A">28 · NEW</text>
+    </g>
+
+    <!-- Pack 3: Lighthouses -->
+    <g transform="translate(20, 326)">
+      <rect x="0" y="0" width="108" height="138" rx="10" fill="url(#p_card3)" stroke="rgba(249,237,217,0.08)"/>
+      <!-- Lighthouse glyph -->
+      <g transform="translate(34, 18)">
+        <path d="M 12 6 L 28 6 L 26 14 L 14 14 Z" fill="#F9EDD9"/>
+        <rect x="14" y="14" width="12" height="3" fill="#F2B84B"/>
+        <path d="M 14 17 L 26 17 L 30 50 L 10 50 Z" fill="#F9EDD9"/>
+        <path d="M 14 28 L 26 28 L 26 32 L 14 32 Z" fill="#E87B3A"/>
+        <!-- Beam -->
+        <path d="M 30 14 L 64 6 L 64 22 Z" fill="#F2B84B" opacity="0.4"/>
+      </g>
+      <text x="10" y="100" font-family="Newsreader, Georgia, serif" font-size="14" font-weight="420" fill="#F9EDD9">World</text>
+      <text x="10" y="116" font-family="Newsreader, Georgia, serif" font-size="14" font-style="italic" fill="#F9EDD9">Lighthouses</text>
+      <text x="10" y="130" font-family="Inter, sans-serif" font-size="8" font-weight="600" letter-spacing="1.5" fill="rgba(249,237,217,0.5)">36 PLACES</text>
+    </g>
+
+    <!-- Pack 4: Old Towns -->
+    <g transform="translate(142, 326)">
+      <rect x="0" y="0" width="108" height="138" rx="10" fill="url(#p_card4)" stroke="rgba(249,237,217,0.08)"/>
+      <!-- Old town rooftops -->
+      <g transform="translate(20, 30)">
+        <path d="M 0 50 L 0 30 L 12 18 L 24 30 L 24 50 Z" fill="#F9EDD9" opacity="0.85"/>
+        <path d="M 24 50 L 24 24 L 38 14 L 52 24 L 52 50 Z" fill="#F9EDD9" opacity="0.95"/>
+        <path d="M 52 50 L 52 32 L 64 22 L 76 32 L 76 50 Z" fill="#F9EDD9" opacity="0.75"/>
+        <rect x="6"  y="38" width="3" height="6" fill="#1C1512"/>
+        <rect x="32" y="32" width="3" height="6" fill="#1C1512"/>
+        <rect x="42" y="32" width="3" height="6" fill="#1C1512"/>
+        <rect x="60" y="40" width="3" height="6" fill="#1C1512"/>
+      </g>
+      <text x="10" y="100" font-family="Newsreader, Georgia, serif" font-size="14" font-weight="420" fill="#F9EDD9">Old World</text>
+      <text x="10" y="116" font-family="Newsreader, Georgia, serif" font-size="14" font-style="italic" fill="#F9EDD9">Capitals</text>
+      <text x="10" y="130" font-family="Inter, sans-serif" font-size="8" font-weight="600" letter-spacing="1.5" fill="rgba(249,237,217,0.5)">40 PLACES</text>
+    </g>
+
+    <!-- Section divider -->
+    <line x1="20" y1="488" x2="250" y2="488" stroke="rgba(249,237,217,0.1)" stroke-width="0.5"/>
+    <text x="20" y="510" font-family="Inter, sans-serif" font-size="9" font-weight="600" letter-spacing="2" fill="rgba(249,237,217,0.5)">UPCOMING</text>
+    <text x="20" y="534" font-family="Newsreader, Georgia, serif" font-size="14" font-style="italic" fill="rgba(249,237,217,0.85)">Sacred Mountains · Pack No. 13</text>
+    <text x="20" y="552" font-family="Newsreader, Georgia, serif" font-size="11" font-style="italic" fill="rgba(249,237,217,0.55)">Releasing first Tuesday in May.</text>
+  </g>
+</svg>
