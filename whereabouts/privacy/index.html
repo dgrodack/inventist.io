@@ -4,7 +4,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Whereabouts — Privacy Policy</title>
-<meta name="description" content="Privacy policy for the Whereabouts iOS app by Inventist LLC.">
+<meta name="description" content="GDPR-compliant privacy policy for the Whereabouts iOS app by Inventist LLC. Local-only architecture, no tracking, no third-party analytics.">
 <meta name="robots" content="index,follow">
 <link rel="preconnect" href="https://rsms.me/">
 <link rel="stylesheet" href="https://rsms.me/inter/inter.css">
@@ -63,7 +63,7 @@
 
   main {
     position: relative; z-index: 2;
-    max-width: 720px;
+    max-width: 760px;
     margin: 0 auto;
     padding: 64px 40px 96px;
   }
@@ -99,14 +99,30 @@
     border-bottom: 1px solid var(--rule);
     font-feature-settings: "tnum";
   }
+  .summary {
+    background: rgba(232, 158, 44, 0.10);
+    border-left: 3px solid var(--marigold);
+    border-radius: 6px;
+    padding: 20px 24px;
+    margin-bottom: 36px;
+  }
+  .summary h2 {
+    font-size: 14px; font-weight: 700;
+    text-transform: uppercase; letter-spacing: 0.10em;
+    color: var(--marigold-deep);
+    margin-bottom: 10px;
+  }
+  .summary p { font-size: 15px; color: var(--ink-soft); margin: 0; }
+  .summary p + p { margin-top: 8px; }
+
   .content { font-size: 16px; line-height: 1.7; color: var(--ink); }
   .content h2 {
     font-size: 22px; font-weight: 700; letter-spacing: -0.015em;
-    margin: 36px 0 12px; color: var(--ink);
+    margin: 40px 0 12px; color: var(--ink);
   }
   .content h3 {
     font-size: 17px; font-weight: 600; letter-spacing: -0.01em;
-    margin: 22px 0 8px; color: var(--ink);
+    margin: 24px 0 8px; color: var(--ink);
   }
   .content p { margin-bottom: 16px; color: var(--ink-soft); }
   .content ul { margin-left: 24px; margin-bottom: 16px; color: var(--ink-soft); }
@@ -117,6 +133,29 @@
     text-underline-offset: 3px;
   }
   .content strong { color: var(--ink); font-weight: 600; }
+
+  .rights-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 16px 0 24px;
+    font-size: 15px;
+  }
+  .rights-table th, .rights-table td {
+    text-align: left;
+    padding: 12px 14px;
+    border-bottom: 1px solid var(--rule);
+    vertical-align: top;
+  }
+  .rights-table th {
+    background: rgba(21, 35, 63, 0.04);
+    font-weight: 600;
+    font-size: 12px;
+    text-transform: uppercase;
+    letter-spacing: 0.06em;
+    color: var(--ink);
+  }
+  .rights-table td:first-child { font-weight: 600; color: var(--ink); width: 38%; }
+  .rights-table td:nth-child(2) { color: var(--ink-soft); }
 
   footer {
     position: relative; z-index: 2;
@@ -132,6 +171,8 @@
     header { padding: 20px 24px; }
     main { padding: 48px 24px 72px; }
     footer { padding: 24px 24px; }
+    .rights-table { font-size: 14px; }
+    .rights-table th, .rights-table td { padding: 10px 8px; }
   }
 </style>
 </head>
@@ -145,49 +186,138 @@
 <main>
   <div class="eyebrow">// Whereabouts · Privacy policy</div>
   <h1>Your data, <em>your business.</em></h1>
-  <p class="lede">Inventist is built on the belief that great software shouldn't cost your privacy. Here's exactly what we do and don't do with your information when you use Whereabouts.</p>
-  <div class="last-updated">Last updated: May 1, 2026</div>
+  <p class="lede">A GDPR-compliant explanation of exactly what Whereabouts does and doesn't do with your information.</p>
+  <div class="last-updated">Last updated: May 2, 2026 · Effective immediately</div>
+
+  <div class="summary">
+    <h2>The short version</h2>
+    <p>Whereabouts is a <strong>local-only iOS app</strong>. Your scores, streak, settings, and game progress live on your iPhone — nothing is sent to a server we control. We use no analytics SDKs, no advertising networks, and no third-party trackers.</p>
+    <p>The longer version below explains the few unavoidable data flows (Apple's App Store, Wikimedia Commons for imagery, your email if you write to us), your rights under GDPR, and how to exercise them.</p>
+  </div>
 
   <div class="content">
-    <h2>The short version</h2>
-    <p>We don't collect personal information from people who use Whereabouts. We don't use analytics SDKs, advertising networks, or tracking tools. We do not sell or share data with third parties.</p>
-    <p>The longer version below explains the specifics, including the limited information that may be processed by Apple itself when you download or use Whereabouts, and what is involved if you choose to subscribe.</p>
 
-    <h2>Information we collect</h2>
+    <h2>1. Who we are (Data Controller)</h2>
+    <p>The data controller responsible for your personal data is:</p>
+    <p>
+      <strong>Inventist LLC</strong><br>
+      Apopka, Florida, United States<br>
+      Email: <a href="mailto:contact@inventist.io">contact@inventist.io</a>
+    </p>
+    <p>Inventist is a small independent publisher and is not required to appoint a Data Protection Officer under Article 37 of the GDPR. The contact above is the single point of contact for all privacy matters, including data-subject requests.</p>
 
-    <h3>Through the Whereabouts app</h3>
-    <p>Whereabouts stores your game progress, daily scores, streak, and settings <strong>locally on your device</strong>. This information never leaves your device unless you choose to back it up via Apple's iCloud service, which is governed by <a href="https://www.apple.com/legal/privacy/" target="_blank" rel="noopener">Apple's Privacy Policy</a>.</p>
-    <p>If you choose to <strong>share your daily stats</strong> with family or friends, that sharing is initiated by you through your device's standard sharing options — we do not see, store, or transmit the content you share.</p>
-    <p>We do not use third-party analytics, advertising, crash reporting, or attribution SDKs in our app.</p>
+    <h2>2. Architecture: local-only by design</h2>
+    <p>Whereabouts is a native iOS app. The vast majority of what the app does happens on your device alone:</p>
+    <ul>
+      <li>Your <strong>game progress</strong> (daily scores, streak, completed rounds, settings, unlocked content) is stored locally using Apple's standard on-device storage. It is not transmitted to Inventist.</li>
+      <li>The <strong>question pool</strong> (locations, coordinates, metadata) is bundled inside the app at the time of download. The app does not "phone home" to fetch it.</li>
+      <li>The app makes <strong>no network requests for the purpose of identifying or tracking you</strong>. There is no account system, no login, no user ID assigned by us.</li>
+    </ul>
+    <p>Because data does not leave your device, there is no central database we could be compelled to disclose, no data we could lose in a breach, and nothing for an attacker to steal from us.</p>
 
-    <h3>If you subscribe</h3>
-    <p>Subscriptions to unlock the friends leaderboard and additional topic packs are processed through <strong>Apple's App Store and StoreKit</strong>. Apple handles the payment, billing, and subscription management — we do not see, store, or have access to your payment information. We may receive aggregate, anonymized information from Apple about subscription activity.</p>
-    <p>To enable the friends leaderboard feature, your scores and a chosen display name may be associated with an anonymous identifier so that you and your friends can see one another's results. This data is used solely to operate the leaderboard feature and is not used for advertising or shared with third parties.</p>
+    <h2>3. The few data flows that do exist</h2>
 
-    <h3>When you contact us</h3>
-    <p>If you email us, we receive your email address and the content of your message. We use this only to reply to you and to keep a record of the conversation. We do not add you to any marketing lists.</p>
+    <h3>3.1 Imagery from Wikimedia Commons</h3>
+    <p>Some location imagery shown during gameplay is loaded directly from <strong>Wikimedia Commons</strong> (<code>upload.wikimedia.org</code>) — a free media repository operated by the Wikimedia Foundation. As with any HTTP request, your device's IP address and standard request headers are visible to Wikimedia's servers as part of fulfilling the request. <strong>No app-level personal data, identifier, score, location, or game state is sent to Wikimedia.</strong> We do not track which images you view.</p>
+    <p>Wikimedia's handling of HTTP request data is governed by the <a href="https://foundation.wikimedia.org/wiki/Policy:Privacy_policy" target="_blank" rel="noopener">Wikimedia Foundation Privacy Policy</a>.</p>
 
-    <h2>Information collected by Apple</h2>
-    <p>When you download Whereabouts from the App Store, Apple may collect information about that download according to <a href="https://www.apple.com/legal/privacy/" target="_blank" rel="noopener">Apple's Privacy Policy</a>. We may receive aggregate, anonymized statistics from Apple about app downloads and usage (such as country of download or app version) through App Store Connect. This data is not associated with any individual user.</p>
+    <h3>3.2 Apple App Store and StoreKit (purchases)</h3>
+    <p>The app is distributed through the Apple App Store. When you download or update Whereabouts, Apple may collect information about that transaction in accordance with <a href="https://www.apple.com/legal/privacy/" target="_blank" rel="noopener">Apple's Privacy Policy</a>. We may receive aggregate, de-identified statistics from Apple via App Store Connect (totals, country of download, app version) — never information that identifies you.</p>
+    <p>If you choose to subscribe or make an in-app purchase, that transaction is processed entirely by <strong>Apple's StoreKit</strong>. Apple handles billing, payment methods, refunds, and subscription management. <strong>Inventist does not see, store, or have access to your payment card details, your Apple ID email, or your billing address.</strong> We receive only an opaque receipt token from Apple confirming the purchase is valid; that token lives on your device.</p>
 
-    <h2>Children's privacy</h2>
-    <p>Whereabouts is designed to be enjoyed by people of all ages, including children. Because we do not collect personal information from any user, we likewise do not knowingly collect personal information from children under 13. Our practices are designed to be compliant with the Children's Online Privacy Protection Act (COPPA) and equivalent regulations.</p>
+    <h3>3.3 iCloud backup (your choice)</h3>
+    <p>If you have iCloud Backup enabled on your iPhone, Apple may include the app's local data in your encrypted iCloud backup. This is governed by <a href="https://www.apple.com/legal/privacy/" target="_blank" rel="noopener">Apple's Privacy Policy</a>; Inventist has no access to iCloud backups.</p>
 
-    <h2>How we share information</h2>
-    <p>We don't. We do not sell, rent, trade, or otherwise share user information with third parties. The only exceptions would be if we were legally required to do so by a valid legal process, or if doing so were necessary to protect our rights, property, or safety.</p>
+    <h3>3.4 If you contact us by email</h3>
+    <p>If you email us at <code>contact@inventist.io</code> (or use any in-app feature that opens your mail client to write to us), we receive your email address and the contents of your message. <strong>Replies are written by a human at Inventist</strong> — there is no automated reply, no chatbot, and no autoresponder. We use this only to reply, troubleshoot, or follow up. Your email is not added to any marketing list. We retain correspondence only as long as necessary to support you, and on request will delete it (see Section 6).</p>
 
-    <h2>Your rights</h2>
-    <p>Because we collect very little personal data, there's typically very little for us to access, correct, or delete on your behalf. If you have contacted us by email and would like that correspondence deleted, or if you'd like your leaderboard data removed, simply email <a href="mailto:contact@inventist.io">contact@inventist.io</a> and we'll take care of it.</p>
-    <p>Residents of the European Economic Area, the United Kingdom, and California have certain rights under applicable data protection laws (such as GDPR and CCPA), including the right to access, correct, delete, or restrict the processing of personal data. To exercise any of these rights, contact us at the address above.</p>
+    <h3>3.5 What we do NOT do</h3>
+    <p>For the avoidance of doubt, Whereabouts:</p>
+    <ul>
+      <li>does not contain any third-party analytics, advertising, attribution, or crash-reporting SDKs;</li>
+      <li>does not place cookies or use any web tracking on this website;</li>
+      <li>does not sell, rent, or share any user information with third parties;</li>
+      <li>does not perform automated decision-making or profiling under Article 22 of the GDPR;</li>
+      <li>does not transfer personal data outside the EEA for processing by Inventist (data stays on your device).</li>
+    </ul>
 
-    <h2>Security</h2>
-    <p>We take reasonable measures to protect any information we do hold. Email correspondence is stored on industry-standard infrastructure with appropriate access controls. No system is perfectly secure, but our deliberate choice to collect as little data as possible is itself one of the strongest privacy protections we can offer.</p>
+    <h2>4. Lawful basis for processing</h2>
+    <p>To the limited extent we process personal data, our lawful bases under Article 6 of the GDPR are:</p>
+    <ul>
+      <li><strong>Performance of a contract</strong> (Art. 6(1)(b)) — operating the app you've installed and providing in-app purchases via Apple.</li>
+      <li><strong>Legitimate interests</strong> (Art. 6(1)(f)) — replying to email you send us, defending against abuse, complying with App Store rules.</li>
+      <li><strong>Legal obligation</strong> (Art. 6(1)(c)) — responding to lawful requests from authorities, where applicable.</li>
+    </ul>
+    <p>We do not rely on consent (Art. 6(1)(a)) because we don't collect data that requires it.</p>
 
-    <h2>Changes to this policy</h2>
-    <p>If we make material changes to this policy, we'll update the date at the top of this page and, for changes of substance, post a notice on our website. We encourage you to check this page periodically.</p>
+    <h2>5. International transfers</h2>
+    <p>Inventist is based in the United States. Email correspondence sent to us is processed in the U.S. via Apple's iCloud Mail infrastructure. We do not transfer game data — because we don't receive any. Apple's transfer mechanisms (including Standard Contractual Clauses where applicable) cover data Apple processes on our behalf.</p>
 
-    <h2>Contact us</h2>
-    <p>For any questions about this privacy policy or our data practices, please email <a href="mailto:contact@inventist.io">contact@inventist.io</a>.</p>
+    <h2>6. Your rights under GDPR</h2>
+    <p>If you are in the European Economic Area, the United Kingdom, Switzerland, or another jurisdiction with equivalent data-protection laws, you have the following rights regarding your personal data. Many of these are exercisable directly inside the app, without needing to contact us:</p>
+
+    <table class="rights-table">
+      <thead>
+        <tr><th>Right</th><th>How to exercise it</th></tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>Access (Art. 15)</td>
+          <td>Open the app → <strong>Settings → Export</strong>. This produces a complete copy of the data the app holds about you.</td>
+        </tr>
+        <tr>
+          <td>Rectification (Art. 16)</td>
+          <td>Edit any of your settings or display name directly in <strong>Settings</strong> inside the app. For corrections to email correspondence we hold, write to <a href="mailto:contact@inventist.io">contact@inventist.io</a>.</td>
+        </tr>
+        <tr>
+          <td>Erasure (Art. 17, "right to be forgotten")</td>
+          <td>Open the app → <strong>Settings → Reset</strong> to wipe all locally-stored data, or simply uninstall the app from your device. To delete email correspondence we hold, write to <a href="mailto:contact@inventist.io">contact@inventist.io</a>.</td>
+        </tr>
+        <tr>
+          <td>Restriction (Art. 18)</td>
+          <td>Email <a href="mailto:contact@inventist.io">contact@inventist.io</a>.</td>
+        </tr>
+        <tr>
+          <td>Data portability (Art. 20)</td>
+          <td>Open the app → <strong>Settings → Export</strong>. Export is provided in a machine-readable format (JSON).</td>
+        </tr>
+        <tr>
+          <td>Object (Art. 21)</td>
+          <td>Email <a href="mailto:contact@inventist.io">contact@inventist.io</a>. Because we do not perform direct marketing, profiling, or automated decision-making, this right has limited practical application but is fully respected.</td>
+        </tr>
+        <tr>
+          <td>Withdraw consent (Art. 7)</td>
+          <td>Not applicable — we do not rely on consent as a lawful basis. Uninstalling the app stops all on-device processing immediately.</td>
+        </tr>
+      </tbody>
+    </table>
+
+    <p>We will respond to any rights request within <strong>30 days</strong>, free of charge. If your request is complex or you submit multiple requests, we may extend this by up to two further months and will tell you why.</p>
+
+    <h2>7. Right to lodge a complaint</h2>
+    <p>You have the right to lodge a complaint with a supervisory authority — typically the data protection authority of the EU/EEA member state where you live, work, or where the alleged infringement occurred. A directory of EU/EEA authorities is maintained by the <a href="https://www.edpb.europa.eu/about-edpb/about-edpb/members_en" target="_blank" rel="noopener">European Data Protection Board</a>. Residents of the United Kingdom can complain to the <a href="https://ico.org.uk/" target="_blank" rel="noopener">Information Commissioner's Office (ICO)</a>. Residents of Switzerland can complain to the <a href="https://www.edoeb.admin.ch/edoeb/en/home.html" target="_blank" rel="noopener">FDPIC</a>.</p>
+    <p>We would always prefer the chance to resolve a concern first — please write to <a href="mailto:contact@inventist.io">contact@inventist.io</a> — but it is your right to escalate at any time.</p>
+
+    <h2>8. Retention</h2>
+    <p>On-device data persists until you reset it inside the app or uninstall the app. Email correspondence is retained only as long as needed to support you (typically up to 24 months after our last exchange) and is deleted earlier on request.</p>
+
+    <h2>9. Children's privacy</h2>
+    <p>Whereabouts is suitable for users of all ages, including children. Because we do not collect personal information from any user, we do not knowingly collect personal information from children under 13 (or the equivalent minimum age in your jurisdiction). Our practices are designed to align with COPPA in the United States and GDPR-K in the EU.</p>
+
+    <h2>10. Security</h2>
+    <p>The strongest privacy measure we offer is <strong>not having your data in the first place</strong>. For the limited information we do hold (email correspondence), we rely on industry-standard infrastructure provided by Apple (iCloud Mail) and Cloudflare (web hosting), with appropriate access controls. No system is perfectly secure, and we will notify affected users and the relevant supervisory authority within 72 hours of becoming aware of any personal-data breach as required by Article 33.</p>
+
+    <h2>11. Changes to this policy</h2>
+    <p>If we make material changes to this policy we will update the "Last updated" date above and, for changes of substance, surface a notice on our website and inside the app at next launch. Older versions are available on request.</p>
+
+    <h2>12. Contact for privacy and GDPR requests</h2>
+    <p>For any privacy question, GDPR rights request, or complaint, write to:</p>
+    <p>
+      <strong>Inventist LLC — Privacy</strong><br>
+      Email: <a href="mailto:contact@inventist.io">contact@inventist.io</a><br>
+      Postal: Apopka, Florida, United States
+    </p>
+    <p>You will receive a reply from a human, typically within one business day.</p>
   </div>
 </main>
 
