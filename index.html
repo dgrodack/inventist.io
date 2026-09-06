@@ -127,8 +127,9 @@ nav {
 
 .nav-cta {
   background: var(--ink);
-  color: var(--cream);
-  padding: 10px 18px;
+  color: var(--cream) !important;
+  padding: 12px 20px;
+  min-height: 44px;
   border-radius: 999px;
   font-size: 13px;
   font-weight: 500;
@@ -136,15 +137,62 @@ nav {
   cursor: pointer;
   border: none;
   font-family: inherit;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  text-decoration: none;
 }
 
 .nav-cta::after { display: none; }
 
 .nav-cta:hover {
   background: var(--marigold);
-  color: var(--ink);
+  color: var(--ink) !important;
   transform: translateY(-1px);
 }
+
+.logo {
+  text-decoration: none;
+  color: inherit;
+}
+
+.nav-toggle {
+  display: none;
+  width: 44px;
+  height: 44px;
+  border: 1px solid var(--rule);
+  border-radius: 12px;
+  background: transparent;
+  color: var(--ink);
+  cursor: pointer;
+  align-items: center;
+  justify-content: center;
+  padding: 0;
+  z-index: 60;
+}
+
+.nav-toggle svg { display: block; }
+
+.nav-toggle .icon-close { display: none; }
+.nav-toggle[aria-expanded="true"] .icon-open { display: none; }
+.nav-toggle[aria-expanded="true"] .icon-close { display: block; }
+
+.nav-backdrop {
+  display: none;
+  position: fixed;
+  inset: 0;
+  background: rgba(21, 35, 63, 0.35);
+  z-index: 40;
+  border: none;
+  padding: 0;
+  cursor: pointer;
+}
+
+body.nav-open .nav-backdrop { display: block; }
+body.nav-open { overflow: hidden; }
+
+.nav-links a[aria-current="page"]::after { width: 100%; }
+
 
 .hero {
   padding: 80px 48px 120px;
@@ -749,6 +797,10 @@ footer {
   font-size: 14px;
   transition: color 0.2s;
   cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  min-height: 44px;
+  padding: 10px 0;
 }
 
 .footer-col a:hover { color: var(--marigold); }
@@ -764,7 +816,7 @@ footer {
   font-family: 'DM Mono', monospace;
   font-size: 11px;
   letter-spacing: 0.08em;
-  color: rgba(244, 234, 213, 0.5);
+  color: rgba(244, 234, 213, 0.78);
 }
 
 .subpage {
@@ -950,8 +1002,42 @@ footer {
 
 @media (max-width: 900px) {
   nav { padding: 20px 24px; }
-  .nav-links { gap: 20px; font-size: 13px; }
-  .nav-links li:not(:last-child) { display: none; }
+  .nav-toggle { display: inline-flex; }
+  .nav-links {
+    position: fixed;
+    top: 0;
+    right: 0;
+    height: 100vh;
+    width: min(320px, 88vw);
+    background: rgba(251, 246, 233, 0.98);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    flex-direction: column;
+    align-items: stretch;
+    gap: 0;
+    padding: 88px 24px 32px;
+    border-left: 1px solid var(--rule);
+    box-shadow: var(--shadow);
+    transform: translateX(105%);
+    transition: transform 0.28s ease;
+    z-index: 55;
+    overflow-y: auto;
+  }
+  body.nav-open .nav-links { transform: translateX(0); }
+  .nav-links li { width: 100%; }
+  .nav-links a {
+    display: flex;
+    align-items: center;
+    min-height: 48px;
+    font-size: 16px;
+    padding: 8px 4px;
+  }
+  .nav-links a::after { display: none; }
+  .nav-links .nav-cta {
+    margin-top: 16px;
+    width: 100%;
+    text-align: center;
+  }
   .hero { padding: 60px 24px 80px; }
   .hero-grid { grid-template-columns: 1fr; gap: 60px; }
   .globe-wrap { max-width: 380px; margin: 0 auto; }
@@ -970,17 +1056,23 @@ footer {
 </head>
 <body>
 
-<nav>
-  <div class="logo" data-route="home">
-    <span class="logo-dot"></span>
+<nav aria-label="Primary">
+  <a href="#home" class="logo" data-route="home">
+    <span class="logo-dot" aria-hidden="true"></span>
     Inventist
-  </div>
-  <ul class="nav-links">
-    <li><a data-route="home" class="active">Home</a></li>
-    <li><a data-route="app">App</a></li>
-    <li><a data-route="contact">Contact</a></li>
-    <li><a data-route="privacy">Privacy</a></li>
-    <li><button class="nav-cta" data-route="contact">Get in touch</button></li>
+  </a>
+  <button type="button" class="nav-toggle" id="nav-toggle" aria-expanded="false" aria-controls="nav-menu" aria-label="Open menu">
+    <svg class="icon-open" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M4 7h16M4 12h16M4 17h16"/></svg>
+    <svg class="icon-close" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M6 6l12 12M18 6L6 18"/></svg>
+  </button>
+  <button type="button" class="nav-backdrop" id="nav-backdrop" tabindex="-1" aria-hidden="true" aria-label="Close menu"></button>
+  <ul class="nav-links" id="nav-menu">
+    <li><a href="#home" data-route="home" class="active" aria-current="page">Home</a></li>
+    <li><a href="#app" data-route="app">App</a></li>
+    <li><a href="#contact" data-route="contact">Contact</a></li>
+    <li><a href="#privacy" data-route="privacy">Privacy</a></li>
+    <li><a href="#terms" data-route="terms">Terms</a></li>
+    <li><a href="#contact" class="nav-cta" data-route="contact">Get in touch</a></li>
   </ul>
 </nav>
 
@@ -1004,14 +1096,14 @@ footer {
         <div class="hero-cta-row">
           <button class="btn-primary" data-route="app">
             Meet our app
-            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M13 5l7 7-7 7"/></svg>
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M5 12h14M13 5l7 7-7 7"/></svg>
           </button>
           <button class="btn-ghost" data-route="contact">Contact us</button>
         </div>
       </div>
 
       <div class="globe-wrap">
-        <svg class="globe-svg" viewBox="0 0 400 400" xmlns="http://www.w3.org/2000/svg">
+        <svg class="globe-svg" viewBox="0 0 400 400" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Illustrated globe with a map pin">
           <defs>
             <radialGradient id="globeFill" cx="35%" cy="35%">
               <stop offset="0%" stop-color="#5a8fb8"/>
@@ -1088,7 +1180,7 @@ footer {
     <div class="about-grid">
       <div class="about-card">
         <div class="about-card-num">01 / Philosophy</div>
-        <svg class="about-card-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+        <svg class="about-card-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true">
           <circle cx="12" cy="12" r="10"/>
           <path d="M12 2 a15 15 0 0 1 0 20 a15 15 0 0 1 0 -20"/>
           <path d="M2 12h20"/>
@@ -1098,7 +1190,7 @@ footer {
       </div>
       <div class="about-card">
         <div class="about-card-num">02 / Craft</div>
-        <svg class="about-card-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+        <svg class="about-card-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true">
           <path d="M3 3h18v18H3z"/>
           <path d="M3 9h18M9 21V9"/>
         </svg>
@@ -1107,7 +1199,7 @@ footer {
       </div>
       <div class="about-card">
         <div class="about-card-num">03 / Privacy</div>
-        <svg class="about-card-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+        <svg class="about-card-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true">
           <path d="M12 2 L4 6 v6 c0 5 3.5 9 8 10 c4.5 -1 8 -5 8 -10 V6 z"/>
         </svg>
         <h3 class="about-card-title">Yours, and only yours</h3>
@@ -1125,7 +1217,7 @@ footer {
         <div>
           <div class="app-meta">
             <div class="app-icon">
-              <svg class="app-icon-svg" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
+              <svg class="app-icon-svg" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Whereabouts app icon">
                 <defs>
                   <radialGradient id="iconGlobe" cx="35%" cy="35%">
                     <stop offset="0%" stop-color="#7ab0d4"/>
@@ -1172,7 +1264,7 @@ footer {
                 Find the city of <em>Marrakech</em> on the globe.
               </div>
               <div class="screen-globe">
-                <svg viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg" style="width: 180px; height: 180px;">
+                <svg viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg" style="width: 180px; height: 180px;" role="img" aria-label="Interactive globe with pin on Marrakech">
                   <defs>
                     <radialGradient id="phoneGlobe" cx="35%" cy="35%">
                       <stop offset="0%" stop-color="#5a8fb8"/>
@@ -1236,7 +1328,7 @@ footer {
     <div style="background: var(--paper); border: 1px solid var(--rule); border-radius: 20px; padding: 40px; margin-bottom: 40px;">
       <div style="display: flex; gap: 24px; align-items: flex-start; margin-bottom: 24px; flex-wrap: wrap;">
         <div class="app-icon" style="width: 80px; height: 80px; border-radius: 18px; background: linear-gradient(135deg, #4a90c2 0%, #2c5f8a 50%, #1a3a5c 100%); position: relative; overflow: hidden; flex-shrink: 0;">
-          <svg viewBox="0 0 100 100" style="width: 100%; height: 100%;">
+          <svg viewBox="0 0 100 100" style="width: 100%; height: 100%;" role="img" aria-label="Whereabouts app icon">
             <circle cx="50" cy="50" r="34" fill="#1a3a5c"/>
             <ellipse cx="50" cy="50" rx="34" ry="12" stroke="rgba(255,255,255,0.25)" fill="none" stroke-width="0.6"/>
             <ellipse cx="50" cy="50" rx="12" ry="34" stroke="rgba(255,255,255,0.25)" fill="none" stroke-width="0.6"/>
@@ -1268,7 +1360,7 @@ footer {
     </div>
 
     <h2>What's next</h2>
-    <p>Whereabouts is launching on the App Store soon. We're a small studio, so we focus on doing one thing well at a time — and we'll have more to share when the app is ready. Drop us a note via the <a data-route="contact">contact page</a> if you'd like to be among the first to know.</p>
+    <p>Whereabouts is launching on the App Store soon. We're a small studio, so we focus on doing one thing well at a time — and we'll have more to share when the app is ready. Drop us a note via the <a href="#contact" data-route="contact">contact page</a> if you'd like to be among the first to know.</p>
   </div>
 </div>
 
@@ -1278,7 +1370,7 @@ footer {
   <p class="page-lede">Real humans, real replies. We typically respond within one business day — often much sooner.</p>
 
   <div class="contact-block">
-    <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+    <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" role="img" aria-label="Email">
       <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/>
       <polyline points="22,6 12,13 2,6"/>
     </svg>
@@ -1286,7 +1378,7 @@ footer {
     <p>Bug reports, feature ideas, app help, press inquiries, privacy questions — all welcome. One inbox, one team.</p>
     <a href="mailto:contact@inventist.io" class="contact-email">
       contact@inventist.io
-      <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M13 5l7 7-7 7"/></svg>
+      <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M5 12h14M13 5l7 7-7 7"/></svg>
     </a>
   </div>
 
@@ -1330,7 +1422,7 @@ footer {
 
     <div class="faq-item">
       <div class="faq-q">Do you collect any personal data?</div>
-      <div class="faq-a"><p>The short answer: no. We don't ask for accounts, we don't track your behavior, and we don't share data with third parties. Read the full <a data-route="privacy">privacy policy</a> for details.</p></div>
+      <div class="faq-a"><p>The short answer: no. We don't ask for accounts, we don't track your behavior, and we don't share data with third parties. Read the full <a href="#privacy" data-route="privacy">privacy policy</a> for details.</p></div>
     </div>
   </div>
 </div>
@@ -1389,7 +1481,7 @@ footer {
     <p>If you send us suggestions, ideas, feedback, or other materials ("Feedback"), you grant us a perpetual, irrevocable, royalty-free license to use that Feedback for any purpose, including improving our app and services, without obligation to you.</p>
 
     <h2>Disclaimers</h2>
-    <p>Our app and website are provided "as is" and "as available," without warranties of any kind, either express or implied. While we try to ensure that all factual content is accurate, we make no guarantees of accuracy, completeness, or reliability. If you find an error, please let us know via the <a data-route="contact">contact page</a>.</p>
+    <p>Our app and website are provided "as is" and "as available," without warranties of any kind, either express or implied. While we try to ensure that all factual content is accurate, we make no guarantees of accuracy, completeness, or reliability. If you find an error, please let us know via the <a href="#contact" data-route="contact">contact page</a>.</p>
 
     <h2>Limitation of liability</h2>
     <p>To the fullest extent permitted by law, Inventist shall not be liable for any indirect, incidental, special, consequential, or punitive damages arising out of or related to your use of our app or website.</p>
@@ -1414,22 +1506,22 @@ footer {
     <div class="footer-col">
       <h4>Studio</h4>
       <ul>
-        <li><a data-route="home">About</a></li>
-        <li><a data-route="app">Our app</a></li>
+        <li><a href="#home" data-route="home">About</a></li>
+        <li><a href="#app" data-route="app">Our app</a></li>
         <li><a href="mailto:contact@inventist.io">Press</a></li>
       </ul>
     </div>
     <div class="footer-col">
       <h4>Help</h4>
       <ul>
-        <li><a data-route="contact">Contact</a></li>
+        <li><a href="#contact" data-route="contact">Contact</a></li>
       </ul>
     </div>
     <div class="footer-col">
       <h4>Legal</h4>
       <ul>
-        <li><a data-route="privacy">Privacy policy</a></li>
-        <li><a data-route="terms">Terms of use</a></li>
+        <li><a href="#privacy" data-route="privacy">Privacy policy</a></li>
+        <li><a href="#terms" data-route="terms">Terms of use</a></li>
         <li><a href="mailto:contact@inventist.io">Data requests</a></li>
       </ul>
     </div>
@@ -1444,6 +1536,40 @@ footer {
   const routes = ['home', 'app', 'contact', 'privacy', 'terms'];
   const mainPage = document.getElementById('page-home');
   const subpages = routes.slice(1).map(r => document.getElementById('page-' + r));
+  const navToggle = document.getElementById('nav-toggle');
+  const navMenu = document.getElementById('nav-menu');
+  const navBackdrop = document.getElementById('nav-backdrop');
+  let lastFocus = null;
+
+  function closeMobileMenu() {
+    document.body.classList.remove('nav-open');
+    if (navToggle) {
+      navToggle.setAttribute('aria-expanded', 'false');
+      navToggle.setAttribute('aria-label', 'Open menu');
+    }
+    if (navBackdrop) navBackdrop.setAttribute('aria-hidden', 'true');
+    if (lastFocus) {
+      lastFocus.focus();
+      lastFocus = null;
+    }
+  }
+
+  function openMobileMenu() {
+    lastFocus = document.activeElement;
+    document.body.classList.add('nav-open');
+    if (navToggle) {
+      navToggle.setAttribute('aria-expanded', 'true');
+      navToggle.setAttribute('aria-label', 'Close menu');
+    }
+    if (navBackdrop) navBackdrop.setAttribute('aria-hidden', 'false');
+    const first = navMenu && navMenu.querySelector('a');
+    if (first) first.focus();
+  }
+
+  function toggleMobileMenu() {
+    if (document.body.classList.contains('nav-open')) closeMobileMenu();
+    else openMobileMenu();
+  }
 
   function navigate(route) {
     if (!routes.includes(route)) route = 'home';
@@ -1455,24 +1581,71 @@ footer {
       mainPage.style.display = 'none';
     }
 
-    subpages.forEach(p => p.classList.remove('active'));
+    subpages.forEach(p => { if (p) p.classList.remove('active'); });
     if (route !== 'home') {
       const target = document.getElementById('page-' + route);
       if (target) target.classList.add('active');
     }
 
-    document.querySelectorAll('.nav-links a').forEach(a => {
-      a.classList.toggle('active', a.dataset.route === route);
+    document.querySelectorAll('.nav-links a[data-route]').forEach(a => {
+      const isCta = a.classList.contains('nav-cta');
+      const active = a.dataset.route === route;
+      a.classList.toggle('active', active && !isCta);
+      if (active && !isCta) a.setAttribute('aria-current', 'page');
+      else a.removeAttribute('aria-current');
     });
 
+    closeMobileMenu();
     window.scrollTo({ top: 0, behavior: 'instant' });
   }
+
+  function go(route) {
+    if (!routes.includes(route)) route = 'home';
+    const next = '#' + route;
+    if (location.hash === next) {
+      navigate(route);
+    } else {
+      location.hash = route;
+    }
+  }
+
+  window.addEventListener('hashchange', () => {
+    navigate((location.hash || '#home').slice(1) || 'home');
+  });
 
   document.querySelectorAll('[data-route]').forEach(el => {
     el.addEventListener('click', (e) => {
       e.preventDefault();
-      navigate(el.dataset.route);
+      go(el.dataset.route);
     });
+  });
+
+  if (navToggle) navToggle.addEventListener('click', toggleMobileMenu);
+  if (navBackdrop) navBackdrop.addEventListener('click', closeMobileMenu);
+
+  document.addEventListener('keydown', (e) => {
+    if (e.key === 'Escape' && document.body.classList.contains('nav-open')) {
+      e.preventDefault();
+      closeMobileMenu();
+      if (navToggle) navToggle.focus();
+      return;
+    }
+    if (!document.body.classList.contains('nav-open') || !navMenu) return;
+    if (e.key !== 'Tab') return;
+    const focusables = [...navMenu.querySelectorAll('a, button')].filter(el => !el.hasAttribute('disabled'));
+    if (!focusables.length) return;
+    const first = focusables[0];
+    const last = focusables[focusables.length - 1];
+    if (e.shiftKey && document.activeElement === first) {
+      e.preventDefault();
+      last.focus();
+    } else if (!e.shiftKey && document.activeElement === last) {
+      e.preventDefault();
+      first.focus();
+    } else if (e.shiftKey && document.activeElement === navToggle) {
+      e.preventDefault();
+      last.focus();
+    }
   });
 
   document.querySelectorAll('.faq-item').forEach(item => {
@@ -1481,7 +1654,9 @@ footer {
     });
   });
 
-  navigate('home');
+  const initial = (location.hash || '#home').slice(1) || 'home';
+  navigate(routes.includes(initial) ? initial : 'home');
+  if (!location.hash) history.replaceState(null, '', '#home');
 </script>
 
 </body>
